@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='3.0' sdk='iphonesimulator'>
+    <sections>
+        <documentation relative-path='fragment-0.html'/>
+        <code source-file-name='section-2.swift'/>
+        <documentation relative-path='fragment-2.html'/>
+        <code source-file-name='section-4.swift'/>
+        <documentation relative-path='fragment-4.html'/>
+        <code source-file-name='section-6.swift'/>
+        <documentation relative-path='fragment-6.html'/>
+        <code source-file-name='section-8.swift'/>
+        <documentation relative-path='fragment-8.html'/>
+        <code source-file-name='section-10.swift'/>
+        <documentation relative-path='fragment-10.html'/>
+        <code source-file-name='section-12.swift'/>
+        <documentation relative-path='fragment-12.html'/>
+        <code source-file-name='section-14.swift'/>
+        <documentation relative-path='fragment-14.html'/>
+        <code source-file-name='section-16.swift'/>
+        <documentation relative-path='fragment-16.html'/>
+        <code source-file-name='section-18.swift'/>
+        <documentation relative-path='fragment-18.html'/>
+        <code source-file-name='section-20.swift'/>
+        <documentation relative-path='fragment-20.html'/>
+        <code source-file-name='section-22.swift'/>
+        <documentation relative-path='fragment-22.html'/>
+        <code source-file-name='section-24.swift'/>
+        <documentation relative-path='fragment-24.html'/>
+        <code source-file-name='section-26.swift'/>
+        <documentation relative-path='fragment-26.html'/>
+        <code source-file-name='section-28.swift'/>
+        <documentation relative-path='fragment-28.html'/>
+        <code source-file-name='section-30.swift'/>
+        <documentation relative-path='fragment-30.html'/>
+    </sections>
+    <timeline fileName='timeline.xctimeline'/>
+</playground>
