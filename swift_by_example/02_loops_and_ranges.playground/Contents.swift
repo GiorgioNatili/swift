@@ -77,4 +77,14 @@ for _ in 0..<tot {
  
  ********************/
 
+/*********************
+ **** Excercise ******
+
+ Print the powers of 2 
+ that are less than or 
+ equal to N.
+
+ ********************/
+
+
 
