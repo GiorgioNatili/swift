@@ -84,3 +84,20 @@ for _ in 1...n {
 
 }
 
+/*********************
+**** Excercise ******
+
+Print the powers of 2
+that are less than or
+equal to N.
+
+********************/
+
+var num = 10
+var power = 2
+
+while power <= num {
+    print(power)
+    power = power * 2
+}
+
