@@ -60,7 +60,9 @@ print(sentence + ", today is \(today.uppercaseString)")
 
  ********************/
 
-
+let now = NSDate()
+let welcome = "Welcome today is "
+print(welcome + now.description)
 
 
 
