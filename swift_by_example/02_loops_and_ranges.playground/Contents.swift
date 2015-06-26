@@ -77,4 +77,10 @@ for _ in 0..<tot {
  
  ********************/
 
+var n = 10
+for _ in 1...n {
+    
+    print("I will not skip the fundamentals!")
+
+}
 
