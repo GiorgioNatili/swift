@@ -92,5 +92,11 @@ increase(by: 6, items: &🏀s)
 
  ********************/
 
+func lastDigit(number: Int) -> Int {
+    
+    return number % 10
 
+}
+
+let last = lastDigit(365)
 
