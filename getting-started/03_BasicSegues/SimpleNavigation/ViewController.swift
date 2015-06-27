@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
     @IBAction func openNextSceene(sender: AnyObject) {
         
-        let view = self.storyboard?.instantiateViewControllerWithIdentifier("sceene2") as SecondViewController
+        let view = self.storyboard?.instantiateViewControllerWithIdentifier("sceene2") as! SecondViewController
         self.navigationController?.pushViewController(view, animated: true)
         
     }

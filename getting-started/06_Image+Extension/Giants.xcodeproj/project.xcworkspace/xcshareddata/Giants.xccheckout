@@ -10,31 +10,31 @@
 	<string>Giants</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>366CA4AA6B486F114DE3688D25A5A3EA372929BE</key>
-		<string>https://github.com/GiorgioNatili/Swift-Video-Tutorials.git</string>
+		<key>F504A325676A70FD565045706879E804C064A985</key>
+		<string>https://github.com/GiorgioNatili/swift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Creating Class Extensions/Giants.xcodeproj</string>
+	<string>getting-started/06_Image+Extension/Giants.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>366CA4AA6B486F114DE3688D25A5A3EA372929BE</key>
-		<string>../../..</string>
+		<key>F504A325676A70FD565045706879E804C064A985</key>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/GiorgioNatili/Swift-Video-Tutorials.git</string>
+	<string>https://github.com/GiorgioNatili/swift.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>366CA4AA6B486F114DE3688D25A5A3EA372929BE</string>
+	<string>F504A325676A70FD565045706879E804C064A985</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>366CA4AA6B486F114DE3688D25A5A3EA372929BE</string>
+			<string>F504A325676A70FD565045706879E804C064A985</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Swift-Video-Tutorials</string>
+			<string>swift</string>
 		</dict>
 	</array>
 </dict>

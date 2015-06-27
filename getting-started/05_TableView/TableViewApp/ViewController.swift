@@ -47,7 +47,7 @@ class ViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as CustomTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomTableViewCell
         
         // Configure the cell...
         cell.nameLabel.text = restaurantNames[indexPath.row]
