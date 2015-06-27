@@ -49,5 +49,21 @@ let formattedNumbers = numbers.map { NSNumberFormatter.localizedStringFromNumber
 
  ********************/
 
-// Your code here...
+func combineArrays(array1: [Int], array2: [Int], closure: (Int,Int) -> Int) -> Int {
+    
+    let combined: [Int] = array1 + array2
+    
+    return combined.reduce(0, combine: closure)
+    
+}
+
+let sample = [1, 2, 3, 4]
+let sample2 = [1, 2, 4, 5, 6, 7]
+let sumThem = {(a:Int, b:Int) -> Int in
+    
+    return a + b
+
+}
+
+let grandTotal = combineArrays(sample, array2: sample2, closure: sumThem)
 
