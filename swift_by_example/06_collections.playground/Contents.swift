@@ -75,5 +75,14 @@ letters.insert("c")
  divisors
 
  ********************/
+let num = 45
+var divisors: [Int] = []
 
-// Your code here...
+for divisor in 1...num {
+    
+    if num % divisor == 0 {
+        divisors.append(divisor)
+    }
+    
+}
+
