@@ -10,5 +10,7 @@ build/
 xcuserdata
 *.xccheckout
 *.moved-aside
+*.xcworkspace
+*.xcworkspacedata
 DerivedData
 *.xcuserstate

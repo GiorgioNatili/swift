@@ -62,4 +62,3 @@ switch coordinates {
 var result: (Int, String, Bool)
 result = (200, "OK", true)
 
-

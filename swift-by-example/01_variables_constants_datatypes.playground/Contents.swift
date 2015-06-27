@@ -28,7 +28,7 @@ var 🍕🍕 = 2
 // Casting and costants
 let sum = Double(aNumber) + aFloat
 // sum = aNumber as Double + aFloat
-// sum = 3
+// sum = 3 
 
 /*********************
  ****** Strings ******
