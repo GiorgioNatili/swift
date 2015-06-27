@@ -13,4 +13,13 @@ Following a list of links that I believe are very useful for people new to Swift
 * [The Many Faces of Swift Functions](http://www.objc.io/issue-16/swift-functions.html)
 * [Facets of Swift, Part 2: Tuples](https://medium.com/swift-programming/facets-of-swift-part-2-tuples-4bfe58d21abf)
 
+## Interesting links and tutorials
+Follwing a list of useful resources to learn and understand the fundamentals of _Swift_:
+* [Types](https://www.weheartswift.com/types/)
+* [Conditionals](https://www.weheartswift.com/conditionals/)
+* [Arrays](https://www.weheartswift.com/arrays/)
+* [Loops](https://www.weheartswift.com/loops/)
+* [Functions](https://www.weheartswift.com/functions/)
+* [Dictionaries](https://www.weheartswift.com/dictionaries/)
+
 All the contents of this repo are distributed accordingly to the [WTFPL](http://www.wtfpl.net/) open source license.
