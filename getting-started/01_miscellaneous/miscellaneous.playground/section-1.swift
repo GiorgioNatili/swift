@@ -49,9 +49,11 @@ for (value) in dict.values{
     
 }
 
+
 // Array excercise
 var letters = [1, 2, 3, 7, 8]
 letters.append("9".toInt()!)
+
 var range:Range = 4...6
 for index in range {
     letters.insert(index, atIndex: index-1)
