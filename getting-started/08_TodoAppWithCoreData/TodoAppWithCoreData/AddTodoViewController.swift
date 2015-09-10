@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddTodoViewController: UIViewController {
+class AddTodoViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: outlets
     @IBOutlet weak var todo: UITextField!
@@ -17,9 +17,12 @@ class AddTodoViewController: UIViewController {
     var tableData:TodoTableViewController!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        todo.delegate = self
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +37,38 @@ class AddTodoViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
         
     }
-
+    
+    // MARK: UITextFieldDelegate
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        println(textField.text)
+        
+        if count(textField.text) < 3 {
+            
+            todo.layer.cornerRadius = 8.0
+            todo.layer.masksToBounds = true
+            todo.layer.borderColor = UIColor.redColor().CGColor
+            todo.layer.borderWidth = 1.0
+            
+        }else{
+            
+            todo.layer.cornerRadius = 8.0
+            todo.layer.masksToBounds = true
+            todo.layer.borderColor = UIColor.grayColor().CGColor
+            todo.layer.borderWidth = 1.0
+            
+        }
+        
+        return true
+        
+    }
+    
+    func textFieldDidBeginEditing(textFieldThatEdited: UITextField) {
+        
+        todo.placeholder = "add a todo"
+        
+    }
+    
     /*
     // MARK: - Navigation
 

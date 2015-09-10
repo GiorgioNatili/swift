@@ -1,18 +1,15 @@
 //
-//  TodoTableViewController.swift
-//  TodoAppWithCoreData
+//  GroceryTableViewController.swift
+//  GroceryUIPickerCoreData
 //
-//  Created by Giorgio Natili on 8/31/15.
+//  Created by Giorgio Natili on 9/7/15.
 //  Copyright (c) 2015 io.webplatform.swift. All rights reserved.
 //
 
 import UIKit
 
-class TodoTableViewController: UITableViewController {
+class GroceryTableViewController: UITableViewController {
 
-    // MARK: data and private members
-    private var todos = ["grocery", "general assembly", "dinner", "moving"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,107 +18,36 @@ class TodoTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        // TODO load dynamcally core data
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: accessing to local data
-    func addTodoItem(item:String) {
-        
-        if !item.isEmpty {
-        
-            todos.append(item)
-            self.tableView.reloadData()
-            
-        }
-        
-    }
-    
-    // MARK: passing data around
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if let todoViewController = segue.destinationViewController as? AddTodoViewController {
-            
-            todoViewController.tableData = self
-            
-        }
-        
-        if segue.identifier == "showInfo" {
-            
-            if let details = segue.destinationViewController as? DetailsViewController {
-                
-                let indexPath = self.tableView.indexPathForSelectedRow()!
-                let titleString = self.todos[indexPath.row]
-                
-                details.todoItem = titleString
-                
-                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-                
-            }
-
-            
-        }
-        
-        
-    }
-    
-    // MARK: editing data in core data
-    @IBAction func editItem(sender: UIButton) {
-        // TODO open the edit delegate
-        
-    }
-    
-    @IBAction func deleteItem(sender: UIButton) {
-        // TODO delete item from core data
-        todos.removeAtIndex(sender.tag)
-        self.tableView.reloadData()
-    
-    }
 
     // MARK: - Table view data source
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return todos.count
+        return 0
     }
 
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("TodoItemCell", forIndexPath: indexPath) as! TodoItemCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
-        cell.todoLabel?.text = todos[indexPath.row]
-        // cell.textLabel?.text = todos[indexPath.row]
-        
-        cell.editItem.tag = indexPath.row;
-        cell.editItem.addTarget(self, action: "editItem:", forControlEvents: .TouchUpInside)
-        
-        cell.deleteItem.tag = indexPath.row;
-        cell.deleteItem.addTarget(self, action: "deleteItem:", forControlEvents: .TouchUpInside)
-        
-      //  (cell.accessoryView as! UIButton).addTarget(self, action: "doSomethingForTheSegue:", forControlEvents: .TouchUpInside)
-
 
         return cell
     }
-    
-    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
-        //
-    }
-
+    */
 
     /*
     // Override to support conditional editing of the table view.

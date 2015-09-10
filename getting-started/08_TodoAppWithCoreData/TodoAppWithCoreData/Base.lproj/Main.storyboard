@@ -14,18 +14,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationLevel="1" indentationWidth="10" reuseIdentifier="TodoItemCell" id="xhv-K8-MQW" customClass="TodoItemCell" customModule="TodoAppWithCoreData" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" indentationLevel="1" indentationWidth="10" reuseIdentifier="TodoItemCell" id="xhv-K8-MQW" customClass="TodoItemCell" customModule="TodoAppWithCoreData" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xhv-K8-MQW" id="k8W-Ek-0fP">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncT-vc-aZV">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncT-vc-aZV">
                                             <rect key="frame" x="513" y="8" width="44" height="30"/>
                                             <state key="normal" title="Delete">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cut-SX-RDY">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cut-SX-RDY">
                                             <rect key="frame" x="475" y="8" width="30" height="30"/>
                                             <state key="normal" title="Edit">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,7 +51,7 @@
                                     <outlet property="deleteItem" destination="ncT-vc-aZV" id="S6r-2a-3rE"/>
                                     <outlet property="editItem" destination="cut-SX-RDY" id="VGz-f7-LBb"/>
                                     <outlet property="todoLabel" destination="89i-zj-fwc" id="H5q-Za-vJx"/>
-                                    <segue destination="Vpl-4c-ROd" kind="show" identifier="showInfo" id="A1f-tz-0I2"/>
+                                    <segue destination="Vpl-4c-ROd" kind="show" trigger="accessoryAction" id="yBw-Jb-tQR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -87,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q5t-o6-4zs">
-                                <rect key="frame" x="252" y="125" width="97" height="30"/>
+                                <rect key="frame" x="252" y="81" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="FJ9-Wf-G4Q"/>
                                 </constraints>
@@ -95,7 +95,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcj-zw-Mgh">
-                                <rect key="frame" x="319" y="163" width="30" height="30"/>
+                                <rect key="frame" x="319" y="119" width="30" height="30"/>
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
