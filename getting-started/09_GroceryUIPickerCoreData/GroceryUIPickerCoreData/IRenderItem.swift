@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+protocol IRenderItem:class {
+    
+    var name:String { set get }
+    var icon:String { set get }
+    
+}

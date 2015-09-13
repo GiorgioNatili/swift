@@ -411,6 +411,7 @@
 				5923ACC61A98BF5B00EB6FE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5923ACC71A98BF5B00EB6FE4 /* Build configuration list for PBXNativeTarget "TableViewAppTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				5923ACC91A98BF5B00EB6FE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

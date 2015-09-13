@@ -9,11 +9,48 @@
 import UIKit
 
 class AddItemViewController: UIAlertController {
-
+    
+    private var icons = ["apple", "pear", "orange"]
+    private var itemName:UITextField!
+    
+    var dataManager:DataManager!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+                
+        //Create and add the Cancel action
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+            
+            //Do some stuff
+            var topVC = UIApplication.sharedApplication().keyWindow?.rootViewController
+            topVC?.dismissViewControllerAnimated(true, completion: nil)
+            
+        }
+        addAction(cancelAction)
+        
+        //Create and an option action
+        let nextAction: UIAlertAction = UIAlertAction(title: "Next", style: .Default) { action -> Void in
+            
+            //Do some other stuff
+            
+            let randomIndex = Int(arc4random_uniform(UInt32(self.icons.count)))
+            self.dataManager.addItem(self.itemName.text, type: self.icons[randomIndex])
+            
+        }
+        
+        addAction(nextAction)
+        
+        //Add a text field
+        addTextFieldWithConfigurationHandler { name -> Void in
+            //TextField configuration
+            name.textColor = UIColor.blueColor()
+            self.itemName = name
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

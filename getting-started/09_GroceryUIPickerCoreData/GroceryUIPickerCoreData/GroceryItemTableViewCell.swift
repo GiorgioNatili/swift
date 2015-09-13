@@ -8,8 +8,11 @@
 
 import UIKit
 
-class GroceryItemTableViewCell: UITableViewCell {
-
+class GroceryItemTableViewCell: UITableViewCell, IRenderItem {
+    
+    @IBOutlet weak var itemImage: UIImageView!
+    @IBOutlet weak var itemLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +22,34 @@ class GroceryItemTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    // MARK: IRenderItem implementation
+    var name: String {
+        get {
+            return itemLabel.text!
+        }
+        set {
+            itemLabel.text = newValue
+        }
+    }
+    
+    var icon: String {
+        get {
+            
+            var value = ""
+            
+            if let image = itemImage.image {
+                
+                value = image.description
+                
+            }
+            
+            return value
+        }
+        set {
+            itemImage.image = UIImage(named: newValue)
+        }
     }
 
 }

@@ -1,0 +1,11 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+target 'GroceryUIPickerCoreData' do
+
+end
+
+target 'GroceryUIPickerCoreDataTests' do
+  pod 'Expecta', '~> 1.0.0'
+end
+

@@ -194,6 +194,7 @@
 		6B24DD981B951DDA00424F37 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = io.webplatform.swift;
 				TargetAttributes = {

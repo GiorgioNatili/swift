@@ -56,8 +56,8 @@ class ViewController: UITableViewController {
         cell.typeLabel.text = restaurantTypes[indexPath.row]
         
         // Circular image
-        //        cell.thumbnailImageView.layer.cornerRadius = 10.0
-        cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 2
+        cell.thumbnailImageView.layer.cornerRadius = 10.0
+        cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 4
         cell.thumbnailImageView.clipsToBounds = true
         
         return cell
