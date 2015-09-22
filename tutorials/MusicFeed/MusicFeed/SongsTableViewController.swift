@@ -10,7 +10,7 @@ import UIKit
 
 class SongsTableViewController: UITableViewController {
 
-    var currentSongs:[Song] = []
+    private var currentSongs:[Song] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +21,17 @@ class SongsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        SongsProvider.fetchSongs(self)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDataRecovered:", name:"songsFeteched", object: nil)
         
+        SongsProvider.fetchSongs()
+        
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        
+        super.viewDidDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "songsFeteched", object: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +40,6 @@ class SongsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -54,6 +62,15 @@ class SongsTableViewController: UITableViewController {
     }
     
 
+    
+    func onDataRecovered(notification: NSNotification){
+        
+        currentSongs = notification.object as! [Song]
+        tableView.reloadData()
+        
+    }
+
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

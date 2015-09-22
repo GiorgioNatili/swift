@@ -6,13 +6,14 @@
 //  Copyright © 2015 io.webplatform.swift. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import SwiftyJSON
 import Alamofire
 
 class SongsProvider: NSObject {
     
-    static func fetchSongs(renderer:SongsTableViewController)  {
+    static func fetchSongs()  {
         
         var parsed = [Song]()
         let postEndpoint: String = "http://10.13.100.20:9000/v1/random"
@@ -28,9 +29,8 @@ class SongsProvider: NSObject {
                 
                 }
                 
-            renderer.currentSongs = parsed
-            renderer.tableView.reloadData()
-                
+            NSNotificationCenter.defaultCenter().postNotificationName("songsFeteched", object: parsed)
+
         }
         
     }
