@@ -16,7 +16,7 @@ class SongsProvider: NSObject {
     static func fetchSongs()  {
         
         var parsed = [Song]()
-        let postEndpoint: String = "http://10.13.100.20:9000/v1/random"
+        let postEndpoint: String = "https://demo0390005.mockable.io/random"
         
         Alamofire.request(.GET, postEndpoint)
             .responseJSON { request, response, result in
