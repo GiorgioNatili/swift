@@ -9,8 +9,13 @@
 import UIKit
 
 class SongsTableViewController: UITableViewController {
+    
+    // MARK: private variables
 
     private var currentSongs:[Song] = []
+    private var activityIndicator:UIActivityIndicatorView!
+    
+    // MARK: viewDidLoader
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,11 @@ class SongsTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onDataRecovered:", name:"songsFeteched", object: nil)
         
         SongsProvider.fetchSongs()
+        
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
         
     }
     
@@ -67,6 +77,9 @@ class SongsTableViewController: UITableViewController {
         
         currentSongs = notification.object as! [Song]
         tableView.reloadData()
+        
+        activityIndicator.stopAnimating()
+        activityIndicator.hidden = true
         
     }
 
