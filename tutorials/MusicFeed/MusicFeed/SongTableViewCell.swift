@@ -41,8 +41,11 @@ class SongTableViewCell: UITableViewCell, IRenderSong {
     
     func updateCover(cover: String) {
         
-        coverImage.image = UIImage(contentsOfFile: cover)
+        let url:NSURL = NSURL(string: cover)!
+        let data:NSData = NSData(contentsOfURL: url)!
+        coverImage.image = UIImage(data: data)
         
     }
+    
     
 }
