@@ -15,6 +15,10 @@
 		6BDC666E1BBB4FE800B4C806 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDC666C1BBB4FE800B4C806 /* LaunchScreen.storyboard */; };
 		6BDC66791BBB4FE800B4C806 /* UserDataPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC66781BBB4FE800B4C806 /* UserDataPersistenceTests.swift */; };
 		6BDC66841BBB4FE800B4C806 /* UserDataPersistenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC66831BBB4FE800B4C806 /* UserDataPersistenceUITests.swift */; };
+		6BDC66921BBB52E400B4C806 /* ColorChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC66911BBB52E400B4C806 /* ColorChanger.swift */; settings = {ASSET_TAGS = (); }; };
+		6BDC66941BBB555200B4C806 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC66931BBB555200B4C806 /* ColorManager.swift */; settings = {ASSET_TAGS = (); }; };
+		6BDC669A1BBB60F900B4C806 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6BDC66991BBB60F900B4C806 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
+		6BDC669C1BBB68C400B4C806 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC669B1BBB68C400B4C806 /* PreferenceManager.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		6BDC667F1BBB4FE800B4C806 /* UserDataPersistenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserDataPersistenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BDC66831BBB4FE800B4C806 /* UserDataPersistenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataPersistenceUITests.swift; sourceTree = "<group>"; };
 		6BDC66851BBB4FE800B4C806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BDC66911BBB52E400B4C806 /* ColorChanger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorChanger.swift; sourceTree = "<group>"; };
+		6BDC66931BBB555200B4C806 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		6BDC66991BBB60F900B4C806 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		6BDC669B1BBB68C400B4C806 /* PreferenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,7 @@
 		6BDC66541BBB4FE800B4C806 = {
 			isa = PBXGroup;
 			children = (
+				6BDC66991BBB60F900B4C806 /* Settings.bundle */,
 				6BDC665F1BBB4FE800B4C806 /* UserDataPersistence */,
 				6BDC66771BBB4FE800B4C806 /* UserDataPersistenceTests */,
 				6BDC66821BBB4FE800B4C806 /* UserDataPersistenceUITests */,
@@ -106,6 +115,9 @@
 				6BDC666C1BBB4FE800B4C806 /* LaunchScreen.storyboard */,
 				6BDC666F1BBB4FE800B4C806 /* Info.plist */,
 				6BDC66671BBB4FE800B4C806 /* UserDataPersistence.xcdatamodeld */,
+				6BDC66911BBB52E400B4C806 /* ColorChanger.swift */,
+				6BDC66931BBB555200B4C806 /* ColorManager.swift */,
+				6BDC669B1BBB68C400B4C806 /* PreferenceManager.swift */,
 			);
 			path = UserDataPersistence;
 			sourceTree = "<group>";
@@ -231,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BDC669A1BBB60F900B4C806 /* Settings.bundle in Resources */,
 				6BDC666E1BBB4FE800B4C806 /* LaunchScreen.storyboard in Resources */,
 				6BDC666B1BBB4FE800B4C806 /* Assets.xcassets in Resources */,
 				6BDC66661BBB4FE800B4C806 /* Main.storyboard in Resources */,
@@ -258,8 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BDC66921BBB52E400B4C806 /* ColorChanger.swift in Sources */,
+				6BDC66941BBB555200B4C806 /* ColorManager.swift in Sources */,
 				6BDC66631BBB4FE800B4C806 /* ViewController.swift in Sources */,
 				6BDC66611BBB4FE800B4C806 /* AppDelegate.swift in Sources */,
+				6BDC669C1BBB68C400B4C806 /* PreferenceManager.swift in Sources */,
 				6BDC66691BBB4FE800B4C806 /* UserDataPersistence.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
