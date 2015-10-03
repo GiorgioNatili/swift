@@ -10,42 +10,75 @@ import UIKit
 
 class NotesTableViewController: UITableViewController {
 
+    // MARK: data source
+    var notes:[String] = Array<String>()
+    
+    // MARK: data manager (plist)
+    let plistManager:PlistManager = PlistManager(plist: "grocery_notes")
+    
+    // MAR: override of view methods
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        plistManager.preparePlistForUse()
+        
+        notes = Array(dataManager.content.keys)
+        
+        self.tableView.reloadData()
+                
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Accessing the model
+    private var dataManager:ManageListItem {
+        
+        return plistManager
+        
+    }
+    
+    // MARK: adding and removing notes
+    func addNote(note:String) {
+        
+        dataManager.addItem(note)
+        notes = Array(dataManager.content.keys)
+
+        self.tableView.reloadData()
+        
+    }
+    
+    func removeNote(note:String) {
+        
+        dataManager.removeItem(note)
+        notes = Array(dataManager.content.keys)
+        
+        self.tableView.reloadData()
+        
+    }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return notes.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("GroceryCell", forIndexPath: indexPath)
 
         // Configure the cell...
+        cell.textLabel?.text = notes[indexPath.item]
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
