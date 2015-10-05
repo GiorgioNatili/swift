@@ -511,6 +511,7 @@
 				6BDC67141BBCC17E00B4C806 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BDC67151BBCC17E00B4C806 /* Build configuration list for PBXNativeTarget "WritingPlistTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +520,7 @@
 				6BDC67171BBCC17E00B4C806 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BDC67181BBCC17E00B4C806 /* Build configuration list for PBXNativeTarget "WritingPlistUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +529,7 @@
 				6BDC671A1BBCC17E00B4C806 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
