@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="S3g-pz-BAp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--List-->
@@ -33,8 +34,7 @@
                     <navigationItem key="navigationItem" title="List" id="ohT-Xt-KQl">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IDc-Tw-DW6">
                             <connections>
-                                <action selector="addNewNote:" destination="k1r-J4-zcF" id="nf0-sJ-uo1"/>
-                                <segue destination="OEM-Hf-Ye3" kind="show" id="IvK-6K-jgu"/>
+                                <segue destination="OEM-Hf-Ye3" kind="show" id="U5c-c3-UPI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -55,26 +55,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nAY-tq-ggA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nAY-tq-ggA">
                                 <rect key="frame" x="20" y="72" width="560" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5O-Qn-3h4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5O-Qn-3h4">
                                 <rect key="frame" x="542" y="110" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Add"/>
                                 <connections>
-                                    <action selector="addNote:" destination="OEM-Hf-Ye3" eventType="touchUpInside" id="1Of-D4-XCX"/>
+                                    <action selector="addNewNote:" destination="OEM-Hf-Ye3" eventType="touchUpInside" id="ZqV-qy-tap"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w5O-Qn-3h4" firstAttribute="top" secondItem="nAY-tq-ggA" secondAttribute="bottom" constant="8" symbolic="YES" id="BVJ-Ko-h6U"/>
+                            <constraint firstItem="nAY-tq-ggA" firstAttribute="trailing" secondItem="kbE-3S-gjC" secondAttribute="trailingMargin" id="J4R-IO-Cwh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w5O-Qn-3h4" secondAttribute="trailing" constant="8" id="cD5-7Y-mXV"/>
+                            <constraint firstItem="nAY-tq-ggA" firstAttribute="leading" secondItem="kbE-3S-gjC" secondAttribute="leadingMargin" id="ggr-jW-7Fy"/>
+                            <constraint firstItem="nAY-tq-ggA" firstAttribute="top" secondItem="6fe-9F-aQ3" secondAttribute="bottom" constant="8" symbolic="YES" id="iCc-vp-d6a"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="addNote" destination="w5O-Qn-3h4" id="1bM-oF-TNw"/>
                         <outlet property="note" destination="nAY-tq-ggA" id="QVg-Fa-lEO"/>
                     </connections>
                 </viewController>

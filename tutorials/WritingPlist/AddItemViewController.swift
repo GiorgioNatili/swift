@@ -27,31 +27,12 @@ class AddItemViewController: UIViewController {
     
     // MARK: user interaction
 
-    
-    @IBAction func addNote(sender: AnyObject) {
-    
-        if let newNote = note.text {
-            noteTable.addNote(newNote)
-        }
+    @IBAction func addNewNote(sender: AnyObject) {
         
+        noteTable.addNote(note.text!)
         navigationController?.popToRootViewControllerAnimated(true)
     
     }
-    
-    
-//    @IBAction func didDone(sender: AnyObject) {
-//        if let note = noteText.text {
-//            NotesTable.addNote(note)
-//        }
-//        dismissViewControllerAnimated(true, completion: nil)
-//        
-//        
-//    }
-//    
-//    override func tableView(tableView:UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-//        return nil
-//    }
-    
 
     /*
     // MARK: - Navigation
