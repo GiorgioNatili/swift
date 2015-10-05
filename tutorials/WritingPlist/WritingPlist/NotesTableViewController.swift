@@ -87,18 +87,44 @@ class NotesTableViewController: UITableViewController {
         return true
     }
     */
+    
+    @IBAction func addNoteButton(sender: AnyObject) {
+        let alert = UIAlertController(title: "What do you need to do?",
+            message: "Add an item.",
+            preferredStyle: .Alert)
+        
+        let saveAction = UIAlertAction(title: "Save",
+            style: .Default) { (action: UIAlertAction) -> Void in
+                
+                let textField = alert.textFields![0]
+                self.addNote(textField.text!)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+            style: .Default) { (action: UIAlertAction) -> Void in
+        }
+        
+        alert.addTextFieldWithConfigurationHandler {
+            (textField: UITextField!) -> Void in
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert,
+            animated: true,
+            completion: nil)
+    }
 
-    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            removeNote(notes[indexPath.row])
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.

@@ -27,7 +27,18 @@
                             <outlet property="delegate" destination="k1r-J4-zcF" id="RbT-LD-8yW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ohT-Xt-KQl"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="ohT-Xt-KQl">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="DM4-eU-zdR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iY1-G5-6ag">
+                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addNoteButton:" destination="k1r-J4-zcF" eventType="touchUpInside" id="iLl-2J-nEy"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgp-kM-6ex" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
