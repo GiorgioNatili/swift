@@ -10,6 +10,9 @@ import UIKit
 
 class AddItemViewController: UIViewController {
 
+    @IBOutlet var note: UITextField!
+    private var noteTable = NotesTableViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +26,18 @@ class AddItemViewController: UIViewController {
     
     
     // MARK: user interaction
+
+    
+    @IBAction func addNote(sender: AnyObject) {
+    
+        if let newNote = note.text {
+            noteTable.addNote(newNote)
+        }
+        
+        navigationController?.popToRootViewControllerAnimated(true)
+    
+    }
+    
     
 //    @IBAction func didDone(sender: AnyObject) {
 //        if let note = noteText.text {
