@@ -28,6 +28,12 @@ class NotesTableViewController: UITableViewController {
         self.tableView.reloadData()
                 
     }
+    @IBAction func openAlertWindow(sender: AnyObject) {
+        let alertController = AddGroceryAlertController(title: "Add Grocery Item", message: "Do it. You won't.", preferredStyle: .Alert)
+        self.presentViewController(alertController, animated: true) {
+            // ...
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,8 +46,8 @@ class NotesTableViewController: UITableViewController {
         return plistManager
         
     }
-    
-   
+
+
     
     // MARK: adding and removing notes
     func addNote(note:String) {
