@@ -21,12 +21,19 @@ class NotesTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onRefreshData:", name: "refreshData", object: nil)
+        
         plistManager.preparePlistForUse()
         
         notes = Array(dataManager.content.keys)
         
         self.tableView.reloadData()
                 
+    }
+    
+    func onRefreshData(ref: AnyObject) {
+        notes = Array(dataManager.content.keys)
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

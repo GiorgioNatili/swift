@@ -11,7 +11,9 @@ import UIKit
 class AddItemViewController: UIViewController {
 
     @IBOutlet var note: UITextField!
-    private var noteTable = NotesTableViewController()
+    
+    private var manager:PlistManager!
+    private var notes = NotesTableViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,8 @@ class AddItemViewController: UIViewController {
 
     @IBAction func addNewNote(sender: AnyObject) {
         
-        noteTable.addNote(note.text!)
+        notes.addNote(note.text!)
+        NSNotificationCenter.defaultCenter().postNotificationName("refreshData", object: nil)
         navigationController?.popToRootViewControllerAnimated(true)
     
     }
