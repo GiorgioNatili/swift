@@ -21,6 +21,8 @@ class NotesTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onRefreshData:", name: "refreshData", object: nil)
+        
         plistManager.preparePlistForUse()
         
         notes = Array(dataManager.content.keys)
@@ -38,6 +40,13 @@ class NotesTableViewController: UITableViewController {
     private var dataManager:ManageListItem {
         
         return plistManager
+        
+    }
+    
+    func onRefreshData(ref:AnyObject) {
+        
+        notes = Array(dataManager.content.keys)
+        self.tableView.reloadData()
         
     }
     
@@ -90,8 +99,8 @@ class NotesTableViewController: UITableViewController {
     
     
     @IBAction func addNoteButton(sender: AnyObject) {
-        let noteManager = NoteManager(tableViewController: self)
-        noteManager.renderAlert()
+        let noteManager: NoteManager = NoteManager(manager: dataManager)
+        presentViewController(noteManager.currentController, animated: true, completion: nil)
     }
 
     // Override to support editing the table view.

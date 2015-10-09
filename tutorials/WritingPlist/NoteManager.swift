@@ -10,38 +10,45 @@ import UIKit
 
 class NoteManager: NSObject {
     
-    private var tableViewController:NotesTableViewController
-    private var alert:UIAlertController = UIAlertController(title: "What do you need to do?", message: "Add an item.", preferredStyle: .Alert)
+    private var alertController:UIAlertController = UIAlertController(title: "What do you need to do?", message: "Add an item.", preferredStyle: .Alert)
+    private var manager:ManageListItem
+    private var currentNote:UITextField!
     
-    init(tableViewController:NotesTableViewController) {
-        self.tableViewController = tableViewController
+    init(manager:ManageListItem) {
+        self.manager = manager
         super.init()
 
-        prepareAlert()
+        prepareViewController()
     }
     
-    func prepareAlert() {
-        let saveAction = UIAlertAction(title: "Save",
-            style: .Default) { (action: UIAlertAction) -> Void in
-                
-                let textField = self.alert.textFields![0]
-                self.tableViewController.addNote(textField.text!)
+    func prepareViewController() {
+        alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            
+            // Here you can configure the text field (eg: make it secure, add a placeholder, etc)
+            textField.placeholder = "Note"
+            textField.keyboardAppearance = UIKeyboardAppearance.Dark
+            textField.keyboardType = UIKeyboardType.Alphabet
+            
+            self.currentNote = textField
+            
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel",
-            style: .Default) { (action: UIAlertAction) -> Void in
-        }
+        let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+            
+            self.manager.addItem(self.currentNote.text!)
+            NSNotificationCenter.defaultCenter().postNotificationName("refreshData", object: nil)
+            
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
-        self.alert.addTextFieldWithConfigurationHandler {
-            (textField: UITextField!) -> Void in
-        }
-        
-        self.alert.addAction(saveAction)
-        self.alert.addAction(cancelAction)
+        alertController.addAction(ok)
+        alertController.addAction(cancel)
         
     }
     
-    func renderAlert() {
-        self.alert.presentViewController(self.alert, animated: true, completion: nil)
+    var currentController:UIAlertController {
+        
+        return alertController
+        
     }
 }
