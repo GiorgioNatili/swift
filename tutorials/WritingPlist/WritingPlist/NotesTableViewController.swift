@@ -14,7 +14,8 @@ class NotesTableViewController: UITableViewController {
     var notes:[String] = Array<String>()
     
     // MARK: data manager (plist)
-    let plistManager:PlistManager = PlistManager(plist: "grocery_notes")
+//    let plistManager:PlistManager = PlistManager(plist: "grocery_notes") // Removed reference
+    let entityManager:EntityManager = EntityManager()
     
     // MAR: override of view methods
     override func viewDidLoad() {
@@ -23,7 +24,7 @@ class NotesTableViewController: UITableViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onRefreshData:", name: "refreshData", object: nil)
         
-        plistManager.preparePlistForUse()
+//        plistManager.preparePlistForUse()
         
         notes = Array(dataManager.content.keys)
         
@@ -39,7 +40,8 @@ class NotesTableViewController: UITableViewController {
     // MARK: Accessing the model
     private var dataManager:ManageListItem {
         
-        return plistManager
+//        return plistManager
+        return entityManager
         
     }
     
@@ -51,18 +53,18 @@ class NotesTableViewController: UITableViewController {
     }
     
     // MARK: adding and removing notes
-    func addNote(note:String) {
+    func addNote(title:String, info:String) {
         
-        dataManager.addItem(note)
+        dataManager.addItem(title, info: info)
         notes = Array(dataManager.content.keys)
 
         self.tableView.reloadData()
         
     }
     
-    func removeNote(note:String) {
+    func removeNote(title:String) {
         
-        dataManager.removeItem(note)
+        dataManager.removeItem(title)
         notes = Array(dataManager.content.keys)
         
         self.tableView.reloadData()

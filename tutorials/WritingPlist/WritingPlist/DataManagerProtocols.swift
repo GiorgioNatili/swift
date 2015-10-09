@@ -10,8 +10,8 @@ import Foundation
 
 protocol ManageListItem {
     
-    func addItem(item:String)
-    func removeItem(item:String)
+    func addItem(title:String, info:String)
+    func removeItem(title:String)
     
     var content:Dictionary<String, AnyObject!> { get }
     

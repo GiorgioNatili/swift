@@ -12,30 +12,43 @@ class NoteManager: NSObject {
     
     private var alertController:UIAlertController = UIAlertController(title: "What do you need to do?", message: "Add an item.", preferredStyle: .Alert)
     private var manager:ManageListItem
-    private var currentNote:UITextField!
+    private var currentTitle:UITextField!
+    private var currentInfo:UITextField!
     
     init(manager:ManageListItem) {
         self.manager = manager
         super.init()
 
-        prepareViewController()
+        prepareAlertViewController()
     }
     
-    func prepareViewController() {
+    func prepareAlertViewController() {
         alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
             
             // Here you can configure the text field (eg: make it secure, add a placeholder, etc)
-            textField.placeholder = "Note"
+            textField.placeholder = "Title"
             textField.keyboardAppearance = UIKeyboardAppearance.Dark
             textField.keyboardType = UIKeyboardType.Alphabet
             
-            self.currentNote = textField
+            self.currentTitle = textField
             
         }
         
+        alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            
+            // Here you can configure the text field (eg: make it secure, add a placeholder, etc)
+            textField.placeholder = "Info"
+            textField.keyboardAppearance = UIKeyboardAppearance.Dark
+            textField.keyboardType = UIKeyboardType.Alphabet
+            
+            self.currentInfo = textField
+            
+        }
+
+        
         let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             
-            self.manager.addItem(self.currentNote.text!)
+            self.manager.addItem(self.currentTitle.text!,info: self.currentInfo.text!)
             NSNotificationCenter.defaultCenter().postNotificationName("refreshData", object: nil)
             
         })
