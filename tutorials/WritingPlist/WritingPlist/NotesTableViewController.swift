@@ -13,6 +13,12 @@ class NotesTableViewController: UITableViewController {
     // MARK: data source
     var notes:[String] = Array<String>()
     
+    
+    // MARK: accessing app delegate and model
+    
+     let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+
+
     // MARK: data manager (plist)
     let plistManager:PlistManager = PlistManager(plist: "grocery_notes")
     
@@ -21,12 +27,16 @@ class NotesTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onRefreshData:", name: "refreshData", object: nil)
         plistManager.preparePlistForUse()
-        
         notes = Array(dataManager.content.keys)
-        
         self.tableView.reloadData()
                 
+    }
+    
+    func onRefreshData(ref: AnyObject) {
+        notes = Array(dataManager.content.keys)
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +48,21 @@ class NotesTableViewController: UITableViewController {
     private var dataManager:ManageListItem {
         
         return plistManager
+        
+    }
+    
+    func getData() {
+        
+        let fetchRequest = NSFetchRequest("Note") //Having errors with this line... 
+            
+            do {
+            
+                let fetchedResults = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            }catch let error as NSError{
+                
+                print("Something went wrong \(error.userInfo)")
+        }
         
     }
     
@@ -83,10 +108,14 @@ class NotesTableViewController: UITableViewController {
     }
     
     
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        notes.removeAtIndex(indexPath.row)
-        let indexPaths = [indexPath]
-        tableView.deleteRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            plistManager.removeItem(notes.removeAtIndex(indexPath.row))
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
     }
 
     
@@ -96,18 +125,6 @@ class NotesTableViewController: UITableViewController {
         return true
     }
 
-
-    
-   /* // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
 
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
