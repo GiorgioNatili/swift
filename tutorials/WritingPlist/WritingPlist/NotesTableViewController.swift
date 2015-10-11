@@ -13,6 +13,12 @@ class NotesTableViewController: UITableViewController {
     // MARK: data source
     var notes:[String] = Array<String>()
     
+    
+    // MARK: accessing app delegate and model
+    
+     let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+
+
     // MARK: data manager (plist)
     let plistManager:PlistManager = PlistManager(plist: "grocery_notes")
     
@@ -22,11 +28,8 @@ class NotesTableViewController: UITableViewController {
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onRefreshData:", name: "refreshData", object: nil)
-        
         plistManager.preparePlistForUse()
-        
         notes = Array(dataManager.content.keys)
-        
         self.tableView.reloadData()
                 
     }
@@ -45,6 +48,21 @@ class NotesTableViewController: UITableViewController {
     private var dataManager:ManageListItem {
         
         return plistManager
+        
+    }
+    
+    func getData() {
+        
+        let fetchRequest = NSFetchRequest("Note") //Having errors with this line... 
+            
+            do {
+            
+                let fetchedResults = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            }catch let error as NSError{
+                
+                print("Something went wrong \(error.userInfo)")
+        }
         
     }
     
