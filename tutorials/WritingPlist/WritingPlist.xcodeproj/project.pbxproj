@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B49A1C91BCB0EE3002F06F8 /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49A1C81BCB0EE3002F06F8 /* NoteManager.swift */; settings = {ASSET_TAGS = (); }; };
 		6BDC66EB1BBCC17D00B4C806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC66EA1BBCC17D00B4C806 /* AppDelegate.swift */; };
 		6BDC66ED1BBCC17D00B4C806 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC66EC1BBCC17D00B4C806 /* ViewController.swift */; };
 		6BDC66F01BBCC17D00B4C806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDC66EE1BBCC17D00B4C806 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B49A1C81BCB0EE3002F06F8 /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
 		6BDC66E71BBCC17D00B4C806 /* WritingPlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WritingPlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BDC66EA1BBCC17D00B4C806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BDC66EC1BBCC17D00B4C806 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		6BDC66E91BBCC17D00B4C806 /* WritingPlist */ = {
 			isa = PBXGroup;
 			children = (
+				6B49A1C81BCB0EE3002F06F8 /* NoteManager.swift */,
 				6BDC66EA1BBCC17D00B4C806 /* AppDelegate.swift */,
 				6BDC66EC1BBCC17D00B4C806 /* ViewController.swift */,
 				6BDC66EE1BBCC17D00B4C806 /* Main.storyboard */,
@@ -287,6 +290,7 @@
 				6BDC66ED1BBCC17D00B4C806 /* ViewController.swift in Sources */,
 				6BDC671C1BBCC46D00B4C806 /* NotesTableViewController.swift in Sources */,
 				6BDC66F31BBCC17D00B4C806 /* WritingPlist.xcdatamodeld in Sources */,
+				6B49A1C91BCB0EE3002F06F8 /* NoteManager.swift in Sources */,
 				6BDC66EB1BBCC17D00B4C806 /* AppDelegate.swift in Sources */,
 				6BDC67231BC034B900B4C806 /* DataManagerProtocols.swift in Sources */,
 			);

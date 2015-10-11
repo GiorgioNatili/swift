@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Title-->
         <scene sceneID="4cu-ps-shr">
             <objects>
                 <tableViewController id="k1r-J4-zcF" customClass="NotesTableViewController" customModule="WritingPlist" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,11 +30,10 @@
                             <outlet property="delegate" destination="k1r-J4-zcF" id="RbT-LD-8yW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ohT-Xt-KQl">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="IDc-Tw-DW6">
+                    <navigationItem key="navigationItem" title="Title" id="JIJ-He-mLH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q5k-Ul-qRw">
                             <connections>
-                                <action selector="addNewNote:" destination="k1r-J4-zcF" id="nf0-sJ-uo1"/>
-                                <segue destination="uUT-WQ-hrh" kind="presentation" id="wCs-zl-4oa"/>
+                                <action selector="createNote:" destination="k1r-J4-zcF" id="yHc-Iw-QNB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
