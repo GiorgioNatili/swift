@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddItemViewController: UIViewController {
 
@@ -15,10 +16,14 @@ class AddItemViewController: UIViewController {
     private var manager:PlistManager!
     private var notes = NotesTableViewController()
     
+    var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        var newNote = NSEntityDescription.insertNewObjectForEntityForName("Note", inManagedObjectContext: context) as NSManagedObject
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,10 +40,6 @@ class AddItemViewController: UIViewController {
         
         // MARK: accessing app delegate and model
         //note: I keep getting an error when I break it up into two lines... still figuring out why
-        var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
-        var newNote = NSEntityDescription.insertNewObjectForEntityForName("Note", inManagedObjectContext: context) as NSManagedObject
-
         
         notes.addNote(note.text!)
         NSNotificationCenter.defaultCenter().postNotificationName("refreshData", object: nil)
@@ -50,20 +51,20 @@ class AddItemViewController: UIViewController {
     
     // MARK: coreData fetching
     
-//    func getData() {
-//        
-//        let fetchRequest = NSFetchRequest("Note") //Having errors with this line...
-//        
-//        do {
-//            
-//            let fetchedResults = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
-//            
-//        }catch let error as NSError{
-//            
-//            print("Something went wrong \(error.userInfo)")
-//        }
-//        
-//    }
+    func getData() {
+        
+        let fetchRequest = NSFetchRequest(entityName: "Note") //Having errors with this line...
+        
+        do {
+            
+            let fetchedResults = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+        }catch let error as NSError{
+            
+            print("Something went wrong \(error.userInfo)")
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
