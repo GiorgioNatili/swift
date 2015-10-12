@@ -11,9 +11,23 @@ import UIKit
 class DataManagerFactory: NSObject {
 
     static func getManager() -> ManageListItem {
+        
+        var manager:ManageListItem
     
-        var manager:ManageListItem = CoreDataManager()
-               
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        let coreData:Bool = defaults.valueForKey("coreData") as! Bool
+        
+        if coreData {
+            
+            manager = CoreDataManager()
+            
+        } else {
+            
+            manager = PlistManager(plist: "grocery_notes")
+            
+        }
+
         return manager
     
     }
