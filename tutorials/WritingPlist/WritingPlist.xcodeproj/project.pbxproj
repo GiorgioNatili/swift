@@ -20,6 +20,11 @@
 		6BDC671E1BBCCA5000B4C806 /* grocery_notes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BDC671D1BBCCA4F00B4C806 /* grocery_notes.plist */; settings = {ASSET_TAGS = (); }; };
 		6BDC67201BBF556600B4C806 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC671F1BBF556600B4C806 /* PlistManager.swift */; settings = {ASSET_TAGS = (); }; };
 		6BDC67231BC034B900B4C806 /* DataManagerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC67221BC034B900B4C806 /* DataManagerProtocols.swift */; settings = {ASSET_TAGS = (); }; };
+		6BE700701BCC76BD00FDD258 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7006B1BCC76BD00FDD258 /* CoreDataManager.swift */; settings = {ASSET_TAGS = (); }; };
+		6BE700711BCC76BD00FDD258 /* DataManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7006C1BCC76BD00FDD258 /* DataManagerFactory.swift */; settings = {ASSET_TAGS = (); }; };
+		6BE700721BCC76BD00FDD258 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7006D1BCC76BD00FDD258 /* Note.swift */; settings = {ASSET_TAGS = (); }; };
+		6BE700731BCC76BD00FDD258 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE7006E1BCC76BD00FDD258 /* Note+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		6BE700741BCC76BD00FDD258 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6BE7006F1BCC76BD00FDD258 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
 		E5E103C41BC1FC7900507795 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E103C31BC1FC7900507795 /* AddNoteViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -60,6 +65,11 @@
 		6BDC671D1BBCCA4F00B4C806 /* grocery_notes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = grocery_notes.plist; sourceTree = "<group>"; };
 		6BDC671F1BBF556600B4C806 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
 		6BDC67221BC034B900B4C806 /* DataManagerProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerProtocols.swift; sourceTree = "<group>"; };
+		6BE7006B1BCC76BD00FDD258 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		6BE7006C1BCC76BD00FDD258 /* DataManagerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerFactory.swift; sourceTree = "<group>"; };
+		6BE7006D1BCC76BD00FDD258 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		6BE7006E1BCC76BD00FDD258 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6BE7006F1BCC76BD00FDD258 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E5E103C31BC1FC7900507795 /* AddNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,18 +121,19 @@
 		6BDC66E91BBCC17D00B4C806 /* WritingPlist */ = {
 			isa = PBXGroup;
 			children = (
-				6B49A1C81BCB0EE3002F06F8 /* NoteManager.swift */,
-				6BDC66EA1BBCC17D00B4C806 /* AppDelegate.swift */,
-				6BDC66EC1BBCC17D00B4C806 /* ViewController.swift */,
-				6BDC66EE1BBCC17D00B4C806 /* Main.storyboard */,
-				6BDC66F41BBCC17D00B4C806 /* Assets.xcassets */,
 				E5E103C31BC1FC7900507795 /* AddNoteViewController.swift */,
-				6BDC66F61BBCC17D00B4C806 /* LaunchScreen.storyboard */,
-				6BDC66F91BBCC17D00B4C806 /* Info.plist */,
-				6BDC66F11BBCC17D00B4C806 /* WritingPlist.xcdatamodeld */,
-				6BDC671B1BBCC46D00B4C806 /* NotesTableViewController.swift */,
-				6BDC671D1BBCCA4F00B4C806 /* grocery_notes.plist */,
+				6BDC66EA1BBCC17D00B4C806 /* AppDelegate.swift */,
+				6BDC66F41BBCC17D00B4C806 /* Assets.xcassets */,
 				6BDC67211BC0349E00B4C806 /* datamanager */,
+				6BDC671D1BBCCA4F00B4C806 /* grocery_notes.plist */,
+				6BDC66F91BBCC17D00B4C806 /* Info.plist */,
+				6BDC66F61BBCC17D00B4C806 /* LaunchScreen.storyboard */,
+				6BDC66EE1BBCC17D00B4C806 /* Main.storyboard */,
+				6BE700751BCC76CB00FDD258 /* model */,
+				6BDC671B1BBCC46D00B4C806 /* NotesTableViewController.swift */,
+				6BE7006F1BCC76BD00FDD258 /* Settings.bundle */,
+				6BDC66EC1BBCC17D00B4C806 /* ViewController.swift */,
+				6BDC66F11BBCC17D00B4C806 /* WritingPlist.xcdatamodeld */,
 			);
 			path = WritingPlist;
 			sourceTree = "<group>";
@@ -148,10 +159,22 @@
 		6BDC67211BC0349E00B4C806 /* datamanager */ = {
 			isa = PBXGroup;
 			children = (
+				6B49A1C81BCB0EE3002F06F8 /* NoteManager.swift */,
+				6BE7006B1BCC76BD00FDD258 /* CoreDataManager.swift */,
+				6BE7006C1BCC76BD00FDD258 /* DataManagerFactory.swift */,
 				6BDC671F1BBF556600B4C806 /* PlistManager.swift */,
 				6BDC67221BC034B900B4C806 /* DataManagerProtocols.swift */,
 			);
 			name = datamanager;
+			sourceTree = "<group>";
+		};
+		6BE700751BCC76CB00FDD258 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6BE7006D1BCC76BD00FDD258 /* Note.swift */,
+				6BE7006E1BCC76BD00FDD258 /* Note+CoreDataProperties.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +282,7 @@
 			files = (
 				6BDC66F81BBCC17D00B4C806 /* LaunchScreen.storyboard in Resources */,
 				6BDC66F51BBCC17D00B4C806 /* Assets.xcassets in Resources */,
+				6BE700741BCC76BD00FDD258 /* Settings.bundle in Resources */,
 				6BDC671E1BBCCA5000B4C806 /* grocery_notes.plist in Resources */,
 				6BDC66F01BBCC17D00B4C806 /* Main.storyboard in Resources */,
 			);
@@ -289,8 +313,12 @@
 				6BDC67201BBF556600B4C806 /* PlistManager.swift in Sources */,
 				6BDC66ED1BBCC17D00B4C806 /* ViewController.swift in Sources */,
 				6BDC671C1BBCC46D00B4C806 /* NotesTableViewController.swift in Sources */,
+				6BE700711BCC76BD00FDD258 /* DataManagerFactory.swift in Sources */,
+				6BE700731BCC76BD00FDD258 /* Note+CoreDataProperties.swift in Sources */,
 				6BDC66F31BBCC17D00B4C806 /* WritingPlist.xcdatamodeld in Sources */,
 				6B49A1C91BCB0EE3002F06F8 /* NoteManager.swift in Sources */,
+				6BE700721BCC76BD00FDD258 /* Note.swift in Sources */,
+				6BE700701BCC76BD00FDD258 /* CoreDataManager.swift in Sources */,
 				6BDC66EB1BBCC17D00B4C806 /* AppDelegate.swift in Sources */,
 				6BDC67231BC034B900B4C806 /* DataManagerProtocols.swift in Sources */,
 			);
