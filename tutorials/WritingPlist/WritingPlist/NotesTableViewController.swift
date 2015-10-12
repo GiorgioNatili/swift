@@ -26,7 +26,7 @@ class NotesTableViewController: UITableViewController {
         plistManager.preparePlistForUse()
         notes = Array(dataManager.content.keys)
         self.tableView.reloadData()
-                
+        
     }
     
     func onRefreshData(ref: AnyObject) {
@@ -66,6 +66,15 @@ class NotesTableViewController: UITableViewController {
         self.tableView.reloadData()
         
     }
+    
+    // MARK: Add interactivity
+    @IBAction func createNote(sender: AnyObject) {
+        
+        let noteManager: NoteManager = NoteManager(manager: dataManager)
+        
+        presentViewController(noteManager.currentController, animated: true, completion: nil)
+    
+    }
 
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -86,6 +95,7 @@ class NotesTableViewController: UITableViewController {
 
         return cell
     }
+<<<<<<< HEAD
     
     
     // Override to support editing the table view.
@@ -99,12 +109,38 @@ class NotesTableViewController: UITableViewController {
     }
 
     
+=======
+        
+>>>>>>> master
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
 
+<<<<<<< HEAD
+=======
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == .Delete {
+            
+            // Define the label you want to remove
+            let label = notes[indexPath.item]
+            
+            // Delete the row from the data source
+            notes.removeAtIndex(indexPath.item)
+            
+            // Delete the row from the table view
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            // Refresh the data
+            removeNote(label)
+            
+        }   
+    }
+
+>>>>>>> master
 
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
