@@ -12,7 +12,6 @@
 import Foundation
 import CoreData
 
-@objc Note
 extension Note {
 
     @NSManaged var noteItem: String?
