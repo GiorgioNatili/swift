@@ -31,11 +31,39 @@ class AddItemViewController: UIViewController {
 
     @IBAction func addNewNote(sender: AnyObject) {
         
+        
+        
+        // MARK: accessing app delegate and model
+        //note: I keep getting an error when I break it up into two lines... still figuring out why
+        var context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+        var newNote = NSEntityDescription.insertNewObjectForEntityForName("Note", inManagedObjectContext: context) as NSManagedObject
+
+        
         notes.addNote(note.text!)
         NSNotificationCenter.defaultCenter().postNotificationName("refreshData", object: nil)
         navigationController?.popToRootViewControllerAnimated(true)
+        
     
     }
+    
+    
+    // MARK: coreData fetching
+    
+//    func getData() {
+//        
+//        let fetchRequest = NSFetchRequest("Note") //Having errors with this line...
+//        
+//        do {
+//            
+//            let fetchedResults = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+//            
+//        }catch let error as NSError{
+//            
+//            print("Something went wrong \(error.userInfo)")
+//        }
+//        
+//    }
 
     /*
     // MARK: - Navigation
