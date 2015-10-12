@@ -13,6 +13,7 @@ class NotesTableViewController: UITableViewController {
     // MARK: data source
     var notes:[String] = Array<String>()
     
+    
     // MARK: data manager (plist)
     let plistManager:PlistManager = PlistManager(plist: "grocery_notes")
     
@@ -21,12 +22,16 @@ class NotesTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onRefreshData:", name: "refreshData", object: nil)
         plistManager.preparePlistForUse()
-        
         notes = Array(dataManager.content.keys)
-        
         self.tableView.reloadData()
         
+    }
+    
+    func onRefreshData(ref: AnyObject) {
+        notes = Array(dataManager.content.keys)
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,13 +95,31 @@ class NotesTableViewController: UITableViewController {
 
         return cell
     }
+<<<<<<< HEAD
+    
+    
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            plistManager.removeItem(notes.removeAtIndex(indexPath.row))
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+
+    
+=======
         
+>>>>>>> master
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
 
+<<<<<<< HEAD
+=======
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
@@ -117,6 +140,7 @@ class NotesTableViewController: UITableViewController {
         }   
     }
 
+>>>>>>> master
 
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
