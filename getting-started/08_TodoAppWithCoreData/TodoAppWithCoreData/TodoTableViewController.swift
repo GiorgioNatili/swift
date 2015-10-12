@@ -56,7 +56,7 @@ class TodoTableViewController: UITableViewController {
             
             if let details = segue.destinationViewController as? DetailsViewController {
                 
-                let indexPath = self.tableView.indexPathForSelectedRow()!
+                let indexPath = self.tableView.indexPathForSelectedRow!
                 let titleString = self.todos[indexPath.row]
                 
                 details.todoItem = titleString
