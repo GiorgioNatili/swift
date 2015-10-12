@@ -5,7 +5,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+<<<<<<< HEAD
         <!--List-->
+=======
+        <!--Title-->
+>>>>>>> master
         <scene sceneID="4cu-ps-shr">
             <objects>
                 <tableViewController id="k1r-J4-zcF" customClass="NotesTableViewController" customModule="WritingPlist" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,10 +35,17 @@
                             <outlet property="delegate" destination="k1r-J4-zcF" id="RbT-LD-8yW"/>
                         </connections>
                     </tableView>
+<<<<<<< HEAD
                     <navigationItem key="navigationItem" title="List" id="ohT-Xt-KQl">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IDc-Tw-DW6">
                             <connections>
                                 <segue destination="OEM-Hf-Ye3" kind="show" id="U5c-c3-UPI"/>
+=======
+                    <navigationItem key="navigationItem" title="Title" id="JIJ-He-mLH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Q5k-Ul-qRw">
+                            <connections>
+                                <action selector="createNote:" destination="k1r-J4-zcF" id="yHc-Iw-QNB"/>
+>>>>>>> master
                             </connections>
                         </barButtonItem>
                     </navigationItem>
