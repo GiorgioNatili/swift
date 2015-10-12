@@ -37,7 +37,7 @@ class NotesTableViewController: UITableViewController {
     // MARK: Accessing the model
     private var dataManager:ManageListItem {
         
-        return plistManager
+        return DataManagerFactory.getManager()
         
     }
     
