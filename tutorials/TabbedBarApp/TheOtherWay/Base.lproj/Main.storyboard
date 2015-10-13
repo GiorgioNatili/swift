@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="i8I-pF-Kj2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Another-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BookViewController" customModule="TheOtherWay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCT-xt-NOO">
+                                <rect key="frame" x="184" y="113" width="233" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Another" image="book" selectedImage="book" id="Y71-mV-ke0"/>
+                    <connections>
+                        <outlet property="random" destination="sCT-xt-NOO" id="6fN-h4-piK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1152" y="429"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="bf7-pW-8mG">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="i8I-pF-Kj2" customClass="MainViewController" customModule="TheOtherWay" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="JFo-Ph-m9a">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="BLU-dU-uz3"/>
+                        <segue destination="61a-JU-cGk" kind="relationship" relationship="viewControllers" id="AWz-JI-3vg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EMd-6x-cn6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="429"/>
+        </scene>
+        <!--Whatever-->
+        <scene sceneID="Vts-Cl-470">
+            <objects>
+                <viewController id="61a-JU-cGk" customClass="HeartViewController" customModule="TheOtherWay" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6nL-BQ-CJy"/>
+                        <viewControllerLayoutGuide type="bottom" id="UJm-fU-ltt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j0T-2x-CWe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ri-2S-3bH">
+                                <rect key="frame" x="200" y="94" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0xr-yI-5JD"/>
+                                    <constraint firstAttribute="width" constant="200" id="2sE-cS-d8Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Ri-2S-3bH" firstAttribute="top" secondItem="6nL-BQ-CJy" secondAttribute="bottom" constant="74" id="hiN-Ju-FVV"/>
+                            <constraint firstItem="7Ri-2S-3bH" firstAttribute="centerX" secondItem="j0T-2x-CWe" secondAttribute="centerX" id="ir5-VQ-LOD"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Whatever" image="heart" selectedImage="heart" id="C6q-US-zzK"/>
+                    <connections>
+                        <outlet property="random" destination="7Ri-2S-3bH" id="irp-aa-dhD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dDw-uF-yvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="827" y="1175"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="book" width="24" height="24"/>
+        <image name="heart" width="24" height="24"/>
+    </resources>
+</document>
