@@ -10,28 +10,45 @@ import UIKit
 
 class MainViewController: UITabBarController {
 
+    private let joke = JokeFetcher(api: "http://api.icndb.com/jokes/random")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
         if let items = tabBar.items {
             
-           // items[0].enabled = false
-           // items[1].enabled = true
+           items[1].enabled = false
             
         }
         
-        let value = randomStringWithLength(8)
+        let defaultCenter = NSNotificationCenter.defaultCenter()
+        defaultCenter.addObserver(self, selector: "onJokeFetched:", name: "jokeFetched", object: nil)
+        
+        joke.loadData()
+        
+    }
+    
+    func onJokeFetched(id:AnyObject) {
+        
+        let value = joke.getJoke()
         
         for controller in viewControllers! {
             
             if let _ = controller.view {
-                               
+                
                 var randomizedController = controller as! Randomized
                 randomizedController.randomValue = value
                 
+                let palla = TranslationService(sentence: value)
+                palla.loadData()
             }
+            
+        }
+
+        if let items = tabBar.items {
+         
+            items[1].enabled = true
             
         }
         

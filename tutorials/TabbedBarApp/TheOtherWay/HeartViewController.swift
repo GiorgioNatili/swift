@@ -16,11 +16,20 @@ class HeartViewController: UIViewController, Randomized {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let defaultCenter = NSNotificationCenter.defaultCenter()
+        defaultCenter.addObserver(self, selector: "onJokeTraslated:", name: "jokeTranslated", object: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func onJokeTraslated(notification: NSNotification) {
+
+        random.text = notification.object as? String
+
     }
     
     var randomValue:String {
