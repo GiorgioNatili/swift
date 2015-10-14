@@ -18,6 +18,7 @@
 		6BE700F01BCC8A7300FDD258 /* HeartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE700EF1BCC8A7300FDD258 /* HeartViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		6BE700F21BCC8AAD00FDD258 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE700F11BCC8AAD00FDD258 /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		6BE700F41BCC8CF700FDD258 /* Randomized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE700F31BCC8CF700FDD258 /* Randomized.swift */; settings = {ASSET_TAGS = (); }; };
+		A3A200A391E0A5D0A410FE78 /* Pods_TheOtherWay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1257F33AD6316FB81AF4F19A /* Pods_TheOtherWay.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		059E571843A3F1E46B617184 /* Pods-TheOtherWay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOtherWay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheOtherWay/Pods-TheOtherWay.debug.xcconfig"; sourceTree = "<group>"; };
+		1257F33AD6316FB81AF4F19A /* Pods_TheOtherWay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheOtherWay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		416DE42C7A2ACC2A03039B9F /* Pods-TheOtherWay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOtherWay.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheOtherWay/Pods-TheOtherWay.release.xcconfig"; sourceTree = "<group>"; };
 		6BE7007F1BCC872600FDD258 /* TheOtherWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheOtherWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE700821BCC872600FDD258 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BE700841BCC872600FDD258 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A200A391E0A5D0A410FE78 /* Pods_TheOtherWay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +94,8 @@
 				6BE700991BCC872600FDD258 /* TheOtherWayTests */,
 				6BE700A41BCC872600FDD258 /* TheOtherWayUITests */,
 				6BE700801BCC872600FDD258 /* Products */,
+				C065C7F4F671DCD64E3230BD /* Pods */,
+				C1A5036258C1ABCA4573832C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +144,23 @@
 			path = TheOtherWayUITests;
 			sourceTree = "<group>";
 		};
+		C065C7F4F671DCD64E3230BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				059E571843A3F1E46B617184 /* Pods-TheOtherWay.debug.xcconfig */,
+				416DE42C7A2ACC2A03039B9F /* Pods-TheOtherWay.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C1A5036258C1ABCA4573832C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1257F33AD6316FB81AF4F19A /* Pods_TheOtherWay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BE700AA1BCC872600FDD258 /* Build configuration list for PBXNativeTarget "TheOtherWay" */;
 			buildPhases = (
+				77134368F8EDC6AF126FDAA3 /* Check Pods Manifest.lock */,
 				6BE7007B1BCC872600FDD258 /* Sources */,
 				6BE7007C1BCC872600FDD258 /* Frameworks */,
 				6BE7007D1BCC872600FDD258 /* Resources */,
+				0646BB973EC90D5367E05B5F /* Embed Pods Frameworks */,
+				6EA93C30E7E6CDDF38EC7DDF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,6 +288,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0646BB973EC90D5367E05B5F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheOtherWay/Pods-TheOtherWay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EA93C30E7E6CDDF38EC7DDF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheOtherWay/Pods-TheOtherWay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77134368F8EDC6AF126FDAA3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6BE7007B1BCC872600FDD258 /* Sources */ = {
@@ -412,6 +487,7 @@
 		};
 		6BE700AB1BCC872600FDD258 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 059E571843A3F1E46B617184 /* Pods-TheOtherWay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TheOtherWay/Info.plist;
@@ -423,6 +499,7 @@
 		};
 		6BE700AC1BCC872600FDD258 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 416DE42C7A2ACC2A03039B9F /* Pods-TheOtherWay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TheOtherWay/Info.plist;
@@ -499,6 +576,7 @@
 				6BE700AC1BCC872600FDD258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BE700AD1BCC872600FDD258 /* Build configuration list for PBXNativeTarget "TheOtherWayTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +585,7 @@
 				6BE700AF1BCC872600FDD258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BE700B01BCC872600FDD258 /* Build configuration list for PBXNativeTarget "TheOtherWayUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +594,7 @@
 				6BE700B21BCC872600FDD258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
