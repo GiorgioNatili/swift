@@ -28,7 +28,7 @@ class JokeFetcher: NSObject {
                 let jokeJSON = JSON(result.value!)
                 let value = jokeJSON["value"]
                 
-                self.joke = String(value)
+                self.joke = String(value["joke"])
                 
                 let defaultCenter = NSNotificationCenter.defaultCenter()
                 defaultCenter.postNotificationName( "jokeFetched", object: nil)
