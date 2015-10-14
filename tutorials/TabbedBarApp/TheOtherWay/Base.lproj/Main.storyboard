@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="i8I-pF-Kj2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Another-->
@@ -16,14 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCT-xt-NOO">
-                                <rect key="frame" x="184" y="113" width="233" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCT-xt-NOO">
+                                <rect key="frame" x="81" y="113" width="438" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sCT-xt-NOO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="18Y-cv-CQP"/>
+                            <constraint firstItem="sCT-xt-NOO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="61" id="1Il-U7-6WK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sCT-xt-NOO" secondAttribute="trailing" constant="61" id="4f2-oc-Cch"/>
+                            <constraint firstItem="sCT-xt-NOO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="93" id="Wec-aI-DM1"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Another" image="book" selectedImage="book" id="Y71-mV-ke0"/>
                     <connections>
@@ -64,12 +71,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ri-2S-3bH">
-                                <rect key="frame" x="200" y="94" width="200" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="0xr-yI-5JD"/>
-                                    <constraint firstAttribute="width" constant="200" id="2sE-cS-d8Q"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ri-2S-3bH">
+                                <rect key="frame" x="89" y="114" width="423" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -77,8 +80,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7Ri-2S-3bH" firstAttribute="top" secondItem="6nL-BQ-CJy" secondAttribute="bottom" constant="74" id="hiN-Ju-FVV"/>
-                            <constraint firstItem="7Ri-2S-3bH" firstAttribute="centerX" secondItem="j0T-2x-CWe" secondAttribute="centerX" id="ir5-VQ-LOD"/>
+                            <constraint firstItem="7Ri-2S-3bH" firstAttribute="top" secondItem="6nL-BQ-CJy" secondAttribute="bottom" constant="94" id="A4k-iL-JmP"/>
+                            <constraint firstItem="7Ri-2S-3bH" firstAttribute="centerX" secondItem="j0T-2x-CWe" secondAttribute="centerX" id="PgV-WD-0k8"/>
+                            <constraint firstItem="7Ri-2S-3bH" firstAttribute="leading" secondItem="j0T-2x-CWe" secondAttribute="leadingMargin" constant="69" id="Qua-QH-R3k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Ri-2S-3bH" secondAttribute="trailing" constant="68" id="qMT-JW-ziw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Whatever" image="heart" selectedImage="heart" id="C6q-US-zzK"/>
