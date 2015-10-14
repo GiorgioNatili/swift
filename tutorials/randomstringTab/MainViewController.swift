@@ -10,26 +10,24 @@ import UIKit
 
 class MainViewController: UITabBarController {
     
-    private var joke = JokeFetcher()
+    private let joke = JokeFetcher(api: "http://api.icndb.com/jokes/random")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for controller in viewControllers! {
             
+            joke.loadData()
+            joke.getJoke()
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "onJokeFetched:", name: "jokeFetched", object: nil)
-            
-            if let _ = controller.view {
-                var randomizedController = controller as! Randomized
-                randomizedController.randomize = "Palla"
-            }
-            
-        }
         
     }
     
-    func onJokeFetched() {
-        joke.getJoke("http://api.icndb.com/jokes/random")
+    func onJokeFetched(notification: NSNotification) {
+        for controller in viewControllers! {
+            if let _ = controller.view {
+                var randomizedController = controller as! Randomized
+                randomizedController.randomize = (notification.object as? String)!
+            }
+        }
         
     }
 

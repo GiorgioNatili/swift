@@ -26,11 +26,13 @@ class JokeFetcher: NSObject {
             .responseJSON { request, response, result in
                 
                 let jsonJoke = JSON(result.value!)
-                let value = jsonJoke["value"]
+                let value = String(jsonJoke["value"]["joke"])
                 
                 let defaultCenter = NSNotificationCenter.defaultCenter()
-                defaultCenter.postNotificationName("jokeFetched", object: nil)
+                defaultCenter.postNotificationName("jokeFetched", object: value)
         
+        }
+
     }
     
     func getJoke() -> String {
@@ -38,6 +40,4 @@ class JokeFetcher: NSObject {
         return joke
     }
     
-
-    }
 }
