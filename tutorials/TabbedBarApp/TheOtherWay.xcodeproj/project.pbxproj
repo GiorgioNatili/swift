@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09316EC41BCDD8240026948E /* JokeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09316EC31BCDD8240026948E /* JokeFetcher.swift */; settings = {ASSET_TAGS = (); }; };
+		09316ECA1BCDD9F70026948E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09316EC91BCDD9F70026948E /* Alamofire.framework */; };
 		6BE700831BCC872600FDD258 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE700821BCC872600FDD258 /* AppDelegate.swift */; };
 		6BE700851BCC872600FDD258 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE700841BCC872600FDD258 /* BookViewController.swift */; };
 		6BE700881BCC872600FDD258 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE700861BCC872600FDD258 /* Main.storyboard */; };
@@ -40,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		059E571843A3F1E46B617184 /* Pods-TheOtherWay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOtherWay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheOtherWay/Pods-TheOtherWay.debug.xcconfig"; sourceTree = "<group>"; };
+		09316EC31BCDD8240026948E /* JokeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeFetcher.swift; sourceTree = "<group>"; };
+		09316EC51BCDD9760026948E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		09316EC71BCDD9B00026948E /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Release-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		09316EC91BCDD9F70026948E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		1257F33AD6316FB81AF4F19A /* Pods_TheOtherWay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheOtherWay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		416DE42C7A2ACC2A03039B9F /* Pods-TheOtherWay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheOtherWay.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheOtherWay/Pods-TheOtherWay.release.xcconfig"; sourceTree = "<group>"; };
 		6BE7007F1BCC872600FDD258 /* TheOtherWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheOtherWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09316ECA1BCDD9F70026948E /* Alamofire.framework in Frameworks */,
 				A3A200A391E0A5D0A410FE78 /* Pods_TheOtherWay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09316EC21BCDD7400026948E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				09316EC31BCDD8240026948E /* JokeFetcher.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		6BE700761BCC872600FDD258 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +127,7 @@
 		6BE700811BCC872600FDD258 /* TheOtherWay */ = {
 			isa = PBXGroup;
 			children = (
+				09316EC21BCDD7400026948E /* model */,
 				6BE700821BCC872600FDD258 /* AppDelegate.swift */,
 				6BE700841BCC872600FDD258 /* BookViewController.swift */,
 				6BE700861BCC872600FDD258 /* Main.storyboard */,
@@ -156,6 +172,9 @@
 		C1A5036258C1ABCA4573832C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09316EC91BCDD9F70026948E /* Alamofire.framework */,
+				09316EC71BCDD9B00026948E /* SwiftyJSON.framework */,
+				09316EC51BCDD9760026948E /* Alamofire.framework */,
 				1257F33AD6316FB81AF4F19A /* Pods_TheOtherWay.framework */,
 			);
 			name = Frameworks;
@@ -346,6 +365,7 @@
 				6BE700831BCC872600FDD258 /* AppDelegate.swift in Sources */,
 				6BE7008B1BCC872600FDD258 /* TheOtherWay.xcdatamodeld in Sources */,
 				6BE700F01BCC8A7300FDD258 /* HeartViewController.swift in Sources */,
+				09316EC41BCDD8240026948E /* JokeFetcher.swift in Sources */,
 				6BE700F41BCC8CF700FDD258 /* Randomized.swift in Sources */,
 				6BE700F21BCC8AAD00FDD258 /* MainViewController.swift in Sources */,
 			);
@@ -490,6 +510,11 @@
 			baseConfigurationReference = 059E571843A3F1E46B617184 /* Pods-TheOtherWay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = TheOtherWay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.webplatform.swift.TheOtherWay;
@@ -502,6 +527,11 @@
 			baseConfigurationReference = 416DE42C7A2ACC2A03039B9F /* Pods-TheOtherWay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = TheOtherWay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.webplatform.swift.TheOtherWay;
