@@ -22,7 +22,7 @@ class CurrentLocation: NSObject, CLLocationManagerDelegate, LocationInfo {
 
     private var locationManager:CLLocationManager
     
-    private var _locationStatus:String
+    private var _locationStatus:(code: Int, message: String)
     private var _longitude:Double
     private var _latitude:Double
     
@@ -30,7 +30,7 @@ class CurrentLocation: NSObject, CLLocationManagerDelegate, LocationInfo {
         
         self.locationManager = CLLocationManager()
         
-        self._locationStatus = ""
+        self._locationStatus = (code: 0, message: "")
         self._longitude = 0.0
         self._latitude = 0.0
         
@@ -38,7 +38,10 @@ class CurrentLocation: NSObject, CLLocationManagerDelegate, LocationInfo {
         
         locationManager.delegate = self
         
-        locationManager.desiredAccuracy=kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestLocation()
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
     }
@@ -48,7 +51,7 @@ class CurrentLocation: NSObject, CLLocationManagerDelegate, LocationInfo {
         
         locationManager.stopUpdatingLocation()
         
-        // TODO: add a notification to the probapage the error
+        // TODO: add a notification to the propagate the error
         
     }
     
@@ -64,24 +67,30 @@ class CurrentLocation: NSObject, CLLocationManagerDelegate, LocationInfo {
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         
+        let _ = (code: 1, message: "palla")
+        
         switch status {
                 
             case CLAuthorizationStatus.Restricted:
-                _locationStatus = "Restricted Access to location"
+                _locationStatus = (code: 1, message: "Restricted access to location")
                 
             case CLAuthorizationStatus.Denied:
-                _locationStatus = "User denied access to location"
+                _locationStatus = (code: 0, message: "User denied access to location")
                 
             case CLAuthorizationStatus.NotDetermined:
-                _locationStatus = "Status not determined"
+                _locationStatus = (code: 0, message: "Status not determined")
                 
             default:
-                _locationStatus = "Allowed to location Access"
+                _locationStatus = (code: 1, message: "Allowed to location Access")
                 
         }
         
         // TODO: add a notification for the status changed event
-    
+        let data:[String : AnyObject]?
+        data = ["value":_locationStatus]
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("updatedLocations", object: nil, userInfo: data)
+        
     }
     
     // MARK: LocationInfo implementation
@@ -89,7 +98,7 @@ class CurrentLocation: NSObject, CLLocationManagerDelegate, LocationInfo {
         
         get {
             
-            return _locationStatus
+            return _locationStatus.message
             
         }
         
