@@ -67,8 +67,6 @@ class CurrentLocation: NSObject, CLLocationManagerDelegate, LocationInfo {
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         
-        let _ = (code: 1, message: "palla")
-        
         switch status {
                 
             case CLAuthorizationStatus.Restricted:
@@ -85,8 +83,9 @@ class CurrentLocation: NSObject, CLLocationManagerDelegate, LocationInfo {
                 
         }
         
-        // TODO: add a notification for the status changed event        
-        NSNotificationCenter.defaultCenter().postNotificationName("updatedLocations", object: nil, userInfo: [_locationStatus.message: _locationStatus.code])
+        // TODO: add a notification for the status changed event
+        let data:[NSObject: AnyObject] = ["status": DataWrapper(element: _locationStatus)]
+        NSNotificationCenter.defaultCenter().postNotificationName("updatedLocations", object: nil, userInfo: data)
         
     }
     

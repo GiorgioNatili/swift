@@ -32,6 +32,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="getForecast" destination="jRE-aR-hC7" id="tq2-Nc-csL"/>
+                        <outlet property="locationStatus" destination="U4E-H9-ehL" id="wxo-5q-lKc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

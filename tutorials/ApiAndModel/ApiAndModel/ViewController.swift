@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     var location:CurrentLocation!
     
+    @IBOutlet weak var locationStatus: UILabel!
+    @IBOutlet weak var getForecast: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,11 +28,24 @@ class ViewController: UIViewController {
 //            // TODO: handle failue
 //            print(error)
 //        }
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onupdatedLocations:", name: "updatedLocations", object: nil)
+        
         
         location = CurrentLocation()
         
     }
-
+    
+    
+    func onupdatedLocations(notification:NSNotification){
+        
+        let status:DataWrapper = notification.userInfo!["status"] as! DataWrapper<(Int, String)>
+        
+        getForecast.enabled = status.element.0.toBool()!
+        locationStatus.text = status.element.1
+        
+    }
+    
     @IBAction func startLocation(sender: AnyObject) {
         
 
