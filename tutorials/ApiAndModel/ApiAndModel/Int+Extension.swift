@@ -10,7 +10,7 @@ import Foundation
 
 extension Int {
     
-    func toBool () ->Bool? {
+    func toBool () -> Bool? {
         
         switch self {
             
