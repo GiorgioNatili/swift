@@ -33,6 +33,7 @@ class ViewController: UIViewController {
             self!.cityList.text = text
             
             print(self!.cities[text])
+            let test = ForecastProvider(location: self!.cities[text]!)
             
         }
         
