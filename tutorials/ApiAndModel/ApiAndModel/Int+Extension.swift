@@ -12,14 +12,17 @@ extension Int {
     
     func toBool () -> Bool? {
         
-        switch self {
+        switch true {
             
-        case 0:
+        case self == 0:
             
             return false
             
-        case 1:
+        case self == 1:
             
+            return true
+            
+        case self > 1:
             return true
             
         default:

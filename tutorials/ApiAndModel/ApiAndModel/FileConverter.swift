@@ -10,7 +10,6 @@ import UIKit
 
 class FileConverter: NSObject {
     
-    
     func arrayFromLocalLines(fileName: String) throws -> [String] {
         
         guard let path = NSBundle.mainBundle().pathForResource(fileName, ofType: nil) else {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DataWrapper<T> {
+class DataWrapper<T>{
 
     let element:T
     

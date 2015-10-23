@@ -85,7 +85,12 @@ class CurrentLocation: NSObject, CLLocationManagerDelegate, LocationInfo {
         
         // TODO: add a notification for the status changed event
         let data:[NSObject: AnyObject] = ["status": DataWrapper(element: _locationStatus)]
-        NSNotificationCenter.defaultCenter().postNotificationName("updatedLocations", object: nil, userInfo: data)
+                
+        NSNotificationCenter.defaultCenter().postNotificationName("updatedLocations",
+                                                                  object: nil,
+                                                                  userInfo: data)
+        
+        
         
     }
     
