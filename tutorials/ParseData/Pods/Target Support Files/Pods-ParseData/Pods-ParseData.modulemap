@@ -1,0 +1,6 @@
+framework module Pods_ParseData {
+  umbrella header "Pods-ParseData-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,15 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+use_frameworks!
+target 'ParseData' do
+  pod 'Parse'
+end
+
+target 'ParseDataTests' do
+
+end
+
+target 'ParseDataUITests' do
+
+end
+
