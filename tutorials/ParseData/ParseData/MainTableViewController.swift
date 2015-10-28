@@ -23,17 +23,24 @@ class MainTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTodosUpdated:", name: "todosUpdated", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTodoAdded:", name: "todoAdded", object: nil)
         
-        todoManager.fetch()
+        
         
     }
     
     func onTodosUpdated(notification: NSNotification) {
         
         currentTodos = todoManager.list
+        
         tableView.reloadData()
         
     }
+    
+    func onTodoAdded(notificiation: NSNotification) {
+        todoManager.fetch()
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

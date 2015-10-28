@@ -33,7 +33,7 @@ class TodoManager: NSObject {
                 print("Successfully retrieved \(objects!.count) todos.")
                 
                 let context = self.appDelegate.managedObjectContext
-                
+
                     // Do something with the found objects
                     for object in objects! {
                         
@@ -68,6 +68,26 @@ class TodoManager: NSObject {
           NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "todoRemoved", object: nil))
             
         }
+    }
+    
+    func add(title:String, note:String, dueDate: NSDate){
+        
+        
+        let newDo = PFObject(className:"Todo")
+        
+        newDo["description"] = note
+        newDo["title"] = title
+        newDo["dueDate"] = dueDate
+        newDo["done"] = false
+        newDo.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "todoAdded", object: nil))
+            } else {
+                print("FUCK")
+            }
+        }
+        
     }
     
     var list:[Todo] {
