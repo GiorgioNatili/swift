@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class MainTableViewController: UITableViewController {
 
@@ -27,6 +28,39 @@ class MainTableViewController: UITableViewController {
         todoManager.fetch()
         
     }
+    
+    
+    func handleCancel(alertView: UIAlertAction!)
+    {
+        print("User click Cancel button")
+    }
+    
+    @IBAction func addTodo(sender: AnyObject) {
+        
+        //NSNotificationCenter.defaultCenter().postNotificationName("onAddTodo", object: nil)
+        
+        var todoTextField : UITextField!
+        let todoNoteTextField: UITextField!
+        
+        var alert = UIAlertController(title: "Add Todo Item", message: "Enter a new todo:", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addTextFieldWithConfigurationHandler({ (textField: UITextField!) -> Void in
+            todoTextField = textField
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:handleCancel))
+        alert.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.Default, handler:{ (UIAlertAction)in
+            self.todoManager.add(todoTextField.text!)
+        }))
+        self.presentViewController(alert, animated: true, completion: {
+            print("completion block")
+        })
+        
+
+        //self.navigationController?.popToRootViewControllerAnimated(true)
+        
+    }
+    
     
     func onTodosUpdated(notification: NSNotification) {
         
