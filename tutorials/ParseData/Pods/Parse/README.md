@@ -8,8 +8,6 @@
 [![Dependencies][dependencies-svg]][dependencies-link]
 [![References][references-svg]][references-link]
 
-[![Join Chat][gitter-svg]][gitter-link]
-
 A library that gives you access to the powerful Parse cloud platform from your iOS or OS X app.
 For more information Parse and its features, see [the website][parse.com] and [getting started][docs].
 
@@ -90,7 +88,7 @@ of patent rights can be found in the PATENTS file in the same directory.
  [build-status-svg]: https://travis-ci.org/ParsePlatform/Parse-SDK-iOS-OSX.svg
  [build-status-link]: https://travis-ci.org/ParsePlatform/Parse-SDK-iOS-OSX/branches
 
- [coverage-status-svg]: https://img.shields.io/codecov/c/github/ParsePlatform/Parse-SDK-iOS-OSX/master.svg
+ [coverage-status-svg]: https://codecov.io/github/ParsePlatform/Parse-SDK-iOS-OSX/coverage.svg?branch=master
  [coverage-status-link]: https://codecov.io/github/ParsePlatform/Parse-SDK-iOS-OSX?branch=master
 
  [license-svg]: https://img.shields.io/badge/license-BSD-lightgrey.svg
@@ -106,6 +104,3 @@ of patent rights can be found in the PATENTS file in the same directory.
 
  [references-svg]: https://www.versioneye.com/objective-c/parse/reference_badge.svg
  [references-link]: https://www.versioneye.com/objective-c/parse/references
-
- [gitter-svg]: https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg
- [gitter-link]: https://gitter.im/ParsePlatform/Chat

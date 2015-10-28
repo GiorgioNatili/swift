@@ -103,7 +103,7 @@ typedef void (^PFQueryArrayResultBlock)(NSArray PF_GENERIC(PFGenericObject) * PF
 
  @returns The same instance of `PFQuery` as the receiver. This allows method chaining.
  */
-- (instancetype)selectKeys:(NSArray PF_GENERIC(NSString *) *)keys;
+- (instancetype)selectKeys:(NSArray *)keys;
 
 /*!
  @abstract Add a constraint that requires a particular key exists.
@@ -379,7 +379,7 @@ typedef void (^PFQueryArrayResultBlock)(NSArray PF_GENERIC(PFGenericObject) * PF
 
  @returns An instance of `PFQuery` that is the `or` of the passed in queries.
  */
-+ (instancetype)orQueryWithSubqueries:(NSArray PF_GENERIC(PFQuery *) *)queries;
++ (instancetype)orQueryWithSubqueries:(NSArray *)queries;
 
 /*!
  @abstract Adds a constraint that requires that a key's value matches a value in another key
@@ -493,7 +493,7 @@ typedef void (^PFQueryArrayResultBlock)(NSArray PF_GENERIC(PFGenericObject) * PF
 
  @returns The same instance of `PFQuery` as the receiver. This allows method chaining.
  */
-- (instancetype)orderBySortDescriptors:(PF_NULLABLE NSArray PF_GENERIC(NSSortDescriptor *) *)sortDescriptors;
+- (instancetype)orderBySortDescriptors:(PF_NULLABLE NSArray *)sortDescriptors;
 
 ///--------------------------------------
 /// @name Getting Objects by ID
@@ -607,7 +607,8 @@ typedef void (^PFQueryArrayResultBlock)(NSArray PF_GENERIC(PFGenericObject) * PF
  @param error Pointer to an NSError that will be set if necessary.
  @result The PFUser if found. Returns nil if the object isn't found, or if there was an error.
  */
-+ (PF_NULLABLE PFUser *)getUserObjectWithId:(NSString *)objectId error:(NSError **)error;
++ (PF_NULLABLE PFUser *)getUserObjectWithId:(NSString *)objectId
+                                      error:(NSError **)error;
 
 /*!
  @deprecated Please use [PFUser query] instead.
@@ -800,12 +801,12 @@ typedef void (^PFQueryArrayResultBlock)(NSArray PF_GENERIC(PFGenericObject) * PF
  @see fromPin
  @see fromPinWithName:
  */
-@property (nonatomic, assign) PFCachePolicy cachePolicy;
+@property (assign, readwrite) PFCachePolicy cachePolicy;
 
 /*!
  @abstract The age after which a cached value will be ignored
  */
-@property (nonatomic, assign) NSTimeInterval maxCacheAge;
+@property (assign, readwrite) NSTimeInterval maxCacheAge;
 
 /*!
  @abstract Returns whether there is a cached result for this query.

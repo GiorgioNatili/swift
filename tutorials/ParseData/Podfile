@@ -2,7 +2,8 @@
 # platform :ios, '6.0'
 use_frameworks!
 target 'ParseData' do
-  pod 'Parse'
+  
+	pod 'Parse'
 end
 
 target 'ParseDataTests' do

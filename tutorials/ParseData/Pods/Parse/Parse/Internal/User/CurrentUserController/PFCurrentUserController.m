@@ -82,10 +82,9 @@
     return [self getCurrentUserAsyncWithOptions:options];
 }
 
-- (BFTask *)saveCurrentObjectAsync:(PFObject *)object {
-    PFUser *user = (PFUser *)object;
+- (BFTask *)saveCurrentObjectAsync:(PFUser *)object {
     return [_dataTaskQueue enqueue:^id(BFTask *task) {
-        return [self _saveCurrentUserAsync:user];
+        return [self _saveCurrentUserAsync:object];
     }];
 }
 
@@ -126,6 +125,7 @@
                 user.isLazy = YES;
                 [user _setDirty:YES];
             }
+            [user setIsCurrentUser:YES];
             return user;
         }] continueWithBlock:^id(BFTask *task) {
             dispatch_barrier_sync(_dataQueue, ^{
@@ -249,7 +249,6 @@
     }
     return [task continueWithSuccessBlock:^id(BFTask *task) {
         PFUser *user = task.result;
-        [user setIsCurrentUser:YES];
         return [[self _loadSensitiveUserDataAsync:user
                          fromKeychainItemWithName:PFUserCurrentUserKeychainItemName] continueWithSuccessResult:user];
     }];

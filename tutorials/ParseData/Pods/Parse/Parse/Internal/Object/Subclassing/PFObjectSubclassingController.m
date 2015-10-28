@@ -18,6 +18,16 @@
 #import "PFPropertyInfo_Private.h"
 #import "PFPropertyInfo_Runtime.h"
 #import "PFSubclassing.h"
+#import "PFUser.h"
+#import "PFSession.h"
+#import "PFPin.h"
+#import "PFRole.h"
+#import "PFEventuallyPin.h"
+#import "PFInstallation.h"
+
+#if TARGET_OS_IPHONE
+#import "PFProduct.h"
+#endif
 
 // CFNumber does not use number type 0, we take advantage of that here.
 #define kCFNumberTypeUnknown 0

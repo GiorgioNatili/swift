@@ -141,9 +141,7 @@ NSString *const PFCurrentInstallationPinName = @"_currentInstallation";
     }];
 }
 
-- (BFTask *)saveCurrentObjectAsync:(PFObject *)object {
-    PFInstallation *installation = (PFInstallation *)object;
-
+- (BFTask *)saveCurrentObjectAsync:(PFInstallation *)installation {
     @weakify(self);
     return [_dataTaskQueue enqueue:^BFTask *(BFTask *unused) {
         @strongify(self);

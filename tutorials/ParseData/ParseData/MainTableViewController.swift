@@ -28,6 +28,10 @@ class MainTableViewController: UITableViewController {
         
     }
     
+    @IBAction func onDidAdd(sender: AnyObject) {
+        
+    }
+    
     func onTodosUpdated(notification: NSNotification) {
         
         currentTodos = todoManager.list

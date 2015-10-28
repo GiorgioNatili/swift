@@ -13,11 +13,39 @@ class TodoManager: NSObject {
 
     private var todos:[Todo] = []
     private let appDelegate:AppDelegate
+    var doneValues = [
+        0: false,
+        1: true
+    ]
     
     override init(){
         
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
+    }
+    
+
+    
+    func add(title: String, descript: String, done: Int) {
+        
+        var todo = PFObject(className:"Todo")
+        todo["title"] = title
+        todo["description"] = descript
+        todo["done"] = doneValues[done]
+        todo.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                let todoObject = Todo(context: context)
+                todoObject.title = title
+                todoObject.note = descript
+                todoObject.done = done
+                
+                self.todos.append(
+                NSNotificationCenter.defaultCenter().postNotificationName("todosUpdated", object: nil)
+            } else {
+                // There was a problem, check error.description
+            }
+        }
     }
 
     func fetch() {

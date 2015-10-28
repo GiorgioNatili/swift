@@ -8,7 +8,6 @@
  */
 
 #import "PFQuery.h"
-#import "PFQueryPrivate.h"
 
 #import <Bolts/BFCancellationTokenSource.h>
 #import <Bolts/BFTask.h>
@@ -551,7 +550,6 @@ static void PFQueryAssertValidOrderingClauseClass(id object) {
             [NSException raise:NSInternalInconsistencyException
                         format:@"LIKE is not supported by PFQuery."];
         }
-        case NSBetweenPredicateOperatorType:
         default: {
             [NSException raise:NSInternalInconsistencyException
                         format:@"This comparison predicate is not supported. (%zd)", predicate.predicateOperatorType];
@@ -616,7 +614,6 @@ static void PFQueryAssertValidOrderingClauseClass(id object) {
                 }
                 return [self orQueryWithSubqueries:subqueries];
             }
-            case NSNotPredicateType:
             default: {
                 // This should never happen.
                 [NSException raise:NSInternalInconsistencyException

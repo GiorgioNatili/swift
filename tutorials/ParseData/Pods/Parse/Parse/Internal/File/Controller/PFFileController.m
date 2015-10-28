@@ -13,7 +13,6 @@
 #import <Bolts/BFTaskCompletionSource.h>
 
 #import "BFTask+Private.h"
-#import "PFFileDataStream.h"
 #import "PFAssert.h"
 #import "PFCommandResult.h"
 #import "PFCommandRunning.h"
@@ -136,8 +135,8 @@ static NSString *const PFFileControllerCacheDirectoryName_ = @"PFFileCache";
     return [BFTask taskFromExecutor:[BFExecutor defaultPriorityBackgroundExecutor] withBlock:^id{
         BFTaskCompletionSource *taskCompletionSource = [BFTaskCompletionSource taskCompletionSource];
         NSString *filePath = [self _temporaryFileDownloadPathForFileState:fileState];
-        PFFileDataStream *stream = [[PFFileDataStream alloc] initWithFileAtPath:filePath];
-        [[self downloadFileAsyncWithState:fileState
+        NSInputStream *stream = [NSInputStream inputStreamWithFileAtPath:filePath];
+        [self downloadFileAsyncWithState:fileState
                        cancellationToken:cancellationToken
                            progressBlock:^(int percentDone) {
                                [taskCompletionSource trySetResult:stream];
@@ -145,9 +144,6 @@ static NSString *const PFFileControllerCacheDirectoryName_ = @"PFFileCache";
                                if (progressBlock) {
                                    progressBlock(percentDone);
                                }
-                           }] continueWithBlock:^id(BFTask *task) {
-                               [stream stopBlocking];
-                               return task;
                            }];
         return taskCompletionSource.task;
     }];

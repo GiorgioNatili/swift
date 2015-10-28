@@ -16,7 +16,6 @@
 #import "PFAnonymousUtils.h"
 #import "PFAnonymousAuthenticationProvider.h"
 #import "PFUserController.h"
-#import "PFCurrentUserController.h"
 #import "PFAssert.h"
 
 @interface PFUserAuthenticationController () {
@@ -32,19 +31,14 @@
 #pragma mark - Init
 ///--------------------------------------
 
-- (instancetype)initWithDataSource:(id<PFCurrentUserControllerProvider>)dataSource {
+- (instancetype)init {
     self = [super init];
     if (!self) return nil;
 
-    _dataSource = dataSource;
     _dataAccessQueue = dispatch_queue_create("com.parse.user.authenticationManager", DISPATCH_QUEUE_SERIAL);
     _authenticationDelegates = [NSMutableDictionary dictionary];
 
     return self;
-}
-
-+ (instancetype)controllerWithDataSource:(id<PFCurrentUserControllerProvider>)dataSource {
-    return [[self alloc] initWithDataSource:dataSource];
 }
 
 ///--------------------------------------
@@ -62,11 +56,9 @@
     });
 
     // TODO: (nlutsenko) Decouple this further.
-    [[self.dataSource.currentUserController getCurrentUserAsyncWithOptions:0] continueWithSuccessBlock:^id(BFTask *task) {
-        PFUser *user = task.result;
-        [user synchronizeAuthDataWithAuthType:authType];
-        return nil;
-    }];
+    if (![authType isEqualToString:PFAnonymousUserAuthenticationType]) {
+        [[PFUser currentUser] synchronizeAuthDataWithAuthType:authType];
+    }
 }
 
 - (void)unregisterAuthenticationDelegateForAuthType:(NSString *)authType {

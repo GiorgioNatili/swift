@@ -21,19 +21,13 @@
 #import "PFLogging.h"
 #import "PFMacros.h"
 #import "PFRESTCommand.h"
-#import "PFTaskQueue.h"
-
-#if !TARGET_OS_WATCH
 #import "PFReachability.h"
-#endif
+#import "PFTaskQueue.h"
 
 NSUInteger const PFEventuallyQueueDefaultMaxAttemptsCount = 5;
 NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
 
-@interface PFEventuallyQueue ()
-#if !TARGET_OS_WATCH
-<PFReachabilityListener>
-#endif
+@interface PFEventuallyQueue () <PFReachabilityListener>
 
 @property (atomic, assign, readwrite) BOOL monitorsReachability;
 @property (atomic, assign, getter=isRunning) BOOL running;
@@ -366,9 +360,6 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
 ///--------------------------------------
 
 - (void)_startMonitoringNetworkReachability {
-#if TARGET_OS_WATCH
-    self.connected = YES;
-#else
     if (self.monitorsReachability) {
         return;
     }
@@ -378,20 +369,24 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
 
     // Set the initial connected status
     self.connected = ([PFReachability sharedParseReachability].currentState != PFReachabilityStateNotReachable);
-#endif
 }
 
 - (void)_stopMonitoringNetworkReachability {
-#if !TARGET_OS_WATCH
     if (!self.monitorsReachability) {
         return;
     }
 
     [[PFReachability sharedParseReachability] removeListener:self];
 
+    if (_reachability != NULL) {
+        SCNetworkReachabilitySetCallback(_reachability, NULL, NULL);
+        SCNetworkReachabilitySetDispatchQueue(_reachability, NULL);
+        CFRelease(_reachability);
+        _reachability = NULL;
+    }
+
     self.monitorsReachability = NO;
     self.connected = YES;
-#endif
 }
 
 ///--------------------------------------
@@ -459,8 +454,6 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
     _retryInterval = retryInterval;
 }
 
-#if !TARGET_OS_WATCH
-
 ///--------------------------------------
 #pragma mark - Reachability
 ///--------------------------------------
@@ -470,8 +463,6 @@ NSTimeInterval const PFEventuallyQueueDefaultTimeoutRetryInterval = 600.0f;
         self.connected = (state != PFReachabilityStateNotReachable);
     }
 }
-
-#endif
 
 @end
 

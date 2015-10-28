@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var motherFucker: UILabel!
     var location:CurrentLocation!
     var cities:[String:Location] = [String: Location]()
     
@@ -98,8 +99,18 @@ class ViewController: UIViewController {
     
     @IBAction func startLocation(sender: AnyObject) {
         
+<<<<<<< Updated upstream
         
 
+=======
+       NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectorMethod", name: "updatedLocations", object: nil)
+      
+    }
+    
+    func selectorMethod() {
+        
+        self.motherFucker.text = "I heard the Notifaction"
+>>>>>>> Stashed changes
         
     }
     override func didReceiveMemoryWarning() {
