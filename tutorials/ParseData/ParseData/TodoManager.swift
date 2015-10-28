@@ -24,6 +24,7 @@ class TodoManager: NSObject {
         
         let query = PFQuery(className:"Todo")
         query.findObjectsInBackgroundWithBlock {
+            
             (objects: [PFObject]?, error: NSError?) -> Void in
             
             if error == nil {
@@ -64,7 +65,7 @@ class TodoManager: NSObject {
         todo.objectId = id
         todo.deleteInBackgroundWithBlock { (status:Bool, error:NSError?) -> Void in
             
-            NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "todosUpdated", object: nil))
+          NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "todoRemoved", object: nil))
             
         }
     }

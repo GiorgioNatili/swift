@@ -77,8 +77,9 @@ class MainTableViewController: UITableViewController {
         if editingStyle == .Delete {
             
             // Delete the row from the data source
-            //currentTodos.removeAtIndex(indexPath.row)
             todoManager.remove(currentTodos[indexPath.row].id!)
+            currentTodos.removeAtIndex(indexPath.row)
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         
         } else if editingStyle == .Insert {

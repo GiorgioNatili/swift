@@ -18,5 +18,6 @@ extension Todo {
     @NSManaged var note: String?
     @NSManaged var title: String?
     @NSManaged var id: String?
+    @NSManaged var dueDate: NSDate?
 
 }
