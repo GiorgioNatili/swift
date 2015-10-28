@@ -1,0 +1,6 @@
+framework module Pods_ApiAndModel {
+  umbrella header "Pods-ApiAndModel-umbrella.h"
+
+  export *
+  module * { export * }
+}

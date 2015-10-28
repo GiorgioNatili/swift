@@ -220,8 +220,7 @@
 - (NSDictionary *)RESTDictionaryWithObjectEncoder:(PFEncoder *)objectEncoder
                                 operationSetUUIDs:(NSArray **)operationSetUUIDs
                                             state:(PFObjectState *)state
-                                operationSetQueue:(NSArray *)queue
-                          deletingEventuallyCount:(NSUInteger)deletingEventuallyCount;
+                                operationSetQueue:(NSArray *)operationSetQueue;
 
 - (void)mergeFromRESTDictionary:(NSDictionary *)object
                     withDecoder:(PFDecoder *)decoder;

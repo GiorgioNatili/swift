@@ -37,9 +37,6 @@
     switch (logLevel) {
         case PFLogLevelNone:
             break;
-        case PFLogLevelDebug:
-            description = @"Debug";
-            break;
         case PFLogLevelError:
             description = @"Error";
             break;
@@ -48,6 +45,8 @@
             break;
         case PFLogLevelInfo:
             description = @"Info";
+            break;
+        default:
             break;
     }
     return description;

@@ -48,9 +48,8 @@
 ///--------------------------------------
 
 - (NSURLRequest *)dataURLRequestForCommand:(PFRESTCommand *)command {
-    NSURL *url = [PFURLConstructor URLFromAbsoluteString:[PFInternalUtils parseServerURLString]
-                                                    path:[NSString stringWithFormat:@"/1/%@", command.httpPath]
-                                                   query:nil];
+    NSURL *url = [PFURLConstructor URLFromBaseURL:[NSURL URLWithString:[PFInternalUtils parseServerURLString]]
+                                             path:[NSString stringWithFormat:@"/1/%@", command.httpPath]];
     NSDictionary *headers = [self _URLRequestHeadersForCommand:command];
 
     NSString *requestMethod = command.httpMethod;

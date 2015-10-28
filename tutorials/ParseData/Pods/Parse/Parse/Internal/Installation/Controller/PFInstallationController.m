@@ -39,10 +39,9 @@
 #pragma mark - Fetch
 ///--------------------------------------
 
-- (BFTask *)fetchObjectAsync:(PFObject *)object withSessionToken:(nullable NSString *)sessionToken {
-    PFInstallation *installation = (PFInstallation *)object;
+- (BFTask *)fetchObjectAsync:(PFInstallation *)object withSessionToken:(nullable NSString *)sessionToken {
     @weakify(self);
-    return [[[self.objectController fetchObjectAsync:installation
+    return [[[self.objectController fetchObjectAsync:object
                                     withSessionToken:sessionToken] continueWithBlock:^id(BFTask *task) {
         @strongify(self);
 
@@ -52,29 +51,28 @@
         }
 
         if (task.faulted && task.error.code == kPFErrorObjectNotFound) {
-            @synchronized (installation.lock) {
+            @synchronized (object.lock) {
                 // Retry the fetch as a save operation because this Installation was deleted on the server.
                 // We always want [currentInstallation fetch] to succeed.
-                installation.objectId = nil;
-                [installation _markAllFieldsDirty];
-                return [[installation saveAsync:nil] continueWithSuccessResult:installation];
+                object.objectId = nil;
+                [object _markAllFieldsDirty];
+                return [[object saveAsync:nil] continueWithSuccessResult:object];
             }
         }
         return task;
     }] continueWithBlock:^id(BFTask *task) {
         @strongify(self);
         // Roll-forward the previous task.
-        return [[self.currentInstallationController saveCurrentObjectAsync:installation] continueWithResult:task];
+        return [[self.currentInstallationController saveCurrentObjectAsync:object] continueWithResult:task];
     }];
 }
 
-- (BFTask *)processFetchResultAsync:(NSDictionary *)result forObject:(PFObject *)object {
-    PFInstallation *installation = (PFInstallation *)object;
+- (BFTask *)processFetchResultAsync:(NSDictionary *)result forObject:(PFInstallation *)object {
     @weakify(self);
-    return [[self.objectController processFetchResultAsync:result forObject:installation] continueWithBlock:^id(BFTask *task) {
+    return [[self.objectController processFetchResultAsync:result forObject:object] continueWithBlock:^id(BFTask *task) {
         @strongify(self);
         // Roll-forward the previous task.
-        return [[self.currentInstallationController saveCurrentObjectAsync:installation] continueWithResult:task];
+        return [[self.currentInstallationController saveCurrentObjectAsync:object] continueWithResult:task];
     }];
 }
 

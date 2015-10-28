@@ -12,7 +12,10 @@
 /*!
  Represents an event that can be subscribed to by multiple observers.
  */
-@interface PFMulticastDelegate : NSObject
+@interface PFMulticastDelegate : NSObject {
+@private
+    NSMutableArray *callbacks;
+}
 
 /*!
  Subscribes a block for callback.

@@ -109,7 +109,7 @@ static BOOL PFObjectValueIsKindOfMutableContainerClass(id object) {
     NSMutableSet *_availableKeys; // TODO: (nlutsenko) Maybe decouple this further.
 
     // TODO (grantland): Derive this off the EventuallyPins as opposed to +/- count.
-    NSUInteger _deletingEventuallyCount;
+    int _deletingEventually;
 
     // A dictionary that maps id (objects) => PFJSONCache
     NSMutableDictionary *hashedObjectsCache;
@@ -263,7 +263,6 @@ static BOOL PFObjectValueIsKindOfMutableContainerClass(id object) {
 
     } else if ([node isKindOfClass:[PFObject class]]) {
         PFObject *object = (PFObject *)node;
-        NSDictionary *toSearch = nil;
 
         @synchronized ([object lock]) {
             // Check for cycles of new objects.  Any such cycle means it will be
@@ -289,19 +288,18 @@ static BOOL PFObjectValueIsKindOfMutableContainerClass(id object) {
             // Recurse into this object's children looking for dirty children.
             // We only need to look at the child object's current estimated data,
             // because that's the only data that might need to be saved now.
-            toSearch = [object->_estimatedData.dictionaryRepresentation copy];
+            [self collectDirtyChildren:object->_estimatedData.dictionaryRepresentation
+                              children:dirtyChildren
+                                 files:dirtyFiles
+                                  seen:seen
+                               seenNew:seenNew
+                           currentUser:currentUser];
+
+            if ([object isDirty:NO]) {
+                [dirtyChildren addObject:object];
+            }
         }
 
-        [self collectDirtyChildren:toSearch
-                          children:dirtyChildren
-                             files:dirtyFiles
-                              seen:seen
-                           seenNew:seenNew
-                       currentUser:currentUser];
-
-        if ([object isDirty:NO]) {
-            [dirtyChildren addObject:object];
-        }
     } else if ([node isKindOfClass:[PFFile class]]) {
         PFFile *file = (PFFile *)node;
         if (!file.url) {
@@ -958,33 +956,25 @@ static BOOL PFObjectValueIsKindOfMutableContainerClass(id object) {
  */
 - (NSDictionary *)RESTDictionaryWithObjectEncoder:(PFEncoder *)objectEncoder
                                 operationSetUUIDs:(NSArray **)operationSetUUIDs {
-    NSArray *operationQueue = nil;
-    PFObjectState *state = nil;
-    NSUInteger deletingEventuallyCount = 0;
     @synchronized (lock) {
         [self checkForChangesToMutableContainers];
-        state = self._state;
-        operationQueue = [[NSArray alloc] initWithArray:operationSetQueue copyItems:YES];
-        deletingEventuallyCount = _deletingEventuallyCount;
+        PFObjectState *state = self._state;
+        return [self RESTDictionaryWithObjectEncoder:objectEncoder
+                                   operationSetUUIDs:operationSetUUIDs
+                                               state:state
+                                   operationSetQueue:operationSetQueue];
     }
-
-    return [self RESTDictionaryWithObjectEncoder:objectEncoder
-                               operationSetUUIDs:operationSetUUIDs
-                                           state:state
-                               operationSetQueue:operationQueue
-                         deletingEventuallyCount:deletingEventuallyCount];
 }
 
 - (NSDictionary *)RESTDictionaryWithObjectEncoder:(PFEncoder *)objectEncoder
                                 operationSetUUIDs:(NSArray **)operationSetUUIDs
                                             state:(PFObjectState *)state
-                                operationSetQueue:(NSArray *)queue
-                          deletingEventuallyCount:(NSUInteger)deletingEventuallyCount {
+                                operationSetQueue:(NSArray *)queue {
     NSMutableDictionary *result = [[state dictionaryRepresentationWithObjectEncoder:objectEncoder] mutableCopy];
     result[PFObjectClassNameRESTKey] = state.parseClassName;
     result[PFObjectCompleteRESTKey] = @(state.complete);
 
-    result[PFObjectIsDeletingEventuallyRESTKey] = @(deletingEventuallyCount);
+    result[PFObjectIsDeletingEventuallyRESTKey] = @(_deletingEventually);
 
     // TODO (hallucinogen): based on some note from Android's toRest, we'll need to put this
     // stuff somewhere else
@@ -1076,7 +1066,7 @@ static BOOL PFObjectValueIsKindOfMutableContainerClass(id object) {
                 return;
             }
             if ([key isEqualToString:PFObjectIsDeletingEventuallyRESTKey]) {
-                _deletingEventuallyCount = [obj unsignedIntegerValue];
+                _deletingEventually = [obj intValue];
                 return;
             }
 
@@ -2030,7 +2020,7 @@ static BOOL PFObjectValueIsKindOfMutableContainerClass(id object) {
             return [self _validateDeleteAsync];
         }] continueWithSuccessBlock:^id(BFTask *task) {
             @synchronized (lock) {
-                _deletingEventuallyCount += 1;
+                _deletingEventually += 1;
 
                 PFOfflineStore *store = [Parse _currentManager].offlineStore;
                 BFTask *updateDataTask = store ? [store updateDataForObjectAsync:self] : [BFTask taskWithResult:nil];

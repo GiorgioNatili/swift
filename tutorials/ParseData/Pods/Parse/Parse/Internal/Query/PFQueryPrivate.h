@@ -42,9 +42,13 @@ extern NSString *const PFQueryOptionKeyRegexOptions;
 @class BFTask PF_GENERIC(__covariant BFGenericType);
 @class PFObject;
 
-@interface PFQuery (Private)
+@interface PFQuery ()
 
 @property (nonatomic, strong, readonly) PFQueryState *state;
+
+@end
+
+@interface PFQuery (Private)
 
 - (instancetype)whereRelatedToObject:(PFObject *)parent fromKey:(NSString *)key;
 - (void)redirectClassNameForKey:(NSString *)key;

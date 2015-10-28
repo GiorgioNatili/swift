@@ -34,7 +34,8 @@
 #import "PFMultiProcessFileLockController.h"
 #import "PFHash.h"
 
-#if TARGET_OS_IOS
+#if PARSE_IOS_ONLY
+#import "PFNetworkActivityIndicatorManager.h"
 #import "PFProduct.h"
 #endif
 
@@ -45,6 +46,10 @@ static NSString *parseServer_;
 + (void)initialize {
     if (self == [PFInternalUtils class]) {
         [self setParseServer:kPFParseServer];
+
+#if PARSE_IOS_ONLY
+        [PFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+#endif
     }
 }
 
@@ -275,13 +280,11 @@ static NSString *parseServer_;
 @implementation PFJSONCacheItem
 
 - (instancetype)initWithObject:(id)object {
-    self = [super init];
-    if (!self) return nil;
-
-    NSObject *encoded = [[PFPointerOrLocalIdObjectEncoder objectEncoder] encodeObject:object];
-    NSData *jsonData = [PFJSONSerialization dataFromJSONObject:encoded];
-    _hashValue = PFMD5HashFromData(jsonData);
-
+    if (self = [super init]) {
+        NSObject *encoded = [[PFPointerOrLocalIdObjectEncoder objectEncoder] encodeObject:object];
+        NSData *jsonData = [PFJSONSerialization dataFromJSONObject:encoded];
+        _hashValue = PFMD5HashFromData(jsonData);
+    }
     return self;
 }
 

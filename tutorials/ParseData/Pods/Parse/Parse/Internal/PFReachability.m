@@ -9,8 +9,6 @@
 
 #import "PFReachability.h"
 
-#import <SystemConfiguration/SystemConfiguration.h>
-
 #import "PFAssert.h"
 #import "PFConstants.h"
 #import "PFLogging.h"

@@ -10,10 +10,6 @@
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
 
-#import <Parse/PFConstants.h>
-
-PF_WATCH_UNAVAILABLE_WARNING
-
 /*!
  * The PFPaymentTransactionObserver listens to the payment queue, processes a payment by running business logic,
  * and completes the transaction. It's a complex interaction and best explained as follows:
@@ -23,7 +19,7 @@ PF_WATCH_UNAVAILABLE_WARNING
  * 4) when the business logic finishes, the observer completes the transaction. If the business logic does not finish, the transaction is not completed, which means the user does not get charged,
  * 5) after the transaction finishes, custom UI logic is run.
  */
-PF_WATCH_UNAVAILABLE @interface PFPaymentTransactionObserver : NSObject <SKPaymentTransactionObserver>
+@interface PFPaymentTransactionObserver : NSObject <SKPaymentTransactionObserver>
 
 - (void)handle:(NSString *)productIdentifier block:(void (^)(SKPaymentTransaction *))block;
 - (void)handle:(NSString *)productIdentifier runOnceBlock:(void (^)(NSError *))block;

@@ -8,10 +8,7 @@
  */
 
 #import <Foundation/Foundation.h>
-
-#import <Parse/PFConstants.h>
-
-PF_WATCH_UNAVAILABLE_WARNING
+#import <SystemConfiguration/SystemConfiguration.h>
 
 @class PFReachability;
 
@@ -29,7 +26,7 @@ typedef NS_ENUM(uint8_t, PFReachabilityState) {
 
 @end
 
-PF_WATCH_UNAVAILABLE @interface PFReachability : NSObject
+@interface PFReachability : NSObject
 
 @property (nonatomic, assign, readonly) PFReachabilityState currentState;
 

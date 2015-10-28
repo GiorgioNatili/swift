@@ -96,7 +96,7 @@
                  } comparisonBlock:^NSPredicate *(NSComparisonPredicate *comparison) {
                      NSPredicateOperatorType newType;
                      NSComparisonPredicateModifier newModifier = comparison.comparisonPredicateModifier;
-                     SEL customSelector = NULL;
+                     SEL customSelector;
 
                      switch (comparison.predicateOperatorType) {
                          case NSEqualToPredicateOperatorType: {
