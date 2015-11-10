@@ -159,6 +159,8 @@
 		59E0703F1AEBA0C9009D6924 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Natili, Giorgio";
 				TargetAttributes = {
@@ -411,6 +413,7 @@
 				59E0706B1AEBA0C9009D6924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59E0706C1AEBA0C9009D6924 /* Build configuration list for PBXNativeTarget "LoginSeguesTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +422,7 @@
 				59E0706E1AEBA0C9009D6924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
