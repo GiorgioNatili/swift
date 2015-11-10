@@ -162,6 +162,8 @@
 		6B1EF9381B8BF46500F595A7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = io.webplatform.swift;
 				TargetAttributes = {
@@ -419,6 +421,7 @@
 				6B1EF9641B8BF46600F595A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B1EF9651B8BF46600F595A7 /* Build configuration list for PBXNativeTarget "HelloCoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +430,7 @@
 				6B1EF9671B8BF46600F595A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

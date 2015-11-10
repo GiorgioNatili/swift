@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        var rvc:SWRevealViewController! = self.revealViewController()
+        let rvc:SWRevealViewController! = self.revealViewController()
         
         if (( rvc ) != nil) {
             

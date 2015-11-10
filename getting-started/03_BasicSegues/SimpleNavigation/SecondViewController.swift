@@ -27,7 +27,7 @@ class SecondViewController: UIViewController {
         
         let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             
-            println("\(alertViewControllerTextField?.text)")
+            print("\(alertViewControllerTextField?.text)")
             self.textField.text = alertViewControllerTextField?.text
             
         })

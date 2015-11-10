@@ -1,2 +1,0 @@
-use_frameworks!
-pod "SwiftyJSON", "~> 2.1.2"

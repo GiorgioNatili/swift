@@ -162,6 +162,8 @@
 		609C39331948014F000BBBBE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Lee Brimelow";
 				TargetAttributes = {
@@ -411,6 +413,7 @@
 				609C395919480150000BBBBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		609C395A19480150000BBBBE /* Build configuration list for PBXNativeTarget "GiantsTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +422,7 @@
 				609C395C19480150000BBBBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

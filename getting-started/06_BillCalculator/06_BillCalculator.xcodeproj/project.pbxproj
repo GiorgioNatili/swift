@@ -194,6 +194,8 @@
 		6B76FE2B1B3EB9090073A4A9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Giorgio Natili";
 				TargetAttributes = {
@@ -459,6 +461,7 @@
 				6B76FE571B3EB90A0073A4A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B76FE581B3EB90A0073A4A9 /* Build configuration list for PBXNativeTarget "06_BillCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +470,7 @@
 				6B76FE5A1B3EB90A0073A4A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

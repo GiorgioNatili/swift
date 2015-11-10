@@ -15,7 +15,7 @@ extension UIImage {
         let imgRect = CGRect(origin: CGPointZero, size: self.size)
         
         UIGraphicsBeginImageContext(imgRect.size)
-        var context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()
         
         CGContextAddEllipseInRect(context, imgRect)
         CGContextClip(context)

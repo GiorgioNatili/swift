@@ -159,6 +159,8 @@
 		59AABD291A98A05B00448B8C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Natili, Giorgio";
 				TargetAttributes = {

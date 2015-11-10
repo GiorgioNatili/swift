@@ -189,6 +189,8 @@
 		6BB118B21A6F2C7D00BE5913 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Giorgio Natili";
 				TargetAttributes = {

@@ -50,11 +50,11 @@ class MHEURLProtocol: NSURLProtocol {
   
   override class func canInitWithRequest(request: NSURLRequest) -> Bool {
     
-    println("Request #\(requestCount++): URL = \(request.URL.absoluteString)\n")
+    print("Request #\(requestCount++): URL = \(request.URL!.absoluteString)\n")
     
     if recording {
       
-      pushDomain(request.URL.absoluteString!)
+      pushDomain(request.URL!.absoluteString)
       
       // Avoid unnecessary requests
       if NSURLProtocol.propertyForKey(protocol_key, inRequest: request) != nil {
@@ -77,9 +77,9 @@ class MHEURLProtocol: NSURLProtocol {
   
   override func startLoading() {
     
-    println("Serving response from NSURLConnection")
+    print("Serving response from NSURLConnection")
     
-    var newRequest = self.request.mutableCopy() as NSMutableURLRequest
+    var newRequest = self.request.mutableCopy() as! NSMutableURLRequest
     NSURLProtocol.setProperty(true, forKey: protocol_key, inRequest: newRequest)
     self.connection = NSURLConnection(request: newRequest, delegate: self)
     
@@ -106,7 +106,7 @@ class MHEURLProtocol: NSURLProtocol {
   
   class func domainList() -> [String] {
     
-    return currentDomains.allObjects as [String]
+    return currentDomains.allObjects as! [String]
     
   }
   

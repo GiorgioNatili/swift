@@ -14,7 +14,7 @@
 			<key>Key</key>
 			<string>coredataEnabled</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 	</array>
 </dict>

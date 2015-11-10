@@ -44,26 +44,26 @@ class ViewController: UIViewController, UITableViewDataSource {
         cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
             
             let buddy = buddies[indexPath.row] as! Friend
-            cell.textLabel!.text = buddy.valueForKey("name") as? String
+            cell!.textLabel!.text = buddy.valueForKey("name") as? String
             
-            return cell
+            return cell!
     }
 
     
     // MARK: user interaction
     @IBAction func addFriend(sender: AnyObject) {
         
-        addFriend(name.text, age: age.text.toInt()!)
+        addFriend(name.text!, age: Int(age.text!)!)
         
     }
     
     
     @IBAction func sortBuddies(sender: AnyObject) {
         
-        buddies.sort({(a, b) -> Bool in
+        buddies.sortInPlace({(a, b) -> Bool in
         
             return (a as! Friend).name < (b as! Friend).name
         
@@ -81,20 +81,19 @@ class ViewController: UIViewController, UITableViewDataSource {
         if let context = appDelegate.managedObjectContext {
             
             let fetchRequest = NSFetchRequest(entityName:"Friend")
-            var error: NSError?
             
-            let fetchedResults = context.executeFetchRequest(fetchRequest, error: &error) as? [NSManagedObject]
+            let fetchedResults = try! context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
 
             if let friends = fetchedResults {
                 
                 buddies = friends
                 
-                println(friends.count)
+                print(friends.count)
                 
                 for friend in friends {
                     
                     let val = (friend as! Friend)
-                    println("I have a buddy named \(val.name) and his/her age is \(val.age)")
+                    print("I have a buddy named \(val.name) and his/her age is \(val.age)")
                     
                 }
                 
@@ -119,13 +118,16 @@ class ViewController: UIViewController, UITableViewDataSource {
             friend.setValue(age, forKey: "age")
             
             var error: NSError?
-            if !context.save(&error) {
+            do {
+                try context.save()
+            } catch let error1 as NSError {
+                error = error1
                 
-                println("Could not save \(error), \(error?.userInfo)")
+                print("Could not save \(error), \(error?.userInfo)")
             
             }
 
-            println(friend)
+            print(friend)
             
             buddies.append(friend)
             friends.reloadData()

@@ -13,7 +13,7 @@ import SwiftyJSON
 class TranslationService: NSObject {
 
     private let URL:String = "https://translate.yandex.net/api/v1.5/tr.json/translate?"
-    private let API_KEY = "API_KEY"
+    private let API_KEY = "trnsl.1.1.20151012T221923Z.0fcc3aa65e75980a.7f601ba07f33f407e2c3da9e383bc31ebf6e1343"
     private let LANGS:String = "en-it"
     
     private var sentence:String

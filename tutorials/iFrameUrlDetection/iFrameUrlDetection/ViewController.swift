@@ -41,7 +41,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
     // MARK: NSURLRequest handlers
     private func handleRequest(request: NSURLRequest){
         
-        UIApplication.sharedApplication().openURL(NSURL(string: request.URL.absoluteString!)!)
+        UIApplication.sharedApplication().openURL(NSURL(string: request.URL!.absoluteString)!)
         
     }
   
@@ -55,18 +55,18 @@ class ViewController: UIViewController, UIWebViewDelegate {
     }
     
     // MARK: UIWebViewDelegate implementation
-    func webView(webView: UIWebView!, didFailLoadWithError error: NSError!) {
-        println("Webview fail with error \(error.code)");
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        print("Webview fail with error \(error!.code)");
     }
     
-    func webView(webView: UIWebView!, shouldStartLoadWithRequest request: NSURLRequest!, navigationType: UIWebViewNavigationType) -> Bool {
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
         var externalContent:Bool
         var value = true
         
         if navigationType == .LinkClicked{
           
-            externalContent = !contains(MHEURLProtocol.domainList(), request.URL.absoluteString!)
+            externalContent = !MHEURLProtocol.domainList().contains(request.URL!.absoluteString)
             value = externalContent
             
             if externalContent {
@@ -75,9 +75,9 @@ class ViewController: UIViewController, UIWebViewDelegate {
                 
             }
             
-            println(request.URL.absoluteString)
-            println(request.mainDocumentURL?.absoluteString)
-            println("externalContent ------> \(externalContent)")
+            print(request.URL!.absoluteString)
+            print(request.mainDocumentURL?.absoluteString)
+            print("externalContent ------> \(externalContent)")
             
         }
         
@@ -85,16 +85,16 @@ class ViewController: UIViewController, UIWebViewDelegate {
         
     }
     
-    func webViewDidStartLoad(webView: UIWebView!) {
+    func webViewDidStartLoad(webView: UIWebView) {
       
       // println("Webview started Loading")
       MHEURLProtocol.switchRecording(true)
       
     }
     
-    func webViewDidFinishLoad(webView: UIWebView!) {
+    func webViewDidFinishLoad(webView: UIWebView) {
         
-      println("\n ******** \n Webview did finish load \n \(webView.request?.URL.absoluteURL) \n ******** \n")
+      print("\n ******** \n Webview did finish load \n \(webView.request?.URL!.absoluteURL) \n ******** \n")
       
       if (timer != nil) {
         

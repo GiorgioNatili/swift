@@ -16,7 +16,7 @@ class DataManagerFactory: NSObject {
     
         let defaults = NSUserDefaults.standardUserDefaults()
         
-        let coreData:Bool = defaults.valueForKey("coreData") as! Bool
+        let coreData:Bool = defaults.valueForKey("coredataEnabled") as! Bool
         
         if coreData {
             
