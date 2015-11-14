@@ -13,10 +13,18 @@ class GroceryItem: NSObject {
     var name:String
     var category:Int
     
+    private let categories:[String] = ["vegetables", "meat", "wine"]
+    
     override init(){
         
         self.name = ""
         self.category = Int(arc4random_uniform(3))
+        
+    }
+    
+    func categoryIcon() -> String {
+        
+        return categories[category]
         
     }
     

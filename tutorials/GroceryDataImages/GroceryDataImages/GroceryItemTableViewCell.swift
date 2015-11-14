@@ -33,6 +33,7 @@ class GroceryItemTableViewCell: UITableViewCell {
     private func updateValues() {
         
         name.text = currentData.name
+        icon.image = UIImage(named: currentData.categoryIcon())
         
     }
     
