@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="34D-aP-Ley">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main Table View Controller-->
@@ -51,22 +52,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IM-Iz-qxp">
-                                <rect key="frame" x="69" y="99" width="50" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IM-Iz-qxp">
+                                <rect key="frame" x="20" y="99" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHp-0r-e3b">
-                                <rect key="frame" x="152" y="96" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U2T-yd-fvq">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2T-yd-fvq">
                                 <rect key="frame" x="0.0" y="384" width="600" height="216"/>
                             </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHp-0r-e3b">
+                                <rect key="frame" x="105" y="95" width="475" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="475" id="Khc-bb-vUf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Khc-bb-vUf"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1mO-a7-aCY" firstAttribute="top" secondItem="U2T-yd-fvq" secondAttribute="bottom" id="11h-dV-iCP"/>
+                            <constraint firstItem="hHp-0r-e3b" firstAttribute="centerY" secondItem="6IM-Iz-qxp" secondAttribute="centerY" id="F2v-5c-yaX"/>
+                            <constraint firstItem="U2T-yd-fvq" firstAttribute="leading" secondItem="cxL-lY-e21" secondAttribute="leadingMargin" constant="-20" id="UTI-DZ-5BN"/>
+                            <constraint firstItem="6IM-Iz-qxp" firstAttribute="top" secondItem="kbK-HC-9F6" secondAttribute="bottom" constant="35" id="VaI-qv-TGj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hHp-0r-e3b" secondAttribute="trailing" id="YLi-yu-bdB"/>
+                            <constraint firstItem="hHp-0r-e3b" firstAttribute="leading" secondItem="6IM-Iz-qxp" secondAttribute="trailing" constant="35" id="gAd-RR-vJW"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="6IM-Iz-qxp" secondAttribute="leading" id="kdR-2C-aXx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="U2T-yd-fvq" secondAttribute="trailing" constant="-20" id="kuu-xk-pdt"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bru-r0-r1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
