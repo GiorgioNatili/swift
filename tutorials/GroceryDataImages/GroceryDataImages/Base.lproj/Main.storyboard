@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rl9-KO-Tg5" customClass="GroceryItemTableViewCell" customModule="GroceryDataImages" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroceryItemCell" id="Rl9-KO-Tg5" customClass="GroceryItemTableViewCell" customModule="GroceryDataImages" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rl9-KO-Tg5" id="fGt-2N-Qac">
@@ -42,6 +42,10 @@
                                         <constraint firstAttribute="leadingMargin" secondItem="fUD-dT-6zZ" secondAttribute="leading" id="oAs-ir-M9G"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icon" destination="B4P-52-rvA" id="LIE-RX-hxH"/>
+                                    <outlet property="name" destination="fUD-dT-6zZ" id="gYP-TD-PNV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

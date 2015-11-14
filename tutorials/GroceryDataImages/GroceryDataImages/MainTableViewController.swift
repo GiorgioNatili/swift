@@ -10,6 +10,9 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
+    // Temporary fake data
+    private let items:[String] = ["one", "two", "three"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,23 +32,24 @@ class MainTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("GroceryItemCell", forIndexPath: indexPath)
 
         // Configure the cell...
+        (cell as! GroceryItemTableViewCell).name.text = items[indexPath.row]
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

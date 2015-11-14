@@ -10,6 +10,10 @@ import UIKit
 
 class GroceryItemTableViewCell: UITableViewCell {
 
+    // MARK: UI items
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var icon: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
