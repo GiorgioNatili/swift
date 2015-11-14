@@ -84,6 +84,46 @@ class DataManager {
         
     }
     
+    func removeItem(itemName:String){
+        
+        let context = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName:"GroceryItem")
+        
+        do {
+            
+            var toDelete:GroceryItem!
+            let fetchedResults = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            if let items = fetchedResults {
+                
+                for item in items {
+                    
+                    let val = (item as! GroceryItem)
+                    
+                    if val.name == itemName {
+                        
+                        toDelete = val
+                        break
+                        
+                    }
+                    
+                }
+                
+                context.deleteObject(toDelete)
+                try context.save()
+                
+            }
+            
+            
+        } catch let error as NSError {
+            
+            // Handle error
+            print("Something went wrong \(error.userInfo)")
+            
+        }
+        
+    }
+    
     private func notifyUpdates(status:DataStatus) {
         
         switch status {
