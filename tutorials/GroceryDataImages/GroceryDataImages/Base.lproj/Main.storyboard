@@ -56,7 +56,7 @@
                     <navigationItem key="navigationItem" id="FxR-6a-XL5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fOi-VB-yYi">
                             <connections>
-                                <segue destination="nd6-f5-g03" kind="show" id="jSA-u1-0TL"/>
+                                <segue destination="nd6-f5-g03" kind="show" identifier="addItemSegue" id="jSA-u1-0TL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
