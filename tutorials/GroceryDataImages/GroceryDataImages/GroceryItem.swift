@@ -6,25 +6,27 @@
 //  Copyright © 2015 io.webplatform.swift. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import CoreData
 
-class GroceryItem: NSObject {
+@objc(GroceryItem)
+class GroceryItem: NSManagedObject {
 
-    var name:String
-    var category:Int
-    
     private let categories:[String] = ["vegetables", "meat", "wine"]
     
-    override init(){
+    init(context: NSManagedObjectContext) {
+        
+        let entity = NSEntityDescription.entityForName("GroceryItem", inManagedObjectContext: context)!
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.name = ""
-        self.category = Int(arc4random_uniform(3))
+        self.category = NSNumber(unsignedInt: arc4random_uniform(3))
         
     }
-    
+
     func categoryIcon() -> String {
         
-        return categories[category]
+        return categories[Int(category!)]
         
     }
     

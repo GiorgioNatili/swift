@@ -22,26 +22,27 @@ class MainTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let one = GroceryItem()
-        one.name = "Orange"
-        
-        items.append(one)
-        
-        let two = GroceryItem()
-        two.name = "Apple"
-        
-        items.append(two)
-        
-        let three = GroceryItem()
-        three.name = "Banana"
-        
-        items.append(three)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onGroceryItemsUpdated:", name: "groceryItemsUpdated", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onGroceryItemsError:", name: "groceryItemsError", object: nil)
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Notification
+    func onGroceryItemsUpdated(notification:NSNotification) {
+        
+        print("I got some data back")
+        
+    }
+    
+    func onGroceryItemsError(notification:NSNotification) {
+        
+        print("I got some error back :(((")
+        
     }
 
     // MARK: - Table view data source

@@ -26,6 +26,8 @@
 		6B41D5F31BF701A600D9E2D4 /* wine@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5F01BF701A600D9E2D4 /* wine@1x.png */; settings = {ASSET_TAGS = (); }; };
 		6B41D5F41BF701A600D9E2D4 /* wine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5F11BF701A600D9E2D4 /* wine@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6B41D5F51BF701A600D9E2D4 /* wine@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5F21BF701A600D9E2D4 /* wine@3x.png */; settings = {ASSET_TAGS = (); }; };
+		6B41D5F71BF706F200D9E2D4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5F61BF706F200D9E2D4 /* DataManager.swift */; settings = {ASSET_TAGS = (); }; };
+		6B41D5F91BF707B000D9E2D4 /* GroceryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5F81BF707B000D9E2D4 /* GroceryItem+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		6B41D5F01BF701A600D9E2D4 /* wine@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wine@1x.png"; sourceTree = "<group>"; };
 		6B41D5F11BF701A600D9E2D4 /* wine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wine@2x.png"; sourceTree = "<group>"; };
 		6B41D5F21BF701A600D9E2D4 /* wine@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wine@3x.png"; sourceTree = "<group>"; };
+		6B41D5F61BF706F200D9E2D4 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		6B41D5F81BF707B000D9E2D4 /* GroceryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GroceryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 		6B41D5D91BF6F80700D9E2D4 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				6B41D5F61BF706F200D9E2D4 /* DataManager.swift */,
+				6B41D5F81BF707B000D9E2D4 /* GroceryItem+CoreDataProperties.swift */,
 				6B41D5DA1BF6F81E00D9E2D4 /* GroceryItem.swift */,
 			);
 			name = model;
@@ -317,6 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B41D5AD1BF6E7C200D9E2D4 /* GroceryDataImages.xcdatamodeld in Sources */,
+				6B41D5F91BF707B000D9E2D4 /* GroceryItem+CoreDataProperties.swift in Sources */,
+				6B41D5F71BF706F200D9E2D4 /* DataManager.swift in Sources */,
 				6B41D5D61BF6EA4500D9E2D4 /* MainTableViewController.swift in Sources */,
 				6B41D5D81BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift in Sources */,
 				6B41D5DB1BF6F81E00D9E2D4 /* GroceryItem.swift in Sources */,
@@ -547,6 +555,7 @@
 				6B41D5CE1BF6E7C200D9E2D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B41D5CF1BF6E7C200D9E2D4 /* Build configuration list for PBXNativeTarget "GroceryDataImagesTests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +564,7 @@
 				6B41D5D11BF6E7C200D9E2D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B41D5D21BF6E7C200D9E2D4 /* Build configuration list for PBXNativeTarget "GroceryDataImagesUITests" */ = {
 			isa = XCConfigurationList;
@@ -563,6 +573,7 @@
 				6B41D5D41BF6E7C200D9E2D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
