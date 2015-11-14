@@ -70,6 +70,20 @@ class TodoManager: NSObject {
         }
     }
     
+    func add(addTodoText: String) {
+        let todoInput = PFObject(className:"Todo")
+        todoInput.setObject(addTodoText, forKey: "title")
+        todoInput.setObject("", forKey: "description")
+        todoInput.setObject(false, forKey: "done")
+        todoInput.saveInBackgroundWithBlock{ (succeeded, error) -> Void in
+            if succeeded {
+                self.reset()
+                self.fetch()
+            }
+            
+        }
+    }
+    
     var list:[Todo] {
         
         get {
@@ -80,4 +94,7 @@ class TodoManager: NSObject {
         
     }
     
+    func reset() {
+        self.todos = []
+    }
 }

@@ -16,11 +16,11 @@
 		6BB2CB1E1BDED909006E8593 /* ParseDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2CB1D1BDED909006E8593 /* ParseDataUITests.swift */; };
 		6BF3F5291BDF0CD0002B43C6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF3F5271BDF0CD0002B43C6 /* Bolts.framework */; };
 		6BF3F52A1BDF0CD0002B43C6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF3F5281BDF0CD0002B43C6 /* Parse.framework */; };
-		6BF3F52C1BE010BB002B43C6 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3F52B1BE010BB002B43C6 /* MainTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		6BF3F52E1BE0114E002B43C6 /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3F52D1BE0114E002B43C6 /* TodoManager.swift */; settings = {ASSET_TAGS = (); }; };
-		6BF3F5311BE0129F002B43C6 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3F52F1BE0129F002B43C6 /* Todo+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		6BF3F5321BE0129F002B43C6 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3F5301BE0129F002B43C6 /* Todo.swift */; settings = {ASSET_TAGS = (); }; };
-		E122CC611466F8E7B994919B /* Pods_ParseData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2817305C80F63FA96060BFA9 /* Pods_ParseData.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6BF3F52C1BE010BB002B43C6 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3F52B1BE010BB002B43C6 /* MainTableViewController.swift */; };
+		6BF3F52E1BE0114E002B43C6 /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3F52D1BE0114E002B43C6 /* TodoManager.swift */; };
+		6BF3F5311BE0129F002B43C6 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3F52F1BE0129F002B43C6 /* Todo+CoreDataProperties.swift */; };
+		6BF3F5321BE0129F002B43C6 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3F5301BE0129F002B43C6 /* Todo.swift */; };
+		E122CC611466F8E7B994919B /* Pods_ParseData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2817305C80F63FA96060BFA9 /* Pods_ParseData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
