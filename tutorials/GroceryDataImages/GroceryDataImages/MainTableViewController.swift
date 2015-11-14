@@ -61,7 +61,7 @@ class MainTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("GroceryItemCell", forIndexPath: indexPath)
 
         // Configure the cell...
-        (cell as! GroceryItemTableViewCell).name.text = items[indexPath.row].name
+        (cell as! GroceryItemTableViewCell).data = items[indexPath.row]
 
         return cell
     }

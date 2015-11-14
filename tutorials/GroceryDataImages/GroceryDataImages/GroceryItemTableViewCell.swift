@@ -14,6 +14,10 @@ class GroceryItemTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var icon: UIImageView!
     
+    // MARK: data
+    private var currentData:GroceryItem!
+    
+    // MARK: UITableViewCell lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,6 +27,31 @@ class GroceryItemTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    // MARK: rendering data
+    private func updateValues() {
+        
+        name.text = currentData.name
+        
+    }
+    
+    // MARK: public properties
+    var data:GroceryItem {
+        
+        get {
+            
+            return currentData
+            
+        }
+
+        set {
+
+            currentData = newValue
+            updateValues()
+    
+        }
+        
     }
 
 }
