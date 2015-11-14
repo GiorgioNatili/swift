@@ -6,11 +6,11 @@ var str = "Hello, playground"
 
 let http404Error = (404, "Not Found")
 
-println(http404Error.0)
-println(http404Error.1)
+print(http404Error.0)
+print(http404Error.1)
 
 let (errorCode, _) = http404Error
-println(errorCode)
+print(errorCode)
 
 // Tuples are particularly useful as the return values of functions
 // https://developer.apple.com/library/prerelease/mac/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html

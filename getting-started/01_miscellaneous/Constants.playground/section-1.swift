@@ -33,7 +33,7 @@ class Person{
         index = 3
     }
 
-    println(messages[index] + ", " + name + " " + surname)
+    print(messages[index] + ", " + name + " " + surname)
   
   }
 

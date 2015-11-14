@@ -23,15 +23,15 @@ var aNumber = 7
 switch aNumber
 {
 case 0...5:
-    println("This number is between 0 and 5")
+    print("This number is between 0 and 5")
     fallthrough
 case 6...10:
-    println("This number is between 6 and 10")
+    print("This number is between 6 and 10")
     fallthrough
 case aNumber % 2:
-    println("it's an odd number")
+    print("it's an odd number")
 default:
-    println("I dunno in which range is this number")
+    print("I dunno in which range is this number")
 }
 
 // Dictionary
@@ -39,20 +39,20 @@ var dict:[String: Int] = ["giorgio": 74, "isaac": 82, "jonathan": 94]
 
 for (key, value) in dict{
     
-    println(key)
+    print(key)
     
 }
 
 for (value) in dict.values{
     
-    println(value)
+    print(value)
     
 }
 
 
 // Array excercise
 var letters = [1, 2, 3, 7, 8]
-letters.append("9".toInt()!)
+letters.append(Int("9")!)
 
 var range:Range = 4...6
 for index in range {
@@ -63,7 +63,7 @@ letters
 // Functions arguments
 func wishYou(name:String, holidayName holiday:String){
     
-    println("Dear \(name), my best wishes for the next \(holiday) holiday!")
+    print("Dear \(name), my best wishes for the next \(holiday) holiday!")
     
 }
 
@@ -72,7 +72,7 @@ wishYou("giorgio", holidayName: "xmas")
 class MyFunClass {
     
     func hello(name: String, age: Int, location: String) {
-        println("Hello \(name). I live in \(location) too. When is your \(age + 1)th birthday?")
+        print("Hello \(name). I live in \(location) too. When is your \(age + 1)th birthday?")
     }
     
 }
@@ -82,13 +82,13 @@ test.hello("giorgio", age: 5, location: "Rome")
 // functions overload
 func helloWorld(){
     
-    println("Hello world")
+    print("Hello world")
     
 }
 
 func helloWorld(from:String){
     
-    println("Hello world by \(from)")
+    print("Hello world by \(from)")
     
 }
 
@@ -147,7 +147,7 @@ class Ball{
     
     init(){
         
-        println("Ball initialized")
+        print("Ball initialized")
         
     }
 }
@@ -156,7 +156,7 @@ class BouncingBall:Ball{
     
     override init(){
         
-        println("Bouncing ball initialized")
+        print("Bouncing ball initialized")
         
     }
     
@@ -169,7 +169,7 @@ class Teacher{
     var fullname:String {
         get { return name + " " + surname}
         set(value){
-            var data = split(value) {$0 == " "}
+            var data = value.componentsSeparatedByString(" ")
             name = data[0]
             surname = data[1]
         }

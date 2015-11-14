@@ -7,7 +7,7 @@ for i in 1...10 {
     evens.append(i)
   }
 }
-println(evens)
+print(evens)
 
 
 
@@ -17,7 +17,7 @@ func isEven(number:Int) -> Bool {
   return number % 2 == 0
 }
 evens = Array(1...10).filter(isEven)
-println(evens)
+print(evens)
 
 
 
@@ -25,14 +25,14 @@ println(evens)
 
 // functional with closure
 evens = Array(1...10).filter { (number) in number % 2 == 0 }
-println(evens)
+print(evens)
 
 
 
 
 // functional with shorthand closure
 evens = Array(1...10).filter { $0 % 2 == 0 }
-println(evens)
+print(evens)
 
 
 
@@ -49,7 +49,7 @@ func myFilter<T>(source: [T], predicate:(T) -> Bool) -> [T] {
 }
 
 evens = myFilter(Array(1...10)) { $0 % 2 == 0 }
-println(evens)
+print(evens)
 
 
 

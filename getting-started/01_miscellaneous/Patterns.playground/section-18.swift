@@ -1,4 +1,4 @@
-extension Train: Printable {
+extension Train: CustomStringConvertible {
     
     var description: String {
 

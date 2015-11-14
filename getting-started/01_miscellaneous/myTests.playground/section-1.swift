@@ -16,7 +16,7 @@ func hello(var message:String, name:String)->String{
     return message
     
 }
-hello("Hello ", "Giorgio")
+hello("Hello ", name: "Giorgio")
 
 var names = ["Jonathan", "Rico", "Matthew"]
 func updateArray(inout data:Array<String>){
@@ -30,9 +30,9 @@ names
 let helloFromClosure = {(name:String) -> String in
     return "Hello " + name + " from your closure! "
 }
-println(helloFromClosure("giorgio"))
+print(helloFromClosure("giorgio"))
 
-println(18 % 2)
+print(18 % 2)
 
 // non functional
 var evens = [Int]()
@@ -47,7 +47,7 @@ var evenSum = 0
 for i in evens {
     evenSum += i
 }
-println(evenSum)
+print(evenSum)
 
 
 
@@ -62,7 +62,7 @@ evenSum = Array(1...10)
     .reduce(0) { (total, number) in total + number }
 
 
-println(evenSum)
+print(evenSum)
 
 
 
@@ -84,7 +84,7 @@ println(evenSum)
 
 var animals = ["Dog", "Cat", "Fish", "Worm"]
 
-let sortedStrings = animals.sorted({(one:String, two:String) -> Bool in return one < two })
+let sortedStrings = animals.sort({(one:String, two:String) -> Bool in return one < two })
 sortedStrings
 
 class Person{
@@ -106,10 +106,10 @@ class Person{
 
 class Animal{
     init(specie:String){
-        println("I am a \(specie)")
+        print("I am a \(specie)")
     }
     init(specie:String, gender:String){
-        println("I am a \(specie), my gender is \(gender)")
+        print("I am a \(specie), my gender is \(gender)")
     }
 }
 var animal = Animal(specie: "Cat")
@@ -159,14 +159,14 @@ var wrappable:String?
 
 if let data = wrappable {
 
-    println("hello " + data)
+    print("hello " + data)
 
 }
 
 
 func maxValue(nums: [Int]) -> Int?{
     
-    return nums.reduce(Int.min, { max($0, $1) })
+    return nums.reduce(Int.min, combine: { max($0, $1) })
     
 }
 

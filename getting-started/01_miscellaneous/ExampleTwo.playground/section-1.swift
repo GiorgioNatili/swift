@@ -13,23 +13,23 @@ var evenSum = 0
 for i in evens {
   evenSum += i
 }
-println(evenSum)
+print(evenSum)
 
 // functional
 evenSum = Array(1...10)
   .filter { (number) in number % 2 == 0 }
   .reduce(0) { (total, number) in total + number }
-println(evenSum)
+print(evenSum)
 
 
 
 // Find the maximum numbr in an integer array
 let maxNumber = Array(1...10)
   .reduce(0) { (total, number) in max(total, number) }
-println(maxNumber)
+print(maxNumber)
 
 // reducing an array of integers into a string
 let numbers = Array(1...10)
   .reduce("numbers: ") { (total, number) in total + "\(number) " }
-println(numbers)
+print(numbers)
 

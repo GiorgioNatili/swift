@@ -5,7 +5,7 @@ import UIKit
 var message = "Hello, playground"
 var courtesy = "How are you today? 😄"
 
-println(message + " " + courtesy.lowercaseString)
+print(message + " " + courtesy.lowercaseString)
 
 let label = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 22))
 label.text = message + " " + courtesy.lowercaseString

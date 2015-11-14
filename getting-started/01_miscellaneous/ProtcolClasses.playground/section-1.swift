@@ -4,13 +4,13 @@ import UIKit
 
 protocol Accounting {
     
-    var fullname:String {get}
-    var accountID:Int {get}
+    var fullname:String { get }
+    var accountID:Int { get }
     func getBalance() -> Int
     
 }
 
-println("test")
+print("test")
 
 class CheckingAccount:Accounting{
     
@@ -61,15 +61,15 @@ class CheckingAccount:Accounting{
     
     
 }
-println("next")
+print("next")
 var account = CheckingAccount(name: "giorgio", surname: "natili")
-println("instantiated")
-println(account.fullname)
-println(account.accountID)
-println(account.getBalance())
+print("instantiated")
+print(account.fullname)
+print(account.accountID)
+print(account.getBalance())
 account.deposit(100)
 account.deposit(89)
-println(account.getBalance())
+print(account.getBalance())
 
 
 

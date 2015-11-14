@@ -8,10 +8,10 @@ func jediGreet(name: String, ability: String) -> (farewell: String, mayTheAbilit
   return ("Good bye, \(name).", " May the \(ability) be with you.")
 }
 
-let retValue = jediGreet("old friend", "Force")
+let retValue = jediGreet("old friend", ability: "Force")
 
-println(retValue)
-println(retValue.farewell)
-println(retValue.mayTheAbilityBeWithYou)
+print(retValue)
+print(retValue.farewell)
+print(retValue.mayTheAbilityBeWithYou)
 
 // http://fuckingswiftblocksyntax.com/

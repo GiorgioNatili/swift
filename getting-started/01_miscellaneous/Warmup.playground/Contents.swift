@@ -52,8 +52,8 @@ if let totallyHasAValue = optional {
 var optionalThatHasAValue: String? = "There's a value here."
 var automaticallyImplicitlyUnwrapped: String! = "There's a value here, too!"
 
-println(optionalThatHasAValue!)
-println(automaticallyImplicitlyUnwrapped)
+print(optionalThatHasAValue!)
+print(automaticallyImplicitlyUnwrapped)
 /*:
 Try removing the `!` from the first `println` statement, and you'll see what it's doing here. Basically, if you don't unwrap an optional, and you're not testing if it has a value, you're not working with the value at all; you're working with an optional. In other words, `Int?` and `Int` are two different types of data. `Int?` can contain an `Int`, but you have to ask for it.
 

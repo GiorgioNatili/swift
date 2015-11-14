@@ -19,5 +19,5 @@ func fizzbuzz(i: Int) -> String {
 }
 
 for number in 1...100 {
-    println(fizzbuzz(number))
+    print(fizzbuzz(number))
 }
