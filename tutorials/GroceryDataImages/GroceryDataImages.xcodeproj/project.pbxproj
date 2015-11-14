@@ -15,6 +15,7 @@
 		6B41D5BD1BF6E7C200D9E2D4 /* GroceryDataImagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5BC1BF6E7C200D9E2D4 /* GroceryDataImagesTests.swift */; };
 		6B41D5C81BF6E7C200D9E2D4 /* GroceryDataImagesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5C71BF6E7C200D9E2D4 /* GroceryDataImagesUITests.swift */; };
 		6B41D5D61BF6EA4500D9E2D4 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5D51BF6EA4500D9E2D4 /* MainTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		6B41D5D81BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5D71BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6B41D5C71BF6E7C200D9E2D4 /* GroceryDataImagesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryDataImagesUITests.swift; sourceTree = "<group>"; };
 		6B41D5C91BF6E7C200D9E2D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B41D5D51BF6EA4500D9E2D4 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		6B41D5D71BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				6B41D5B31BF6E7C200D9E2D4 /* Info.plist */,
 				6B41D5AB1BF6E7C200D9E2D4 /* GroceryDataImages.xcdatamodeld */,
 				6B41D5D51BF6EA4500D9E2D4 /* MainTableViewController.swift */,
+				6B41D5D71BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift */,
 			);
 			path = GroceryDataImages;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				6B41D5AD1BF6E7C200D9E2D4 /* GroceryDataImages.xcdatamodeld in Sources */,
 				6B41D5D61BF6EA4500D9E2D4 /* MainTableViewController.swift in Sources */,
+				6B41D5D81BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift in Sources */,
 				6B41D5A51BF6E7C200D9E2D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

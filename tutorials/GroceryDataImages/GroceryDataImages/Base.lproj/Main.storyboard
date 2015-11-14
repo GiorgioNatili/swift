@@ -14,12 +14,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rl9-KO-Tg5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rl9-KO-Tg5" customClass="GroceryItemTableViewCell" customModule="GroceryDataImages" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rl9-KO-Tg5" id="fGt-2N-Qac">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUD-dT-6zZ">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B4P-52-rvA">
+                                            <rect key="frame" x="552" y="0.0" width="40" height="42"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="ftI-pb-O5Z"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="B4P-52-rvA" secondAttribute="trailing" id="DBq-ev-fjR"/>
+                                        <constraint firstItem="B4P-52-rvA" firstAttribute="top" secondItem="fGt-2N-Qac" secondAttribute="top" id="Mq4-8W-6JQ"/>
+                                        <constraint firstItem="B4P-52-rvA" firstAttribute="centerY" secondItem="fGt-2N-Qac" secondAttribute="centerY" id="fT6-0H-YCD"/>
+                                        <constraint firstItem="fUD-dT-6zZ" firstAttribute="centerY" secondItem="fGt-2N-Qac" secondAttribute="centerY" id="kR3-bK-4gA"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="fUD-dT-6zZ" secondAttribute="leading" id="oAs-ir-M9G"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
