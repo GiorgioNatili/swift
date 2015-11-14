@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		6B41D5A51BF6E7C200D9E2D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5A41BF6E7C200D9E2D4 /* AppDelegate.swift */; };
-		6B41D5A71BF6E7C200D9E2D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5A61BF6E7C200D9E2D4 /* ViewController.swift */; };
 		6B41D5AA1BF6E7C200D9E2D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5A81BF6E7C200D9E2D4 /* Main.storyboard */; };
 		6B41D5AD1BF6E7C200D9E2D4 /* GroceryDataImages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5AB1BF6E7C200D9E2D4 /* GroceryDataImages.xcdatamodeld */; };
 		6B41D5AF1BF6E7C200D9E2D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5AE1BF6E7C200D9E2D4 /* Assets.xcassets */; };
 		6B41D5B21BF6E7C200D9E2D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5B01BF6E7C200D9E2D4 /* LaunchScreen.storyboard */; };
 		6B41D5BD1BF6E7C200D9E2D4 /* GroceryDataImagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5BC1BF6E7C200D9E2D4 /* GroceryDataImagesTests.swift */; };
 		6B41D5C81BF6E7C200D9E2D4 /* GroceryDataImagesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5C71BF6E7C200D9E2D4 /* GroceryDataImagesUITests.swift */; };
+		6B41D5D61BF6EA4500D9E2D4 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5D51BF6EA4500D9E2D4 /* MainTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		6B41D5A11BF6E7C200D9E2D4 /* GroceryDataImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryDataImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B41D5A41BF6E7C200D9E2D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6B41D5A61BF6E7C200D9E2D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6B41D5A91BF6E7C200D9E2D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B41D5AC1BF6E7C200D9E2D4 /* GroceryDataImages.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroceryDataImages.xcdatamodel; sourceTree = "<group>"; };
 		6B41D5AE1BF6E7C200D9E2D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		6B41D5C31BF6E7C200D9E2D4 /* GroceryDataImagesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroceryDataImagesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B41D5C71BF6E7C200D9E2D4 /* GroceryDataImagesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryDataImagesUITests.swift; sourceTree = "<group>"; };
 		6B41D5C91BF6E7C200D9E2D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B41D5D51BF6EA4500D9E2D4 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				6B41D5A41BF6E7C200D9E2D4 /* AppDelegate.swift */,
-				6B41D5A61BF6E7C200D9E2D4 /* ViewController.swift */,
 				6B41D5A81BF6E7C200D9E2D4 /* Main.storyboard */,
 				6B41D5AE1BF6E7C200D9E2D4 /* Assets.xcassets */,
 				6B41D5B01BF6E7C200D9E2D4 /* LaunchScreen.storyboard */,
 				6B41D5B31BF6E7C200D9E2D4 /* Info.plist */,
 				6B41D5AB1BF6E7C200D9E2D4 /* GroceryDataImages.xcdatamodeld */,
+				6B41D5D51BF6EA4500D9E2D4 /* MainTableViewController.swift */,
 			);
 			path = GroceryDataImages;
 			sourceTree = "<group>";
@@ -258,8 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B41D5A71BF6E7C200D9E2D4 /* ViewController.swift in Sources */,
 				6B41D5AD1BF6E7C200D9E2D4 /* GroceryDataImages.xcdatamodeld in Sources */,
+				6B41D5D61BF6EA4500D9E2D4 /* MainTableViewController.swift in Sources */,
 				6B41D5A51BF6E7C200D9E2D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
