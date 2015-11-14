@@ -27,7 +27,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B4P-52-rvA">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegetables" translatesAutoresizingMaskIntoConstraints="NO" id="B4P-52-rvA">
                                             <rect key="frame" x="552" y="0.0" width="40" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="ftI-pb-O5Z"/>
@@ -136,4 +136,7 @@
             <point key="canvasLocation" x="463" y="433"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="vegetables" width="23" height="23"/>
+    </resources>
 </document>

@@ -17,6 +17,12 @@
 		6B41D5D61BF6EA4500D9E2D4 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5D51BF6EA4500D9E2D4 /* MainTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		6B41D5D81BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5D71BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		6B41D5DB1BF6F81E00D9E2D4 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5DA1BF6F81E00D9E2D4 /* GroceryItem.swift */; settings = {ASSET_TAGS = (); }; };
+		6B41D5E71BF6FF6D00D9E2D4 /* vegetables@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5E41BF6FF6D00D9E2D4 /* vegetables@1x.png */; settings = {ASSET_TAGS = (); }; };
+		6B41D5E81BF6FF6D00D9E2D4 /* vegetables@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5E51BF6FF6D00D9E2D4 /* vegetables@2x.png */; settings = {ASSET_TAGS = (); }; };
+		6B41D5E91BF6FF6D00D9E2D4 /* vegetables@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5E61BF6FF6D00D9E2D4 /* vegetables@3x.png */; settings = {ASSET_TAGS = (); }; };
+		6B41D5ED1BF7007800D9E2D4 /* meat@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5EA1BF7007800D9E2D4 /* meat@1x.png */; settings = {ASSET_TAGS = (); }; };
+		6B41D5EE1BF7007800D9E2D4 /* meat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5EB1BF7007800D9E2D4 /* meat@2x.png */; settings = {ASSET_TAGS = (); }; };
+		6B41D5EF1BF7007800D9E2D4 /* meat@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5EC1BF7007800D9E2D4 /* meat@3x.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,12 @@
 		6B41D5D51BF6EA4500D9E2D4 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		6B41D5D71BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItemTableViewCell.swift; sourceTree = "<group>"; };
 		6B41D5DA1BF6F81E00D9E2D4 /* GroceryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
+		6B41D5E41BF6FF6D00D9E2D4 /* vegetables@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vegetables@1x.png"; sourceTree = "<group>"; };
+		6B41D5E51BF6FF6D00D9E2D4 /* vegetables@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vegetables@2x.png"; sourceTree = "<group>"; };
+		6B41D5E61BF6FF6D00D9E2D4 /* vegetables@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vegetables@3x.png"; sourceTree = "<group>"; };
+		6B41D5EA1BF7007800D9E2D4 /* meat@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meat@1x.png"; sourceTree = "<group>"; };
+		6B41D5EB1BF7007800D9E2D4 /* meat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meat@2x.png"; sourceTree = "<group>"; };
+		6B41D5EC1BF7007800D9E2D4 /* meat@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meat@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,7 @@
 		6B41D5A31BF6E7C200D9E2D4 /* GroceryDataImages */ = {
 			isa = PBXGroup;
 			children = (
+				6B41D5E31BF6FF6D00D9E2D4 /* images */,
 				6B41D5D91BF6F80700D9E2D4 /* model */,
 				6B41D5A41BF6E7C200D9E2D4 /* AppDelegate.swift */,
 				6B41D5A81BF6E7C200D9E2D4 /* Main.storyboard */,
@@ -140,6 +153,19 @@
 				6B41D5DA1BF6F81E00D9E2D4 /* GroceryItem.swift */,
 			);
 			name = model;
+			sourceTree = "<group>";
+		};
+		6B41D5E31BF6FF6D00D9E2D4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				6B41D5EA1BF7007800D9E2D4 /* meat@1x.png */,
+				6B41D5EB1BF7007800D9E2D4 /* meat@2x.png */,
+				6B41D5EC1BF7007800D9E2D4 /* meat@3x.png */,
+				6B41D5E41BF6FF6D00D9E2D4 /* vegetables@1x.png */,
+				6B41D5E51BF6FF6D00D9E2D4 /* vegetables@2x.png */,
+				6B41D5E61BF6FF6D00D9E2D4 /* vegetables@3x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +272,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B41D5B21BF6E7C200D9E2D4 /* LaunchScreen.storyboard in Resources */,
+				6B41D5EF1BF7007800D9E2D4 /* meat@3x.png in Resources */,
 				6B41D5AF1BF6E7C200D9E2D4 /* Assets.xcassets in Resources */,
+				6B41D5E91BF6FF6D00D9E2D4 /* vegetables@3x.png in Resources */,
 				6B41D5AA1BF6E7C200D9E2D4 /* Main.storyboard in Resources */,
+				6B41D5E81BF6FF6D00D9E2D4 /* vegetables@2x.png in Resources */,
+				6B41D5E71BF6FF6D00D9E2D4 /* vegetables@1x.png in Resources */,
+				6B41D5ED1BF7007800D9E2D4 /* meat@1x.png in Resources */,
+				6B41D5EE1BF7007800D9E2D4 /* meat@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
