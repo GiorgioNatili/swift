@@ -41,6 +41,9 @@ class MainTableViewController: UITableViewController {
         
         print("I got some data back")
         
+        items = dataManager.getItems()
+        tableView.reloadData()
+        
     }
     
     func onGroceryItemsError(notification:NSNotification) {

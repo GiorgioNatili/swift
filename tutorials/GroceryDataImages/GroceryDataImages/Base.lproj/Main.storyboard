@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="1275" y="433"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Item View Controller-->
         <scene sceneID="cgX-yI-oIB">
             <objects>
-                <viewController id="nd6-f5-g03" sceneMemberID="viewController">
+                <viewController id="nd6-f5-g03" customClass="AddItemViewController" customModule="GroceryDataImages" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kbK-HC-9F6"/>
                         <viewControllerLayoutGuide type="bottom" id="1mO-a7-aCY"/>
@@ -84,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2T-yd-fvq">
-                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                                <rect key="frame" x="0.0" y="140" width="600" height="216"/>
                             </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHp-0r-e3b">
                                 <rect key="frame" x="105" y="95" width="475" height="30"/>
@@ -99,19 +99,33 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Py3-RU-Rfz">
+                                <rect key="frame" x="20" y="562" width="560" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveItem:" destination="nd6-f5-g03" eventType="touchUpInside" id="2Tc-JZ-jQe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1mO-a7-aCY" firstAttribute="top" secondItem="U2T-yd-fvq" secondAttribute="bottom" id="11h-dV-iCP"/>
+                            <constraint firstItem="1mO-a7-aCY" firstAttribute="top" secondItem="U2T-yd-fvq" secondAttribute="bottom" constant="244" id="11h-dV-iCP"/>
+                            <constraint firstItem="1mO-a7-aCY" firstAttribute="top" secondItem="Py3-RU-Rfz" secondAttribute="bottom" constant="8" id="Cxh-XA-QEx"/>
                             <constraint firstItem="hHp-0r-e3b" firstAttribute="centerY" secondItem="6IM-Iz-qxp" secondAttribute="centerY" id="F2v-5c-yaX"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Py3-RU-Rfz" secondAttribute="leading" id="GxL-MT-lLF"/>
                             <constraint firstItem="U2T-yd-fvq" firstAttribute="leading" secondItem="cxL-lY-e21" secondAttribute="leadingMargin" constant="-20" id="UTI-DZ-5BN"/>
                             <constraint firstItem="6IM-Iz-qxp" firstAttribute="top" secondItem="kbK-HC-9F6" secondAttribute="bottom" constant="35" id="VaI-qv-TGj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hHp-0r-e3b" secondAttribute="trailing" id="YLi-yu-bdB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Py3-RU-Rfz" secondAttribute="trailing" id="exT-dN-JxS"/>
                             <constraint firstItem="hHp-0r-e3b" firstAttribute="leading" secondItem="6IM-Iz-qxp" secondAttribute="trailing" constant="35" id="gAd-RR-vJW"/>
                             <constraint firstAttribute="leadingMargin" secondItem="6IM-Iz-qxp" secondAttribute="leading" id="kdR-2C-aXx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="U2T-yd-fvq" secondAttribute="trailing" constant="-20" id="kuu-xk-pdt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="category" destination="U2T-yd-fvq" id="Mwa-Jl-I7n"/>
+                        <outlet property="name" destination="hHp-0r-e3b" id="3xB-Nl-TAY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bru-r0-r1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

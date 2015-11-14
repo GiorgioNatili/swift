@@ -18,12 +18,11 @@ class GroceryItem: NSManagedObject {
         
         let entity = NSEntityDescription.entityForName("GroceryItem", inManagedObjectContext: context)!
         self.init(entity: entity, insertIntoManagedObjectContext: context)
-        
-        self.name = ""
-        self.category = NSNumber(unsignedInt: arc4random_uniform(3))
+
         
     }
-
+    
+   
     func categoryIcon() -> String {
         
         return categories[Int(category!)]
