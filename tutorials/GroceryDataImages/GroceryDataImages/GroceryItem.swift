@@ -12,20 +12,18 @@ import CoreData
 @objc(GroceryItem)
 class GroceryItem: NSManagedObject {
 
-    private let categories:[String] = ["vegetables", "meat", "wine"]
+    static let categories:[String] = ["vegetables", "meat", "wine"]
     
     convenience init(context: NSManagedObjectContext) {
         
         let entity = NSEntityDescription.entityForName("GroceryItem", inManagedObjectContext: context)!
         self.init(entity: entity, insertIntoManagedObjectContext: context)
 
-        
     }
-    
    
     func categoryIcon() -> String {
         
-        return categories[Int(category!)]
+        return GroceryItem.categories[Int(category!)]
         
     }
     
