@@ -16,7 +16,7 @@ class GroceryItem: NSObject {
     override init(){
         
         self.name = ""
-        self.category = 0
+        self.category = Int(arc4random_uniform(3))
         
     }
     
