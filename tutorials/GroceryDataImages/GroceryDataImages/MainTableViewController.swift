@@ -11,7 +11,7 @@ import UIKit
 class MainTableViewController: UITableViewController {
 
     // Temporary fake data
-    private let items:[String] = ["one", "two", "three"]
+    private var items:[GroceryItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,22 @@ class MainTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let one = GroceryItem()
+        one.name = "Orange"
+        
+        items.append(one)
+        
+        let two = GroceryItem()
+        two.name = "Apple"
+        
+        items.append(two)
+        
+        let three = GroceryItem()
+        three.name = "Banana"
+        
+        items.append(three)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +61,7 @@ class MainTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("GroceryItemCell", forIndexPath: indexPath)
 
         // Configure the cell...
-        (cell as! GroceryItemTableViewCell).name.text = items[indexPath.row]
+        (cell as! GroceryItemTableViewCell).name.text = items[indexPath.row].name
 
         return cell
     }
