@@ -88,6 +88,7 @@ class MainTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             
+            dataManager.removeItem(items[indexPath.row].name!)
             items.removeAtIndex(indexPath.row)
             
             // Delete the row from the data source
