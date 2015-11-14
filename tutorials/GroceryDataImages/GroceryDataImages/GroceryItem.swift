@@ -14,10 +14,10 @@ class GroceryItem: NSManagedObject {
 
     private let categories:[String] = ["vegetables", "meat", "wine"]
     
-    init(context: NSManagedObjectContext) {
+    convenience init(context: NSManagedObjectContext) {
         
         let entity = NSEntityDescription.entityForName("GroceryItem", inManagedObjectContext: context)!
-        super.init(entity: entity, insertIntoManagedObjectContext: context)
+        self.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.name = ""
         self.category = NSNumber(unsignedInt: arc4random_uniform(3))

@@ -10,9 +10,11 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
-    // Temporary fake data
-    private var items:[GroceryItem] = []
+    // Data managment and storage
+    private var items:[GroceryItem]!
+    private var dataManager:DataManager = DataManager()
     
+    // MARK: UITableViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +26,8 @@ class MainTableViewController: UITableViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onGroceryItemsUpdated:", name: "groceryItemsUpdated", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onGroceryItemsError:", name: "groceryItemsError", object: nil)
+        
+        items = dataManager.getItems()
         
     }
 

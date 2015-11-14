@@ -16,7 +16,6 @@
 		6B41D5C81BF6E7C200D9E2D4 /* GroceryDataImagesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5C71BF6E7C200D9E2D4 /* GroceryDataImagesUITests.swift */; };
 		6B41D5D61BF6EA4500D9E2D4 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5D51BF6EA4500D9E2D4 /* MainTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		6B41D5D81BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5D71BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		6B41D5DB1BF6F81E00D9E2D4 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5DA1BF6F81E00D9E2D4 /* GroceryItem.swift */; settings = {ASSET_TAGS = (); }; };
 		6B41D5E71BF6FF6D00D9E2D4 /* vegetables@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5E41BF6FF6D00D9E2D4 /* vegetables@1x.png */; settings = {ASSET_TAGS = (); }; };
 		6B41D5E81BF6FF6D00D9E2D4 /* vegetables@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5E51BF6FF6D00D9E2D4 /* vegetables@2x.png */; settings = {ASSET_TAGS = (); }; };
 		6B41D5E91BF6FF6D00D9E2D4 /* vegetables@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5E61BF6FF6D00D9E2D4 /* vegetables@3x.png */; settings = {ASSET_TAGS = (); }; };
@@ -28,6 +27,7 @@
 		6B41D5F51BF701A600D9E2D4 /* wine@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B41D5F21BF701A600D9E2D4 /* wine@3x.png */; settings = {ASSET_TAGS = (); }; };
 		6B41D5F71BF706F200D9E2D4 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5F61BF706F200D9E2D4 /* DataManager.swift */; settings = {ASSET_TAGS = (); }; };
 		6B41D5F91BF707B000D9E2D4 /* GroceryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5F81BF707B000D9E2D4 /* GroceryItem+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		6B41D6041BF7215900D9E2D4 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B41D5DA1BF6F81E00D9E2D4 /* GroceryItem.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -327,8 +327,8 @@
 				6B41D5F71BF706F200D9E2D4 /* DataManager.swift in Sources */,
 				6B41D5D61BF6EA4500D9E2D4 /* MainTableViewController.swift in Sources */,
 				6B41D5D81BF6F31D00D9E2D4 /* GroceryItemTableViewCell.swift in Sources */,
-				6B41D5DB1BF6F81E00D9E2D4 /* GroceryItem.swift in Sources */,
 				6B41D5A51BF6E7C200D9E2D4 /* AppDelegate.swift in Sources */,
+				6B41D6041BF7215900D9E2D4 /* GroceryItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
