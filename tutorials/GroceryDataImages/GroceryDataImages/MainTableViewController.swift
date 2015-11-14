@@ -9,7 +9,7 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,14 +34,17 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 3
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("GroceryItemCell", forIndexPath: indexPath)
 
         // Configure the cell...
+        
+        // (cell as! GroceryItemTableViewCell).itemName.text = "Test"
 
         return cell
     }

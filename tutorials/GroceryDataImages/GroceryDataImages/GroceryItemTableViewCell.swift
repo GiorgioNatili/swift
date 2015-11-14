@@ -9,7 +9,7 @@
 import UIKit
 
 class GroceryItemTableViewCell: UITableViewCell {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
