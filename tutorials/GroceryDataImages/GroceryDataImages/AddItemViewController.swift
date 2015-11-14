@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddItemViewController: UIViewController {
+class AddItemViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     // MARK: UI elements
     @IBOutlet weak var name: UITextField!
@@ -16,6 +16,7 @@ class AddItemViewController: UIViewController {
     
     // MARK: data
     var dataManager:DataManager!
+    private var pickerDataSource:[String]!
     
     // MARK: UIViewController lifecycle
     override func viewDidLoad() {
@@ -23,11 +24,35 @@ class AddItemViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        pickerDataSource = GroceryItem.categories
+        
+        category.dataSource = self
+        category.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: UIPickerViewDataSource implementation
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        
+        return 1
+    
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return pickerDataSource.count;
+    
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        
+        return pickerDataSource[row]
+        
     }
     
     // MARK: User interactions
