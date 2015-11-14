@@ -15,14 +15,13 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var category: UIPickerView!
     
     // MARK: data
-    private var dataManager:DataManager!
+    var dataManager:DataManager!
     
     // MARK: UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        dataManager = DataManager()
         
     }
 
@@ -39,6 +38,8 @@ class AddItemViewController: UIViewController {
         }
         
         dataManager.addItem(name.text!, category: currentCategory())
+        
+        navigationController!.popViewControllerAnimated(true)
         
     }
     

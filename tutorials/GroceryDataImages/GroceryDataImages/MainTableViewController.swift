@@ -121,7 +121,7 @@ class MainTableViewController: UITableViewController {
         if segue.identifier == "addItemSegue" {
             
             if let vc = segue.destinationViewController as? AddItemViewController{
-                // vc.dataManager = dataManager
+                vc.dataManager = dataManager
             }
             
         }
