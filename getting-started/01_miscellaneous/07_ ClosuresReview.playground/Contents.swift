@@ -43,6 +43,7 @@ var test = others.reduce(0, combine: {x, y in
     return x + y
 
 })
+test
 
 var even = others.filter {x in
 
