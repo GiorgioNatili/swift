@@ -26,52 +26,54 @@ class DataManager {
     
     func addItem(name:String, type:String) {
         
-        if let context = appDelegate.managedObjectContext {
+        let context = appDelegate.managedObjectContext
             
-            // Get access to the class
-            let entity = NSEntityDescription.entityForName("GroceryItem", inManagedObjectContext: context)
+        // Get access to the class
+        let entity = NSEntityDescription.entityForName("GroceryItem", inManagedObjectContext: context)
             
-            let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:context)
+        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:context)
             
-            item.setValue(name, forKey: "name")
-            item.setValue(type, forKey: "type")
+        item.setValue(name, forKey: "name")
+        item.setValue(type, forKey: "type")
             
-            var error: NSError?
-            if !context.save(&error) {
+        do {
                 
-                println("Could not save \(error), \(error?.userInfo)")
+            try context.save()
                 
-            }
+        } catch let error as NSError {
             
-            todoItems.append(item)
-            
-            // dispatch event
-            notifyUpdates()
-            
+            print("Something went wrong \(error.userInfo)")
+                
         }
-
+            
+        todoItems.append(item)
+            
+        // dispatch event
+        notifyUpdates()
+        
     }
     
     private func recoverItems() {
         
-        if let context = appDelegate.managedObjectContext {
+        let context = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName:"GroceryItem")
             
-            let fetchRequest = NSFetchRequest(entityName:"GroceryItem")
-            var error: NSError?
-            
-            let fetchedResults = context.executeFetchRequest(fetchRequest, error: &error) as? [NSManagedObject]
-            
+        do {
+                
+            let fetchedResults = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+                
             if let items = fetchedResults {
-                
+                    
                 todoItems = items
-                
+                    
             }
-            
-            // dispatch event
-            notifyUpdates()
-            
+                
+                
+        }catch let error as NSError{
+                
+            print("Something went wrong \(error.userInfo)")
+                
         }
-
         
     }
     

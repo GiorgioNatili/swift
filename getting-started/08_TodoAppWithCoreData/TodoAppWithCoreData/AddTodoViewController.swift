@@ -33,7 +33,7 @@ class AddTodoViewController: UIViewController, UITextFieldDelegate {
     // MARK: user interaction
     @IBAction func addItem(sender: AnyObject) {
         
-        tableData.addTodoItem(todo.text)
+        tableData.addTodoItem(todo.text!)
         dismissViewControllerAnimated(true, completion: nil)
         
     }
@@ -41,9 +41,9 @@ class AddTodoViewController: UIViewController, UITextFieldDelegate {
     // MARK: UITextFieldDelegate
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         
-        println(textField.text)
+        print(textField.text)
         
-        if count(textField.text) < 3 {
+        if textField.text!.characters.count < 3 {
             
             todo.layer.cornerRadius = 8.0
             todo.layer.masksToBounds = true

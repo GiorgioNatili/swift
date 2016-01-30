@@ -37,7 +37,7 @@ class AddItemViewController: UIAlertController {
             //Do some other stuff
             
             let randomIndex = Int(arc4random_uniform(UInt32(self.icons.count)))
-            self.dataManager.addItem(self.itemName.text, type: self.icons[randomIndex])
+            self.dataManager.addItem(self.itemName.text!, type: self.icons[randomIndex])
             
         }
         

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CQ9-R7-rCN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CQ9-R7-rCN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -14,8 +15,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="LoV-22-NHc" customClass="CustomTableViewCell" customModule="TableViewApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LoV-22-NHc" id="dbM-cW-cTE">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6TE-Ln-p71">
@@ -42,10 +45,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="currentLocation" destination="3fe-uX-Kbx" id="Bmc-r8-Ce5"/>
-                                    <outlet property="currentName" destination="683-sJ-bRj" id="zrd-Lc-9cl"/>
-                                    <outlet property="currentType" destination="dMc-Og-QC3" id="3Tn-YV-j9u"/>
-                                    <outlet property="curretnImage" destination="6TE-Ln-p71" id="Ice-2m-4nD"/>
+                                    <outlet property="locationLabel" destination="3fe-uX-Kbx" id="vll-bX-uNu"/>
+                                    <outlet property="nameLabel" destination="683-sJ-bRj" id="bxC-TK-8r4"/>
+                                    <outlet property="thumbnailImageView" destination="6TE-Ln-p71" id="Swu-Gv-qK6"/>
+                                    <outlet property="typeLabel" destination="dMc-Og-QC3" id="GIW-uG-WlS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
