@@ -10,8 +10,8 @@ import UIKit
 
 class AddItemViewController: UIAlertController {
     
-    private var icons = ["apple", "pear", "orange"]
-    private var itemName:UITextField!
+    fileprivate var icons = ["apple", "pear", "orange"]
+    fileprivate var itemName:UITextField!
     
     var dataManager:DataManager!
     
@@ -22,17 +22,17 @@ class AddItemViewController: UIAlertController {
         // Do any additional setup after loading the view.
                 
         //Create and add the Cancel action
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
             
             //Do some stuff
-            var topVC = UIApplication.sharedApplication().keyWindow?.rootViewController
-            topVC?.dismissViewControllerAnimated(true, completion: nil)
+            var topVC = UIApplication.shared.keyWindow?.rootViewController
+            topVC?.dismiss(animated: true, completion: nil)
             
         }
         addAction(cancelAction)
         
         //Create and an option action
-        let nextAction: UIAlertAction = UIAlertAction(title: "Next", style: .Default) { action -> Void in
+        let nextAction: UIAlertAction = UIAlertAction(title: "Next", style: .default) { action -> Void in
             
             //Do some other stuff
             
@@ -44,9 +44,9 @@ class AddItemViewController: UIAlertController {
         addAction(nextAction)
         
         //Add a text field
-        addTextFieldWithConfigurationHandler { name -> Void in
+        addTextField { name -> Void in
             //TextField configuration
-            name.textColor = UIColor.blueColor()
+            name.textColor = UIColor.blue
             self.itemName = name
             
         }

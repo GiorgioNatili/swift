@@ -19,42 +19,42 @@ class SecondViewController: UIViewController {
 
     }
     
-    @IBAction func openPrompt(sender: AnyObject) {
+    @IBAction func openPrompt(_ sender: AnyObject) {
         
         var alertViewControllerTextField: UITextField?
         
-        let promptController = UIAlertController(title: "Type Something", message: nil, preferredStyle: .Alert)
+        let promptController = UIAlertController(title: "Type Something", message: nil, preferredStyle: .alert)
         
-        let ok = UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             
             print("\(alertViewControllerTextField?.text)")
             self.textField.text = alertViewControllerTextField?.text
             
         })
-        let cancel = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in }
         
         promptController.addAction(ok)
         promptController.addAction(cancel)
         
-        promptController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+        promptController.addTextField { (textField) -> Void in
             alertViewControllerTextField = textField
         }
         
-        presentViewController(promptController, animated: true, completion: nil)
-        
+        present(promptController, animated: true, completion: nil)
     }
     
-    func wordEntered(alert: UIAlertAction!){
+    func wordEntered(_ alert: UIAlertAction!){
         
 
     }
-    func addTextField(textField: UITextField!){
+    
+    func addTextField(_ textField: UITextField!){
     
     }
-    @IBAction func goBack(sender: AnyObject) {
+    
+    @IBAction func goBack(_ sender: AnyObject) {
         
-        self.navigationController?.popToRootViewControllerAnimated(true)
-        
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
     override func didReceiveMemoryWarning() {

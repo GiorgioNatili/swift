@@ -31,15 +31,15 @@ class AddTodoViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: user interaction
-    @IBAction func addItem(sender: AnyObject) {
+    @IBAction func addItem(_ sender: AnyObject) {
         
         tableData.addTodoItem(todo.text!)
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
     }
     
     // MARK: UITextFieldDelegate
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         print(textField.text)
         
@@ -47,14 +47,14 @@ class AddTodoViewController: UIViewController, UITextFieldDelegate {
             
             todo.layer.cornerRadius = 8.0
             todo.layer.masksToBounds = true
-            todo.layer.borderColor = UIColor.redColor().CGColor
+            todo.layer.borderColor = UIColor.red.cgColor
             todo.layer.borderWidth = 1.0
             
         }else{
             
             todo.layer.cornerRadius = 8.0
             todo.layer.masksToBounds = true
-            todo.layer.borderColor = UIColor.grayColor().CGColor
+            todo.layer.borderColor = UIColor.gray.cgColor
             todo.layer.borderWidth = 1.0
             
         }
@@ -63,7 +63,7 @@ class AddTodoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func textFieldDidBeginEditing(textFieldThatEdited: UITextField) {
+    func textFieldDidBeginEditing(_ textFieldThatEdited: UITextField) {
         
         todo.placeholder = "add a todo"
         

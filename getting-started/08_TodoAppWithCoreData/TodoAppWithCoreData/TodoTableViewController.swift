@@ -11,7 +11,7 @@ import UIKit
 class TodoTableViewController: UITableViewController {
 
     // MARK: data and private members
-    private var todos = ["grocery", "general assembly", "dinner", "moving"]
+    fileprivate var todos = ["grocery", "general assembly", "dinner", "moving"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class TodoTableViewController: UITableViewController {
     }
     
     // MARK: accessing to local data
-    func addTodoItem(item:String) {
+    func addTodoItem(_ item:String) {
         
         if !item.isEmpty {
         
@@ -44,9 +44,9 @@ class TodoTableViewController: UITableViewController {
     }
     
     // MARK: passing data around
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let todoViewController = segue.destinationViewController as? AddTodoViewController {
+        if let todoViewController = segue.destination as? AddTodoViewController {
             
             todoViewController.tableData = self
             
@@ -54,14 +54,14 @@ class TodoTableViewController: UITableViewController {
         
         if segue.identifier == "showInfo" {
             
-            if let details = segue.destinationViewController as? DetailsViewController {
+            if let details = segue.destination as? DetailsViewController {
                 
                 let indexPath = self.tableView.indexPathForSelectedRow!
-                let titleString = self.todos[indexPath.row]
+                let titleString = self.todos[(indexPath as NSIndexPath).row]
                 
                 details.todoItem = titleString
                 
-                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                self.tableView.deselectRow(at: indexPath, animated: true)
                 
             }
 
@@ -72,45 +72,45 @@ class TodoTableViewController: UITableViewController {
     }
     
     // MARK: editing data in core data
-    @IBAction func editItem(sender: UIButton) {
+    @IBAction func editItem(_ sender: UIButton) {
         // TODO open the edit delegate
         
     }
     
-    @IBAction func deleteItem(sender: UIButton) {
+    @IBAction func deleteItem(_ sender: UIButton) {
         // TODO delete item from core data
-        todos.removeAtIndex(sender.tag)
+        todos.remove(at: sender.tag)
         self.tableView.reloadData()
     
     }
 
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return todos.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("TodoItemCell", forIndexPath: indexPath) as! TodoItemCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath) as! TodoItemCell
 
         // Configure the cell...
-        cell.todoLabel?.text = todos[indexPath.row]
+        cell.todoLabel?.text = todos[(indexPath as NSIndexPath).row]
         // cell.textLabel?.text = todos[indexPath.row]
         
-        cell.editItem.tag = indexPath.row;
-        cell.editItem.addTarget(self, action: "editItem:", forControlEvents: .TouchUpInside)
+        cell.editItem.tag = (indexPath as NSIndexPath).row;
+        cell.editItem.addTarget(self, action: #selector(TodoTableViewController.editItem(_:)), for: .touchUpInside)
         
-        cell.deleteItem.tag = indexPath.row;
-        cell.deleteItem.addTarget(self, action: "deleteItem:", forControlEvents: .TouchUpInside)
+        cell.deleteItem.tag = (indexPath as NSIndexPath).row;
+        cell.deleteItem.addTarget(self, action: #selector(TodoTableViewController.deleteItem(_:)), for: .touchUpInside)
         
       //  (cell.accessoryView as! UIButton).addTarget(self, action: "doSomethingForTheSegue:", forControlEvents: .TouchUpInside)
 
@@ -118,7 +118,7 @@ class TodoTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         //
     }
 

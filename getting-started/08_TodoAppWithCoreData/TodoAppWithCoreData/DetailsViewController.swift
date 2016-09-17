@@ -14,7 +14,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var todoContent: UITextView!
     
     // Mark: private properties
-    private var todo:String!
+    fileprivate var todo:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()

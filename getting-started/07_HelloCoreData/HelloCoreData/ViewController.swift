@@ -16,14 +16,14 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var friends: UITableView!
     
     // MARK: private property
-    private var buddies:[NSManagedObject] = []
+    fileprivate var buddies:[NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         title = "\"The List\""
-        friends.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        friends.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
         getSomeData()
         
@@ -35,35 +35,35 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     // MARK: UITableViewDataSource implementation
-    func tableView(tableView: UITableView,
+    func tableView(_ tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             return buddies.count
     }
     
-    func tableView(tableView: UITableView,
-        cellForRowAtIndexPath
-        indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+        cellForRowAt
+        indexPath: IndexPath) -> UITableViewCell {
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("Cell")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
             
-            let buddy = buddies[indexPath.row] as! Friend
-            cell!.textLabel!.text = buddy.valueForKey("name") as? String
+            let buddy = buddies[(indexPath as NSIndexPath).row] as! Friend
+            cell!.textLabel!.text = buddy.value(forKey: "name") as? String
             
             return cell!
     }
 
     
     // MARK: user interaction
-    @IBAction func addFriend(sender: AnyObject) {
+    @IBAction func addFriend(_ sender: AnyObject) {
         
         addFriend(name.text!, age: Int(age.text!)!)
         
     }
     
     
-    @IBAction func sortBuddies(sender: AnyObject) {
+    @IBAction func sortBuddies(_ sender: AnyObject) {
         
-        buddies.sortInPlace({(a, b) -> Bool in
+        buddies.sort(by: {(a, b) -> Bool in
         
             return (a as! Friend).name < (b as! Friend).name
         
@@ -76,13 +76,13 @@ class ViewController: UIViewController, UITableViewDataSource {
     // MARK: Core Data
     func getSomeData() {
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         if let context = appDelegate.managedObjectContext {
             
-            let fetchRequest = NSFetchRequest(entityName:"Friend")
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName:"Friend")
             
-            let fetchedResults = try! context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            let fetchedResults = try! context.fetch(fetchRequest) as? [NSManagedObject]
 
             if let friends = fetchedResults {
                 
@@ -104,15 +104,15 @@ class ViewController: UIViewController, UITableViewDataSource {
         
     }
     
-    func addFriend(name:String, age:Int) {
+    func addFriend(_ name:String, age:Int) {
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if let context = appDelegate.managedObjectContext {
          
             // Get access to the class
-            let entity = NSEntityDescription.entityForName("Friend", inManagedObjectContext: context)
+            let entity = NSEntityDescription.entity(forEntityName: "Friend", in: context)
             
-            let friend = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:context)
+            let friend = NSManagedObject(entity: entity!, insertInto:context)
             
             friend.setValue(name, forKey: "name")
             friend.setValue(age, forKey: "age")

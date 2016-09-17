@@ -201,9 +201,11 @@
 				TargetAttributes = {
 					6B76FE321B3EB9090073A4A9 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0800;
 					};
 					6B76FE4A1B3EB90A0073A4A9 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = 6B76FE321B3EB9090073A4A9;
 					};
 				};
@@ -395,6 +397,7 @@
 				INFOPLIST_FILE = 06_BillCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -405,6 +408,7 @@
 				INFOPLIST_FILE = 06_BillCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -423,6 +427,7 @@
 				INFOPLIST_FILE = 06_BillCalculatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/06_BillCalculator.app/06_BillCalculator";
 			};
 			name = Debug;
@@ -438,6 +443,7 @@
 				INFOPLIST_FILE = 06_BillCalculatorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/06_BillCalculator.app/06_BillCalculator";
 			};
 			name = Release;

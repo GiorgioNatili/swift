@@ -20,12 +20,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func openNextSceene(sender: AnyObject) {
+    @IBAction func openNextSceene(_ sender: AnyObject) {
         
-        let view = self.storyboard?.instantiateViewControllerWithIdentifier("sceene2") as! SecondViewController
+        let view = self.storyboard?.instantiateViewController(withIdentifier: "sceene2") as! SecondViewController
         self.navigationController?.pushViewController(view, animated: true)
-        
     }
-  
 }
 

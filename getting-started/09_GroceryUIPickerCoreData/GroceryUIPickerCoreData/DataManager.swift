@@ -12,26 +12,26 @@ import CoreData
 
 class DataManager {
     
-    private var todoItems:[NSManagedObject]
-    private var appDelegate:AppDelegate
+    fileprivate var todoItems:[NSManagedObject]
+    fileprivate var appDelegate:AppDelegate
     
     init() {
         
-        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
         todoItems = []
         
         recoverItems()
         
     }
     
-    func addItem(name:String, type:String) {
+    func addItem(_ name:String, type:String) {
         
         let context = appDelegate.managedObjectContext
             
         // Get access to the class
-        let entity = NSEntityDescription.entityForName("GroceryItem", inManagedObjectContext: context)
+        let entity = NSEntityDescription.entity(forEntityName: "GroceryItem", in: context)
             
-        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:context)
+        let item = NSManagedObject(entity: entity!, insertInto:context)
             
         item.setValue(name, forKey: "name")
         item.setValue(type, forKey: "type")
@@ -53,14 +53,14 @@ class DataManager {
         
     }
     
-    private func recoverItems() {
+    fileprivate func recoverItems() {
         
         let context = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName:"GroceryItem")
             
         do {
                 
-            let fetchedResults = try context.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            let fetchedResults = try context.fetch(fetchRequest) as? [NSManagedObject]
                 
             if let items = fetchedResults {
                     
@@ -77,9 +77,9 @@ class DataManager {
         
     }
     
-    private func notifyUpdates() {
+    fileprivate func notifyUpdates() {
         
-        NSNotificationCenter.defaultCenter().postNotificationName("todoItemsUpdated", object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "todoItemsUpdated"), object: nil)
         
     }
     

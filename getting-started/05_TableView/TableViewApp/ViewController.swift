@@ -35,25 +35,25 @@ class ViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         return self.restaurantNames.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomTableViewCell
         
         // Configure the cell...
-        cell.nameLabel.text = restaurantNames[indexPath.row]
-        cell.thumbnailImageView.image = UIImage(named: restaurantImages[indexPath.row])
-        cell.locationLabel.text = restaurantLocations[indexPath.row]
-        cell.typeLabel.text = restaurantTypes[indexPath.row]
+        cell.nameLabel.text = restaurantNames[(indexPath as NSIndexPath).row]
+        cell.thumbnailImageView.image = UIImage(named: restaurantImages[(indexPath as NSIndexPath).row])
+        cell.locationLabel.text = restaurantLocations[(indexPath as NSIndexPath).row]
+        cell.typeLabel.text = restaurantTypes[(indexPath as NSIndexPath).row]
         
         // Circular image
         cell.thumbnailImageView.layer.cornerRadius = 10.0

@@ -22,7 +22,7 @@ class NewsViewController: UIViewController {
         if (( rvc ) != nil) {
             
             menuItem.target = rvc
-            menuItem.action = Selector ("revealToggle:")
+            menuItem.action = #selector(SWRevealViewController.revealToggle(_:))
             
             self.view.addGestureRecognizer(rvc.panGestureRecognizer())
             
