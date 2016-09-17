@@ -10,22 +10,23 @@ func sayHello(name:String)->String{
     
 }
 
-func hello(var message:String, name:String)->String{
+func hello( message:String, name:String)->String{
     
+    var message = message
     message += name
     return message
     
 }
 
-hello("Hello ", name: "Giorgio")
+hello(message: "Hello ", name: "Giorgio")
 
 var names = ["Jonathan", "Rico", "Matthew"]
-func updateArray(inout data:Array<String>){
+func updateArray( data:inout Array<String>){
     
     data.append("Giorgio")
     
 }
-updateArray(&names)
+updateArray(data: &names)
 names
 
 let helloFromClosure = {(name:String) -> String in
@@ -85,7 +86,7 @@ print(evenSum)
 
 var animals = ["Dog", "Cat", "Fish", "Worm"]
 
-let sortedStrings = animals.sort({(one:String, two:String) -> Bool in return one < two })
+let sortedStrings = animals.sorted(by: {(one:String, two:String) -> Bool in return one < two })
 sortedStrings
 
 class Person{
@@ -138,7 +139,7 @@ struct Account{
 }
 
 var account = Account(id: 1234)
-account.manageAmount(100)
+account.manageAmount(value: 100)
 account
 
 enum AccountType:String{
@@ -167,12 +168,12 @@ if let data = wrappable {
 
 func maxValue(nums: [Int]) -> Int?{
     
-    return nums.reduce(Int.min, combine: { max($0, $1) })
+    return nums.reduce(Int.min, { max($0, $1) })
     
 }
 
-maxValue([1, 3, 5, 6, 8, 11])
-maxValue([])
+maxValue(nums: [1, 3, 5, 6, 8, 11])
+maxValue(nums: [])
 
 
 func minMax(numbers:[Int]) -> (min: Int, max: Int, average: Int)?{

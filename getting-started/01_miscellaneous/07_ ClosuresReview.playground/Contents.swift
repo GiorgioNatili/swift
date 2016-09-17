@@ -6,39 +6,39 @@ var str = "Hello, playground"
 
 var hello:()->String = {
     
-    return "Hello JJ"    
+    return "Hello everyone"
     
 }
-var surname = "Barton"
-var sayHello:(String)->String = { name in
+var surname = "Smith"
+var sayHello:(String) -> String = { name in
     
     return "Hello \(name) \(surname)"
     
 }
 
-func iWillSayHello(hello:(String) -> String) {
+func iWillSayHello(_ hello:(String) -> String) {
     
-    hello("Super JJ")
+    hello("Super Mario")
     
 }
 
 iWillSayHello(sayHello)
-sayHello("JJ")
+sayHello("Luigi")
 
 var numbers = [3, 5, 7, 2, 1, 0, 54]
-numbers.sort({x, y in
+numbers.sorted(by: {x, y in
     
     return x < y
     
 })
-// numbers.sort(>)
+// numbers.sort(by: >)
 let 😊 = "happy"
 
 var letters = ["g", "h", "a", "c", "z"]
-letters.sort(<)
+letters.sorted(by: <)
 
 let others = [3, 43, 7, 8, 32, 12, 1, 2, 0]
-var test = others.reduce(0, combine: {x, y in
+var test = others.reduce(0, {x, y in
 
     return x + y
 
@@ -48,25 +48,15 @@ test
 var even = others.filter {x in
 
     return x % 2 == 0
-
 }
 
 var doubled = others.map {x in
 
     return x * 2
-
 }
 
 var doubled2 = letters.map {x in
     
     return x + x
-    
 }
-
-
-
-
-
-
-
 

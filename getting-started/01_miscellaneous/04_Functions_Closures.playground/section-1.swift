@@ -8,7 +8,7 @@ func jediGreet(name: String, ability: String) -> (farewell: String, mayTheAbilit
   return ("Good bye, \(name).", " May the \(ability) be with you.")
 }
 
-let retValue = jediGreet("old friend", ability: "Force")
+let retValue = jediGreet(name: "old friend", ability: "Force")
 
 print(retValue)
 print(retValue.farewell)

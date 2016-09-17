@@ -24,7 +24,7 @@ class CheckingAccount:Accounting{
         name = n
         surname = s
         
-        id = Int(rand())
+        id = Int(arc4random())
         balance = 0
         
     }
@@ -67,8 +67,8 @@ print("instantiated")
 print(account.fullname)
 print(account.accountID)
 print(account.getBalance())
-account.deposit(100)
-account.deposit(89)
+account.deposit(val: 100)
+account.deposit(val: 89)
 print(account.getBalance())
 
 

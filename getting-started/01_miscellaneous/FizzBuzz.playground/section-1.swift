@@ -4,8 +4,10 @@ import UIKit
 
 var str = "Hello, playground"
 
-func fizzbuzz(i: Int) -> String {
+func fizzbuzz(_ i: Int) -> String {
+    
     let result = (i % 3, i % 5)
+    
     switch result {
     case (0, _):
         return "Fizz"
@@ -19,5 +21,6 @@ func fizzbuzz(i: Int) -> String {
 }
 
 for number in 1...100 {
+    
     print(fizzbuzz(number))
 }

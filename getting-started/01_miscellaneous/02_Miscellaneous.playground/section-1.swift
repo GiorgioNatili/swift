@@ -1,23 +1,6 @@
 // Playground - noun: a place where people can play
 import UIKit
 
-// Operators
-var x = 0
-
-var y = x++
-y = x++
-y = x++
-y = x++
-
-/*
-var y = ++x
-y = ++x
-y = ++x
-y = ++x
-*/
-x
-y
-
 // swithc and fallthrough
 var aNumber = 7
 switch aNumber
@@ -54,9 +37,9 @@ for (value) in dict.values{
 var letters = [1, 2, 3, 7, 8]
 letters.append(Int("9")!)
 
-var range:Range = 4...6
+var range = 4...6
 for index in range {
-    letters.insert(index, atIndex: index-1)
+    letters.insert(index, at: index-1)
 }
 letters
 
@@ -67,7 +50,7 @@ func wishYou(name:String, holidayName holiday:String){
     
 }
 
-wishYou("giorgio", holidayName: "xmas")
+wishYou(name: "giorgio", holidayName: "xmas")
 
 class MyFunClass {
     
@@ -77,7 +60,7 @@ class MyFunClass {
     
 }
 var test = MyFunClass()
-test.hello("giorgio", age: 5, location: "Rome")
+test.hello(name: "giorgio", age: 5, location: "Rome")
 
 // functions overload
 func helloWorld(){
@@ -93,7 +76,7 @@ func helloWorld(from:String){
 }
 
 helloWorld()
-helloWorld("giorgio")
+helloWorld(from: "giorgio")
 
 // Array and ranges
 var data = [1, 2, 3, 7, 8, 9]
@@ -109,7 +92,7 @@ func someFunctionThatTakesAClosure(closure: () -> ()) {
     // function body goes here
 }
 
-someFunctionThatTakesAClosure({
+someFunctionThatTakesAClosure(closure: {
     // closure's body goes here
 })
 
@@ -169,7 +152,7 @@ class Teacher{
     var fullname:String {
         get { return name + " " + surname}
         set(value){
-            var data = value.componentsSeparatedByString(" ")
+            var data = value.components(separatedBy: " ")
             name = data[0]
             surname = data[1]
         }
@@ -182,9 +165,11 @@ giorgio.fullname = "Isaac Zarsky"
 giorgio.fullname
 
 // Strings stack
-
 struct StringsStack {
-    private var items = [String]()
+    
+    
+    var items = [String]()
+    
     mutating func push(item:String){
         items.append(item)
     }
@@ -207,7 +192,6 @@ words[2] = "yeah"
 words
 
 // Enumeration
-
 enum AccountType:String{
     case Savings = "savings"
     case Checking = "checking"
@@ -225,12 +209,12 @@ enum TriStateSwitch {
     case Off, Low, High
     mutating func next() {
         switch self {
-        case Off:
-            self = Low
-        case Low:
-            self = High
-        case High:
-            self = Off
+        case .Off:
+            self = .Low
+        case .Low:
+            self = .High
+        case .High:
+            self = .Off
         }
     }
 }

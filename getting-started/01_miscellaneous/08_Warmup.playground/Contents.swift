@@ -9,7 +9,7 @@ let today = "A good day to learn some Swift!"
 //: If a variable needs to be created with an explicit type, it's done like this:
 var explicitlyTypedVariable: Double
 //: This function takes a `String` and returns another `String`:
-func superCoolFunction(coolName: String) -> String {
+func superCoolFunction(_ coolName: String) -> String {
     return "Oh hi, " + coolName + ", you're my favorite!"
 }
 //: I've called it, but you should probably put in your own name. (Note the live results to the right! You might want to make the result area wider.)

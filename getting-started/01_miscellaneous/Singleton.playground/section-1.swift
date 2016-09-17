@@ -26,7 +26,7 @@ class SingletonBundle {
       
       if(key != SubStruct.internalKey){
       
-        NSException(name: "SingletonBundle ->", reason: "cannot be instantiated directly", userInfo: nil).raise()
+        NSException(name: NSExceptionName(rawValue: "SingletonBundle ->"), reason: "cannot be instantiated directly", userInfo: nil).raise()
         return
       
       }
