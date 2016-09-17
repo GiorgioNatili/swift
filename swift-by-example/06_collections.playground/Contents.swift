@@ -16,10 +16,10 @@ var enemies:[String] = [String]()
 enemies.append("Bill")
 
 // Prepopulated arrays
-var bugs = [String](count: 4, repeatedValue: "bug")
+var bugs = [String](repeating: "bug", count: 4)
 
 bugs += ["hug", "dug"]
-bugs.insert("SWIFT", atIndex: 3)
+bugs.insert("SWIFT", at: 3)
 
 // Accessing elements
 bugs[bugs.endIndex - 1]
@@ -29,7 +29,7 @@ bugs[2...3]
 if !bugs.isEmpty {
 
     bugs.removeLast()
-    bugs.removeRange(2...3)
+    bugs.removeSubrange(2...3)
 
 }
 
@@ -44,7 +44,7 @@ var dictionary = ["a": 4, "b": 7, "c": 8, "d": 2, "e": 5]
 // Update and delete values
 dictionary.updateValue(41, forKey: "b")
 dictionary
-dictionary.removeValueForKey("c")
+dictionary.removeValue(forKey: "c")
 dictionary
 dictionary["e"] = nil
 dictionary

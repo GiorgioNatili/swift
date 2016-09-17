@@ -18,7 +18,7 @@ var str = "Hello, playground"
 
 // Using a closure to order an array
 var numbers = [1, 2, 3, 4, 5, 6, 7]
-numbers.sort({(a: Int, b: Int) -> Bool in
+numbers.sorted(by: {(a: Int, b: Int) -> Bool in
     return a > b})
 
 //var reversed = numbers.sorted {(a: Int, b: Int) -> Bool in
@@ -35,7 +35,8 @@ let total = numbers.reduce(0) {(a:Int, b:Int) -> Int in
 let shortTotal = numbers.reduce(0) { $0 + $1 }
 
 // Using a closure to manipulate the elements in an array
-let formattedNumbers = numbers.map { NSNumberFormatter.localizedStringFromNumber($0, numberStyle: .DecimalStyle) }
+let formattedNumbers = numbers.map { NumberFormatter.localizedString(from: NSNumber(value: $0), number: .decimal) }
+print(formattedNumbers)
 
 /*********************
  **** Excercise ******

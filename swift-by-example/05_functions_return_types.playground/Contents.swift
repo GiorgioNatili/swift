@@ -24,22 +24,20 @@ func sayHello(name:String) {
     
 }
 
-sayHello("Jonathan")
+sayHello(name: "Jonathan")
 
 // A block of code that returns a value
 func sum (a:Int, b:Int) -> Int {
     
     return a + b
-    
 }
 
-let value = sum(2, b: 5)
+let value = sum(a: 2, b: 5)
 
 // External named arguments
 func multiply (left l:Int, right r:Int) -> Int {
     
     return l * r
-    
 }
 
 let num = multiply(left: 3, right: 7)
@@ -48,36 +46,32 @@ let num = multiply(left: 3, right: 7)
 func multiply (left:Int, _ right:Int) -> Int {
     
     return left * right
-    
 }
 
-let 🍕s = multiply(2, 7)
+let 🍕s = multiply(left: 2, right: 7)
 
 // Variadic arguments
 func concatenate (chars:Character...) -> String {
     
     var str = ""
-    for var char in chars{
+    for var char in chars {
         
         str.append(char)
         
     }
     
     return str
-    
 }
 
-let sequence = concatenate("1", "e", "r", "l")
+let sequence = concatenate(chars: "1", "e", "r", "l")
 
 // In and out arguments
-func increase(by amount:Int, inout items:Int) {
+func increase(by amount:Int, items:inout Int) {
     
-    for var i = 0; i < amount; i++ {
+    for _ in 0 ..< amount {
         
         items += 1
-        
     }
-    
 }
 
 var 🏀s = 5

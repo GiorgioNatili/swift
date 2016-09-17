@@ -23,7 +23,6 @@ if let username = name {
     for var char in username.characters {
         
         print(char)
-    
     }
 }
 

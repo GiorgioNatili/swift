@@ -12,7 +12,7 @@ var i = 0
 while i < 10 {
     
     print(i)
-    i++
+    i += 1
     
 }
 
@@ -54,9 +54,9 @@ for value in username.characters {
 
 // Iterate over chars
 let chars = username as NSString
-for var i = chars.length; i > 0; i-- {
+for i in ((0 + 1)...chars.length).reversed() {
     
-   print(chars.characterAtIndex(i))
+   print(chars.character(at: i))
     
 }
 

@@ -40,16 +40,16 @@ var name = "Giorgio"
 print(sayWhat + " " + name)
 
 // Capitalize strings
-let sayWatCapitalized = sayWhat.capitalizedString
+let sayWatCapitalized = sayWhat.capitalized
 
 // The power of the value types
-print(sayWhat.capitalizedString + " " + name)
+print(sayWhat.capitalized + " " + name)
 
 // Basic manipulation
 let sentence = sayWhat + " " + name
 let today = "Saturday "
 
-print(sentence + ", today is \(today.uppercaseString)")
+print(sentence + ", today is \(today.uppercased())")
 
 /*********************
  **** Excercise ******
